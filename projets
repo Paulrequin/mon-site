@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Titre optimisé -->
+    <title>Mes Projets | Paul Defais - Développeur Web</title>
+
+    <!-- Description pour le SEO -->
+    <meta name="description" content="Découvrez mes projets de développement web et data. Portfolio de Paul Defais, créateur de sites web modernes et performants.">
+    <meta name="keywords" content="Projets Web, Portfolio, Développement, HTML, CSS, JavaScript, Paul Defais">
+    <meta name="author" content="Paul Defais">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio de Projets | Paul Defais">
+    <meta property="og:description" content="Découvrez mes réalisations en développement web et data.">
+    <meta property="og:image" content="https://www.pauldefais.fr/image.png">
+    <meta property="og:url" content="https://www.pauldefais.fr/projets">
+    <meta property="og:type" content="website">
+
+    <!-- Lien vers le CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS spécifique pour la page projets -->
+    <link rel="stylesheet" href="projets.css">
+</head>
+<body>
+    <!-- En-tête du site -->
+    <header>
+        <h1>Mes Projets</h1>
+        <p>Découvrez mes réalisations et travaux récents</p>
+        
+        <!-- Menu de navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section principale -->
+    <main>
+        <!-- Grille de projets -->
+        <section class="projets-grid">
+            <!-- Projet 1 -->
+            <article class="projet-card">
+                <div class="projet-image">
+                    <img src="images/projet1.jpg" alt="Mon premier projet web">
+                </div>
+                <div class="projet-info">
+                    <h3>Site Vitrine Responsive</h3>
+                    <p class="projet-tags">HTML • CSS • JavaScript</p>
+                    <p>Un site vitrine moderne avec design responsive et animations fluides.</p>
+                    <a href="#" class="projet-btn">Voir le projet</a>
+                </div>
+            </article>
+
+            <!-- Projet 2 -->
+            <article class="projet-card">
+                <div class="projet-image">
+                    <img src="images/projet2.jpg" alt="Application web">
+                </div>
+                <div class="projet-info">
+                    <h3>Application Web de Gestion</h3>
+                    <p class="projet-tags">JavaScript • API • Base de données</p>
+                    <p>Une application permettant de gérer des tâches avec système d'authentification.</p>
+                    <a href="#" class="projet-btn">Voir le projet</a>
+                </div>
+            </article>
+
+            <!-- Projet 3 -->
+            <article class="projet-card">
+                <div class="projet-image">
+                    <img src="images/projet3.jpg" alt="Visualisation de données">
+                </div>
+                <div class="projet-info">
+                    <h3>Visualisation de Données</h3>
+                    <p class="projet-tags">Data • D3.js • SVG</p>
+                    <p>Un dashboard interactif pour visualiser des statistiques complexes.</p>
+                    <a href="#" class="projet-btn">Voir le projet</a>
+                </div>
+            </article>
+
+            <!-- Vous pouvez ajouter plus de projets en copiant la structure d'un article -->
+        </section>
+
+        <!-- Section pour un appel à l'action -->
+        <section class="cta-section">
+            <h2>Vous avez un projet en tête ?</h2>
+            <p>Je suis disponible pour discuter de nouvelles opportunités et collaborations.</p>
+            <a href="contact.html" class="cta-btn">Contactez-moi</a>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2024 Paul Defais - Tous droits réservés</p>
+    </footer>
+
+    <!-- Fichier JS -->
+    <script src="script.js"></script>
+</body>
+</html>
+Last edited just now
+
+
