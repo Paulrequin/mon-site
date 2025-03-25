@@ -1,1 +1,45 @@
+/* ✅ Style global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
 
+/* ✅ En-tête */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+/* ✅ Section principale */
+section {
+    padding: 20px;
+}
+
+/* ✅ Bouton stylé */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* ✅ Pied de page */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
