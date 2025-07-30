@@ -1,387 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paul Defais - Le meilleur site de l'internet</title>
-<meta name="description" content="Bienvenue sur mon site !">
-<meta name="keywords" content="Développement Web, Data, Site internet, HTML, CSS, SEO, Paul Defais">
-<meta name="author" content="Paul Defais">
-<meta property="og:title" content="Paul Defais - Développeur Web">
-<meta property="og:description" content="Je crée des sites web performants et optimisés pour le SEO.">
-<meta property="og:image" content="https://www.pauldefais.fr/image.png">
-<meta property="og:url" content="https://www.pauldefais.fr">
-<meta property="og:type" content="website">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-/* Variables CSS pour la cohérence */
-:root {
-  --primary-color: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary-color: #06b6d4;
-  --accent-color: #f59e0b;
-  --text-color: #1f2937;
-  --text-light: #6b7280;
-  --bg-color: #f8fafc;
-  --white: #ffffff;
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
-  --border-radius: 16px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, var(--bg-color) 0%, #e2e8f0 100%);
-  color: var(--text-color);
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-/* Header moderne avec glassmorphism */
-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  background-attachment: fixed;
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  pointer-events: none;
-}
-
-header h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 2;
-}
-
-header img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: var(--shadow);
-  margin: 20px 0;
-  transition: transform 0.3s ease;
-  object-fit: cover;
-}
-
-header img:hover {
-  transform: scale(1.05);
-}
-
-header p {
-  font-size: 1.2rem;
-  font-weight: 300;
-  opacity: 0.9;
-  position: relative;
-  z-index: 2;
-}
-
-/* Navigation moderne */
-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 15px 0;
-  box-shadow: var(--shadow);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-nav a:hover {
-  background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* Section principale avec cards modernes */
-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.card {
-  background: var(--white);
-  border-radius: var(--border-radius);
-  padding: 40px;
-  margin: 30px 0;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-
-.card h2 {
-  color: var(--primary-color);
-  font-size: 2rem;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.card p {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  margin-bottom: 25px;
-}
-
-/* Bouton moderne avec effets */
-.btn {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.6s;
-}
-
-.btn:hover::before {
-  left: 100%;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-}
-
-/* Message d'animation */
-#message {
-  margin-top: 20px;
-  padding: 15px;
-  background: linear-gradient(135deg, var(--accent-color), #f97316);
-  color: white;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
-}
-
-#message.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Footer moderne */
-footer {
-  background: linear-gradient(135deg, var(--text-color), #111827);
-  color: white;
-  padding: 40px 20px 20px;
-  text-align: center;
-  margin-top: 60px;
-  position: relative;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-}
-
-.footer-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.social-links {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.social-links a {
-  color: white;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-  padding: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.social-links a:hover {
-  background: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-/* Animations et responsive */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.card {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .card {
-    padding: 30px 20px;
-    margin: 20px 0;
-  }
-  
-  header {
-    padding: 40px 20px;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Mon Blog</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Bienvenue sur mon site ! 🎉</h1>
-  <img src="https://via.placeholder.com/300x300/6366f1/ffffff?text=PD" alt="Paul Defais" width="300">
-  <p>Je suis Paul Defais et c'est mon site trop beau</p>
-</header>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Mon Blog</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<nav>
-  <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-    <li><a href="about.html"><i class="fas fa-user"></i> À propos</a></li>
-  </ul>
-</nav>
+    <main class="container">
+        <a href="index.html" class="back-link">← Retour aux articles</a>
+        
+        <article class="full-article">
+            <h2 class="post-title">Titre de votre article complet</h2>
+            <div class="post-meta">Publié le [date] par [auteur]</div>
+            
+            <p>Contenu complet de votre article ici...</p>
+            <h2>Sous-titre</h2>
+            <p>Plus de contenu...</p>
+        </article>
+    </main>
 
-<section>
-  <div class="card">
-    <h2><i class="fas fa-rocket"></i> À propos</h2>
-    <p>Découvrez qui je suis et ce que je fais. Passionné de développement web et de nouvelles technologies !</p>
-    <button class="btn" onclick="afficherMessage()">
-      <i class="fas fa-magic"></i> Clique ici
-    </button>
-    <p id="message"></p>
-  </div>
-  
-  <div class="card">
-    <h2><i class="fas fa-code"></i> Mes compétences</h2>
-    <p>HTML, CSS, JavaScript et plein d'autres technologies modernes pour créer des sites exceptionnels.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-content">
-    <div class="social-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-    </div>
-    <p>© 2024 Paul Defais - Tous droits réservés</p>
-  </div>
-</footer>
-
-<script>
-function afficherMessage() {
-  const message = document.getElementById('message');
-  message.innerText = "🎉 Fantastique ! Tu as découvert mon secret !";
-  message.classList.add('show');
-  
-  // Animation du bouton
-  const btn = document.querySelector('.btn');
-  btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-  btn.innerHTML = '<i class="fas fa-check"></i> Merci !';
-  
-  setTimeout(() => {
-    btn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--primary-dark))';
-    btn.innerHTML = '<i class="fas fa-magic"></i> Clique ici';
-  }, 3000);
-}
-
-// Animation au scroll
-window.addEventListener('scroll', () => {
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.8) {
-      card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
-    }
-  });
-});
-</script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mon Blog. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
