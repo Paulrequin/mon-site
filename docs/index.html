@@ -3,63 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ✅ Titre optimisé -->
-    <title>Paul Defais - Le meilleur site de l'internet</title>
-
-    <!-- ✅ Description pour le SEO -->
-    <meta name="description" content="Bienvenue sur mon site !">
-
-    <!-- ✅ Mots-clés SEO -->
-    <meta name="keywords" content="Développement Web, Data, Site internet, HTML, CSS, SEO, Paul Defais">
-    <meta name="author" content="Paul Defais">
-
-    <!-- ✅ Open Graph (meilleur affichage sur Facebook, Twitter...) -->
-    <meta property="og:title" content="Paul Defais - Développeur Web">
-    <meta property="og:description" content="Je crée des sites web performants et optimisés pour le SEO.">
-    <meta property="og:image" content="https://www.pauldefais.fr/image.png">
-    <meta property="og:url" content="https://www.pauldefais.fr">
-    <meta property="og:type" content="website">
-
-    <!-- ✅ Lien vers le CSS -->
+    <title>Mon Blog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ✅ En-tête du site -->
     <header>
-    
-        <h1>Bienvenue sur mon site ! 🎉</h1>
-        <img src="image.jpg" alt="une belle image" width="300">
-        <p>Je suis Paul Defais et c'est mon site trop beau</p>
+        <div class="container">
+            <div class="header-content">
+                <h1>Mon Blog</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-<nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-         <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html"> A propos</a></li>
-    </ul>
-</nav>
-    <!-- ✅ Section principale -->
-    <section>
-        <h2>À propos</h2>
-        <p>Voici à quoi ça ressemble</p>
-        <!-- ✅ Bouton interactif -->
-        <button onclick="afficherMessage()">Clique ici</button>
-        <p id="message"></p>
-         <script>
-        function afficherMessage() {
-            document.getElementById('message').innerText = "Merci d'avoir cliqué!";
-        }
-    </script>
-    </section>
 
-    <!-- ✅ Pied de page -->
+    <main class="container">
+        <!-- Vos articles ici -->
+        <article class="blog-post">
+            <h2 class="post-title">Titre de votre article</h2>
+            <div class="post-meta">Publié le [date] par [auteur]</div>
+            <p class="post-excerpt">Extrait de votre article...</p>
+            <a href="blog.html" class="read-more">Lire la suite →</a>
+        </article>
+    </main>
+
     <footer>
-        <p>© 2024 Paul Defais - Tous droits réservés</p>
+        <div class="container">
+            <p>&copy; 2025 Mon Blog. Tous droits réservés.</p>
+        </div>
     </footer>
-
-    <!-- ✅ Fichier JS -->
-    <script src="script.js"></script>
 </body>
 </html>
