@@ -1,41 +1,336 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Blog</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal Vinicult — par Paul Defais</title>
+  <meta name="description" content="Journal Vinicult — Vin, Culture, Récits de Provence. Notes d'un vigneron entre les vignes de Saint Vincent et le monde." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8;
+      --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F;
+      --mid: #8A6A40; --rule: #D4B888;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      align-items: center; padding: 0 2rem; height: 52px;
+      border-bottom: 1px solid var(--ink); background: var(--bg);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
+    .nav-l li { cursor: pointer; transition: color 0.15s; }
+    .nav-l li:hover { color: var(--ink); }
+    .nav-logo { text-align: center; }
+    .logo-main { font-family: 'EB Garamond', serif; font-size: 20px; font-style: italic; font-weight: 500; display: block; color: var(--ink); line-height: 1.1; }
+    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
+    .nav-r li { cursor: pointer; transition: color 0.15s; }
+    .nav-r li:hover { color: var(--ink); }
+    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; cursor: pointer; transition: opacity 0.15s; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); min-height: 80vh; }
+    .hero-left { background: var(--rouge); display: flex; flex-direction: column; justify-content: space-between; padding: 3rem; border-right: 1px solid var(--ink); overflow: hidden; position: relative; }
+    .hero-deco { position: absolute; top: -0.1em; right: -0.05em; font-family: 'Barlow Condensed', sans-serif; font-size: 320px; font-weight: 900; line-height: 1; color: rgba(0,0,0,0.08); text-transform: uppercase; pointer-events: none; user-select: none; }
+    .hero-big-type { font-family: 'Barlow Condensed', sans-serif; font-size: 110px; font-weight: 900; line-height: 0.9; text-transform: uppercase; color: #fff; letter-spacing: -0.02em; position: relative; z-index: 2; }
+    .hero-big-type .hl { color: var(--sun); display: block; }
+    .hero-big-type .hr { font-family: 'EB Garamond', serif; font-style: italic; font-size: 96px; font-weight: 400; text-transform: none; color: #fff; display: block; opacity: 0.9; }
+    .hero-desc-wrap { position: relative; z-index: 2; }
+    .hero-desc { font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic; line-height: 1.65; color: rgba(255,255,255,0.75); margin-bottom: 1.8rem; max-width: 380px; }
+    .hero-ctas { display: flex; gap: 1rem; align-items: center; }
+    .btn-sun { background: var(--sun); color: var(--ink); font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.8rem; cursor: pointer; transition: opacity 0.15s; display: inline-block; }
+    .btn-sun:hover { opacity: 0.85; }
+    .btn-ghost { font-size: 12px; color: rgba(255,255,255,0.6); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; transition: color 0.15s; }
+    .btn-ghost:hover { color: #fff; }
+    .hero-right { background: var(--warm); position: relative; display: flex; align-items: flex-end; padding: 2rem; min-height: 400px; }
+    .hero-right img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-img-fill { position: absolute; inset: 0; background: radial-gradient(ellipse at 40% 50%, #D4A060 0%, transparent 55%), radial-gradient(ellipse at 75% 25%, #A87840 0%, transparent 50%), var(--warm); opacity: 0.85; }
+    .hero-img-tag { position: absolute; top: 2rem; left: 2rem; z-index: 3; background: var(--sun); color: var(--ink); font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.8rem; }
+    .hero-img-label { position: relative; z-index: 2; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7840; }
+
+    /* SECTION BAR */
+    .sbar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
+    .sbar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+    .sbar-r { font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: var(--ink); transition: opacity 0.15s; }
+    .sbar-r:hover { opacity: 0.5; }
+
+    /* FEATURED */
+    .feat { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); cursor: pointer; transition: background 0.15s; }
+    .feat:hover { background: var(--warm); }
+    .feat-img { aspect-ratio: 4/3; background: var(--warm); border-right: 1px solid var(--ink); overflow: hidden; position: relative; }
+    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .feat-img-fill { width: 100%; height: 100%; background: radial-gradient(ellipse at 45% 55%, #D4A060 0%, #B07840 100%); }
+    .feat-text { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .feat-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.8rem; }
+    .feat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 46px; font-weight: 700; line-height: 1.0; text-transform: uppercase; color: var(--ink); margin-bottom: 1.2rem; letter-spacing: -0.01em; }
+    .feat-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 50px; font-weight: 400; text-transform: none; color: var(--rouge); }
+    .feat-body { font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic; line-height: 1.7; color: var(--mid); flex: 1; margin-bottom: 2rem; }
+    .feat-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+    .feat-meta { font-size: 9px; color: var(--rule); letter-spacing: 0.08em; text-transform: uppercase; }
+    .feat-read { font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: var(--ink); }
+
+    /* GRILLE */
+    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .art { padding: 2rem; border-right: 1px solid var(--ink); cursor: pointer; transition: background 0.15s; }
+    .art:last-child { border-right: none; }
+    .art:hover { background: var(--warm); }
+    .art-img { width: 100%; aspect-ratio: 3/2; margin-bottom: 1.2rem; background: var(--warm); overflow: hidden; }
+    .art-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .art-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; }
+    .art-title { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.1; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; }
+    .art-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.65; color: var(--mid); margin-bottom: 1rem; }
+    .art-rule { width: 24px; height: 1px; background: var(--rule); margin-bottom: 0.8rem; }
+    .art-meta { font-size: 9px; color: var(--rule); letter-spacing: 0.06em; }
+
+    /* CITATION */
+    .quote { background: var(--vert); padding: 4rem 2rem; border-bottom: 1px solid var(--ink); display: grid; grid-template-columns: 1fr 260px; gap: 3rem; align-items: center; }
+    .q-text { font-family: 'Barlow Condensed', sans-serif; font-size: 60px; font-weight: 900; line-height: 0.95; text-transform: uppercase; color: #fff; letter-spacing: -0.02em; }
+    .q-text em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 56px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
+    .q-side { border-left: 1px solid rgba(255,255,255,0.2); padding-left: 2rem; }
+    .q-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.8rem; }
+    .q-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.65; }
+
+    /* SAINT VINCENT */
+    .sv { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .sv-l { background: var(--ink); padding: 3.5rem 2.5rem; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--ink); }
+    .sv-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #555; margin-bottom: 1.5rem; }
+    .sv-title { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900; line-height: 0.92; text-transform: uppercase; color: #fff; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .sv-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 52px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
+    .sv-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: #666; line-height: 1.65; margin-bottom: 2rem; }
+    .sv-btn { display: inline-block; background: var(--sun); color: var(--ink); font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.8rem; cursor: pointer; width: fit-content; transition: opacity 0.15s; }
+    .sv-btn:hover { opacity: 0.85; }
+    .sv-r { padding: 3.5rem 2.5rem; background: var(--bg); display: flex; flex-direction: column; justify-content: space-between; }
+    .sv-r-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem; }
+    .sv-spec { display: flex; justify-content: space-between; align-items: baseline; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
+    .sv-spec:last-child { border-bottom: none; }
+    .sv-spec-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+    .sv-spec-v { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); }
+
+    /* NEWSLETTER */
+    .nl { background: var(--sun); padding: 2.5rem 2rem; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nl-text { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+    .nl-form { display: flex; flex: 1; max-width: 400px; }
+    .nl-input { flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--ink); border-right: none; background: transparent; font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--ink); outline: none; }
+    .nl-input::placeholder { color: rgba(0,0,0,0.4); }
+    .nl-btn { padding: 0.75rem 1.4rem; border: 1px solid var(--ink); background: var(--ink); color: var(--sun); font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+
+    /* FOOTER */
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 2.5rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
+    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.6; }
+    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.15s; }
+    .ft-links li:hover { color: var(--mid); }
+    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-l { display: none; }
+      .nav { grid-template-columns: 1fr auto; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 300px; border-top: 1px solid var(--ink); }
+      .hero-big-type { font-size: 72px; }
+      .hero-big-type .hr { font-size: 64px; }
+      .feat { grid-template-columns: 1fr; }
+      .feat-img { border-right: none; border-bottom: 1px solid var(--ink); }
+      .grid { grid-template-columns: 1fr; }
+      .art { border-right: none; border-bottom: 1px solid var(--ink); }
+      .art:last-child { border-bottom: none; }
+      .quote { grid-template-columns: 1fr; }
+      .q-text { font-size: 40px; }
+      .q-text em { font-size: 38px; }
+      .q-side { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; }
+      .sv { grid-template-columns: 1fr; }
+      .sv-l { border-right: none; border-bottom: 1px solid var(--ink); }
+      .nl { flex-direction: column; align-items: flex-start; }
+      .nl-form { max-width: 100%; width: 100%; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Mon Blog</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="blog.html">Articles</a></li>
-                        <li><a href="about.html">À propos</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <main class="container">
-        <!-- Vos articles ici -->
-        <article class="blog-post">
-            <h2 class="post-title">Titre de votre article</h2>
-            <div class="post-meta">Publié le [date] par [auteur]</div>
-            <p class="post-excerpt">Extrait de votre article...</p>
-            <a href="blog.html" class="read-more">Lire la suite →</a>
-        </article>
-    </main>
+  <nav class="nav">
+    <ul class="nav-l">
+      <li><a href="#journal">Journal</a></li>
+      <li><a href="#articles">Culture</a></li>
+      <li><a href="#articles">Articles</a></li>
+    </ul>
+    <div class="nav-logo">
+      <span class="logo-main">Journal Vinicult</span>
+      <span class="logo-sub">par Paul Defais</span>
+    </div>
+    <ul class="nav-r">
+      <li><a href="#saint-vincent">Saint Vincent</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Mon Blog. Tous droits réservés.</p>
+  <section id="journal" class="hero">
+    <div class="hero-left">
+      <div class="hero-deco">V</div>
+      <div class="hero-big-type">
+        <span>Vin</span>
+        <span class="hl">Culture</span>
+        <span class="hr">Récits.</span>
+      </div>
+      <div class="hero-desc-wrap">
+        <p class="hero-desc">Notes d'un vigneron entre les vignes de Saint Vincent et le monde. Un journal au rythme des saisons.</p>
+        <div class="hero-ctas">
+          <a href="#articles" class="btn-sun">Lire le journal</a>
+          <a href="#saint-vincent" class="btn-ghost">Saint Vincent →</a>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Remplacez par votre photo : <img src="hero.jpg" alt="Vignes Saint Vincent" /> -->
+      <div class="hero-img-fill"></div>
+      <div class="hero-img-tag">Provence 2026</div>
+      <div class="hero-img-label">Vos photos ici — vignes, bouteilles</div>
+    </div>
+  </section>
+
+  <div class="sbar">
+    <span class="sbar-l">À la une</span>
+    <a class="sbar-r" href="#">Tous les articles</a>
+  </div>
+
+  <article class="feat">
+    <div class="feat-img">
+      <!-- <img src="article1.jpg" alt="Vieilles vignes" /> -->
+      <div class="feat-img-fill"></div>
+    </div>
+    <div class="feat-text">
+      <div>
+        <div class="feat-cat">Terroir &amp; Saisons</div>
+        <h2 class="feat-title">Vieilles vignes en <em>mars</em></h2>
+        <p class="feat-body">Entre la taille tardive et les premières chaleurs, il y a ce moment suspendu où la vigne décide. Ni l'homme, ni le calendrier — juste la sève qui monte ou qui attend.</p>
+      </div>
+      <div class="feat-footer">
+        <span class="feat-meta">12 Mars 2026 · 5 min</span>
+        <a class="feat-read" href="#">Lire l'article →</a>
+      </div>
+    </div>
+  </article>
+
+  <div id="articles" class="sbar">
+    <span class="sbar-l">Derniers articles</span>
+    <a class="sbar-r" href="#">Voir tout</a>
+  </div>
+
+  <div class="grid">
+    <article class="art">
+      <div class="art-img" style="background:#E8D0A0;"></div>
+      <div class="art-cat">Dégustation</div>
+      <h3 class="art-title">Grenache 2023</h3>
+      <p class="art-body">Un millésime qu'on n'attendait pas. Fruité, tendu, presque impudent.</p>
+      <div class="art-rule"></div>
+      <span class="art-meta">3 Mars 2026 · 4 min</span>
+    </article>
+    <article class="art">
+      <div class="art-img" style="background:#C8D8B8;"></div>
+      <div class="art-cat">Culture</div>
+      <h3 class="art-title">Ribera del Duero</h3>
+      <p class="art-body">Trois jours en Castille pour comprendre ce que le soleil peut faire d'autre.</p>
+      <div class="art-rule"></div>
+      <span class="art-meta">18 Fév. 2026 · 6 min</span>
+    </article>
+    <article class="art">
+      <div class="art-img" style="background:#E0C8A0;"></div>
+      <div class="art-cat">Terroir</div>
+      <h3 class="art-title">La Syrah du sud</h3>
+      <p class="art-body">Cépage du nord, adopté par le sud. Ce que le mistral lui a appris.</p>
+      <div class="art-rule"></div>
+      <span class="art-meta">5 Fév. 2026 · 4 min</span>
+    </article>
+  </div>
+
+  <div class="quote">
+    <p class="q-text">La vigne<br>ne ment pas.<em>Le sol non plus.</em></p>
+    <div class="q-side">
+      <div class="q-label">En ce moment</div>
+      <p class="q-body">Taille en cours sur les parcelles de Grenache. Premier débourrement attendu fin mars.</p>
+    </div>
+  </div>
+
+  <section id="saint-vincent" class="sv">
+    <div class="sv-l">
+      <div>
+        <div class="sv-tag">— Saint Vincent</div>
+        <h2 class="sv-title">Vins de<em>Provence.</em></h2>
+        <p class="sv-body">Un domaine singulier, des vins de terroir. Grenache, Syrah, Rolle — les cépages du soleil.</p>
+      </div>
+      <a href="#" class="sv-btn">Découvrir le domaine →</a>
+    </div>
+    <div class="sv-r">
+      <div class="sv-r-label">— Les vins</div>
+      <div>
+        <div class="sv-spec"><span class="sv-spec-k">Appellation</span><span class="sv-spec-v">Provence AOC</span></div>
+        <div class="sv-spec"><span class="sv-spec-k">Cépages</span><span class="sv-spec-v">Grenache, Syrah, Rolle</span></div>
+        <div class="sv-spec"><span class="sv-spec-k">Millésime</span><span class="sv-spec-v">2023</span></div>
+        <div class="sv-spec"><span class="sv-spec-k">Domaine</span><span class="sv-spec-v">Saint Vincent</span></div>
+        <div class="sv-spec"><span class="sv-spec-k">Lieu</span><span class="sv-spec-v">Marseille, France</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nl">
+    <p class="nl-text">Les nouvelles<br>du journal.</p>
+    <form class="nl-form" onsubmit="return false;">
+      <input class="nl-input" type="email" placeholder="Votre adresse e-mail" required />
+      <button class="nl-btn" type="submit">S'inscrire</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Journal Vinicult</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Un journal entre les vignes et le monde, autour du vin, de la culture et des récits de Provence.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#articles">Culture</a></li>
+          <li><a href="#saint-vincent">Saint Vincent</a></li>
+          <li><a href="#about">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Suivre</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Journal Vinicult 2026</span>
+      <span>Provence, France</span>
+    </div>
+  </footer>
+
 </body>
 </html>
