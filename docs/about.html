@@ -1,28 +1,261 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — Journal Vinicult</title>
+  <meta name="description" content="Paul Defais — passionné de vin, Marseille, agence Saint Vincent." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8;
+      --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F;
+      --mid: #8A6A40; --rule: #D4B888;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      align-items: center; padding: 0 2rem; height: 52px;
+      border-bottom: 1px solid rgba(26,14,0,0.18);
+      background: rgba(255,248,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
+    .nav-l li { cursor: pointer; transition: color 0.2s; }
+    .nav-l li:hover { color: var(--ink); }
+    .nav-logo { text-align: center; }
+    .logo-main { font-family: 'EB Garamond', serif; font-size: 20px; font-style: italic; font-weight: 500; display: block; color: var(--ink); line-height: 1.1; }
+    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
+    .nav-r li { cursor: pointer; transition: color 0.2s; }
+    .nav-r li:hover { color: var(--ink); }
+    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
+
+    /* HERO ABOUT */
+    .about-hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink); min-height: 60vh;
+    }
+    .about-hero-l {
+      background: var(--ink); padding: 4rem 3rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+      border-right: 1px solid var(--ink);
+    }
+    .about-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 2rem; }
+    .about-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900;
+      line-height: 0.88; text-transform: uppercase; color: #fff; letter-spacing: -0.02em;
+    }
+    .about-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 72px; font-weight: 400; text-transform: none;
+      color: var(--sun); display: block;
+    }
+    .about-hero-meta { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .about-hero-r {
+      background: var(--warm); position: relative; overflow: hidden;
+    }
+    .about-hero-r-fill {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(212,160,96,0.8) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(160,100,40,0.6) 0%, transparent 50%),
+        var(--warm);
+    }
+
+    /* CORPS */
+    .about-body {
+      display: grid; grid-template-columns: 1fr 560px 1fr;
+      padding: 5rem 0; border-bottom: 1px solid var(--ink);
+    }
+    .about-body-inner { grid-column: 2; }
+    .about-body-inner p {
+      font-family: 'EB Garamond', serif; font-size: 20px;
+      line-height: 1.78; color: var(--ink); margin-bottom: 1.6rem;
+    }
+    .about-body-inner p:first-child::first-letter {
+      font-size: 4.5em; line-height: 0.75; float: left;
+      margin: 0.06em 0.1em 0 0;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      color: var(--rouge); text-transform: uppercase;
+    }
+    .about-pull {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700;
+      line-height: 1.05; text-transform: uppercase; color: var(--rouge);
+      letter-spacing: -0.01em; margin: 2.5rem 0; padding: 2rem 0;
+      border-top: 2px solid var(--rouge); border-bottom: 2px solid var(--rouge);
+    }
+    .about-pull em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 32px; font-weight: 400; text-transform: none; color: var(--mid);
+      display: block; margin-top: 0.3em;
+    }
+
+    /* SAINT VINCENT BLOC */
+    .sv-bloc {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .sv-bloc-l {
+      background: linear-gradient(150deg, #2A1800 0%, #1A0E00 100%);
+      padding: 3.5rem 2.5rem; border-right: 1px solid var(--ink);
+    }
+    .sv-bloc-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; }
+    .sv-bloc-title { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 900; line-height: 0.92; text-transform: uppercase; color: #fff; margin-bottom: 1.2rem; }
+    .sv-bloc-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 44px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
+    .sv-bloc-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .sv-bloc-r { padding: 3.5rem 2.5rem; background: var(--bg); }
+    .sv-bloc-r-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem; }
+    .sv-spec { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+    .sv-spec:last-child { border-bottom: none; }
+    .sv-spec-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+    .sv-spec-v { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); }
+
+    /* FOOTER */
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
+    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.65; }
+    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+    .ft-links li:hover { color: var(--rouge); }
+    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
+
+    @media (max-width: 768px) {
+      .nav-l { display: none; }
+      .nav { grid-template-columns: 1fr auto; }
+      .about-hero { grid-template-columns: 1fr; }
+      .about-hero-r { min-height: 240px; border-top: 1px solid var(--ink); }
+      .about-title { font-size: 56px; }
+      .about-title em { font-size: 52px; }
+      .about-body { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+      .about-body-inner { grid-column: 1; }
+      .about-body-inner p { font-size: 18px; }
+      .sv-bloc { grid-template-columns: 1fr; }
+      .sv-bloc-l { border-right: none; border-bottom: 1px solid var(--ink); }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h1>À propos de nous</h1>
-        <p>Nous sommes une équipe passionnée par le développement web et la création de sites modernes et conviviaux.</p>
-    </main>
+  <nav class="nav">
+    <ul class="nav-l">
+      <li><a href="index.html#journal">Journal</a></li>
+      <li><a href="blog.html">Culture</a></li>
+      <li><a href="blog.html">Articles</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Journal Vinicult</span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+      <li><a href="about.html" style="color: var(--ink);">À propos</a></li>
+      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
 
-    <footer>
-        <p>&copy; 2025 Mon Site Web</p>
-    </footer>
+  <div class="about-hero">
+    <div class="about-hero-l">
+      <div>
+        <div class="about-tag">— À propos</div>
+        <h1 class="about-title">Paul<em>Defais.</em></h1>
+      </div>
+      <div class="about-hero-meta">Marseille, France · 2026</div>
+    </div>
+    <div class="about-hero-r">
+      <div class="about-hero-r-fill"></div>
+    </div>
+  </div>
+
+  <div class="about-body">
+    <div class="about-body-inner">
+
+      <p>Le vin, ça m'est tombé dessus assez tard. Pas dans une cave familiale en Bourgogne, pas en héritant d'un domaine. Dans un verre, un soir à Marseille, avec une bouteille que quelqu'un avait posée sur la table sans commentaire. Un Grenache de Provence, tanins serrés, finale longue. J'ai demandé où c'était fait. C'était à vingt kilomètres.</p>
+
+      <p>Depuis, j'essaie de comprendre ce truc — pourquoi ce verre-là et pas un autre, pourquoi ce sol, pourquoi cette saison. Ce journal est l'endroit où je pose les questions sans forcément avoir les réponses. C'est honnête, je crois. Le vin mérite mieux que les certitudes.</p>
+
+      <div class="about-pull">
+        Pas de cave familiale.<br>Pas d'héritage.
+        <em>Juste un verre un soir, et une question qui n'est pas finie.</em>
+      </div>
+
+      <p>Je vis à Marseille. Cette ville qui ressemble à rien d'autre et qui ressemble à tout ce que j'aime — bruyante, directe, avec une lumière qui change tout ce qu'elle touche. La mer d'un côté, la garrigue de l'autre. Entre les deux, des vignes qui n'ont pas peur du mistral parce qu'elles n'ont pas le choix.</p>
+
+      <p>Ce journal parle de ce qui se passe dans les rangs selon la saison, de bouteilles qui méritent d'être racontées, de voyages faits pour comprendre ce qu'on fait chez soi. Ribera del Duero, Etna, vallée du Rhône — on va voir comment les autres font, et on revient toujours avec la même question : qu'est-ce que le soleil fait exactement à un raisin ?</p>
+
+      <p>J'écris comme je bois. Sans chichi. Si quelque chose est bon, je dis pourquoi. Si c'est raté, pareil. Le vin est trop sérieux pour être pris au sérieux en permanence.</p>
+
+    </div>
+  </div>
+
+  <div class="sv-bloc">
+    <div class="sv-bloc-l">
+      <div class="sv-bloc-tag">— L'agence</div>
+      <h2 class="sv-bloc-title">Saint<em>Vincent.</em></h2>
+      <p class="sv-bloc-body">Conseil, création et récits autour du vin et de la culture. Une agence à Marseille, entre la mer et la garrigue.</p>
+    </div>
+    <div class="sv-bloc-r">
+      <div class="sv-bloc-r-label">— Contact</div>
+      <div>
+        <div class="sv-spec"><span class="sv-spec-k">Agence</span><span class="sv-spec-v">Saint Vincent</span></div>
+        <div class="sv-spec"><span class="sv-spec-k">Lieu</span><span class="sv-spec-v">Marseille, France</span></div>
+        <div class="sv-spec"><span class="sv-spec-k">Instagram</span><span class="sv-spec-v"><a href="https://instagram.com/agencesaintvincent" target="_blank">@agencesaintvincent</a></span></div>
+        <div class="sv-spec"><span class="sv-spec-k">Email</span><span class="sv-spec-v"><a href="mailto:paul@pauldefais.fr">paul@pauldefais.fr</a></span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Journal Vinicult</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Un journal entre les vignes et le monde, autour du vin, de la culture et des récits de Provence.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+          <li><a href="about.html">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Suivre</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com/agencesaintvincent" target="_blank">Instagram</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Journal Vinicult 2026</span>
+      <span>Provence, France</span>
+    </div>
+  </footer>
+
 </body>
 </html>

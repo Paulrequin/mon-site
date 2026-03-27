@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ribera del Duero — Journal Vinicult</title>
+  <meta name="description" content="Trois jours en Castille pour comprendre ce que le soleil peut faire d'autre. Par Paul Defais." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8; --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F; --mid: #8A6A40; --rule: #D4B888; --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
+    a { color: inherit; text-decoration: none; }
+    .nav { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; padding: 0 2rem; height: 52px; border-bottom: 1px solid rgba(26,14,0,0.18); background: rgba(255,248,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
+    .nav-l li { cursor: pointer; transition: color 0.2s; }
+    .nav-l li:hover { color: var(--ink); }
+    .nav-logo { text-align: center; }
+    .logo-main { font-family: 'EB Garamond', serif; font-size: 20px; font-style: italic; font-weight: 500; display: block; color: var(--ink); line-height: 1.1; }
+    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
+    .nav-r li { cursor: pointer; transition: color 0.2s; }
+    .nav-r li:hover { color: var(--ink); }
+    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
+    .article-header { position: relative; height: 55vh; min-height: 360px; border-bottom: 1px solid var(--ink); overflow: hidden; display: flex; align-items: flex-end; }
+    .article-header img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
+    .article-header-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,14,0,0.85) 0%, rgba(26,14,0,0.3) 60%, transparent 100%); }
+    .article-header-content { position: relative; z-index: 2; padding: 2.5rem 3rem; width: 100%; }
+    .article-cat { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sun); margin-bottom: 0.8rem; display: block; }
+    .article-title { font-family: 'Barlow Condensed', sans-serif; font-size: 72px; font-weight: 900; line-height: 0.92; text-transform: uppercase; color: #fff; letter-spacing: -0.02em; max-width: 700px; }
+    .article-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 68px; font-weight: 400; text-transform: none; color: var(--sun); display: inline; }
+    .article-meta-bar { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 3rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .article-meta-l { display: flex; gap: 2rem; align-items: center; }
+    .article-byline { font-size: 11px; color: var(--ink); letter-spacing: 0.04em; }
+    .article-byline strong { font-weight: 400; }
+    .article-date { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+    .article-readtime { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+    .article-back { font-size: 11px; color: var(--mid); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+    .article-back:hover { color: var(--ink); }
+    .article-body { display: grid; grid-template-columns: 1fr 580px 1fr; padding: 4rem 0; border-bottom: 1px solid var(--ink); }
+    .article-body-inner { grid-column: 2; }
+    .article-body-inner p { font-family: 'EB Garamond', serif; font-size: 20px; line-height: 1.78; color: var(--ink); margin-bottom: 1.6rem; }
+    .article-body-inner p:first-child::first-letter { font-size: 4.5em; line-height: 0.75; float: left; margin: 0.06em 0.1em 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; color: var(--rouge); text-transform: uppercase; }
+    .article-body-inner h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--ink); letter-spacing: -0.01em; margin: 2.5rem 0 1rem; border-top: 1px solid var(--rule); padding-top: 2rem; }
+    .article-pull { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 700; line-height: 1.05; text-transform: uppercase; color: var(--rouge); letter-spacing: -0.01em; margin: 2.5rem 0; padding: 2rem 0; border-top: 2px solid var(--rouge); border-bottom: 2px solid var(--rouge); }
+    .article-pull em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 34px; font-weight: 400; text-transform: none; color: var(--mid); display: block; margin-top: 0.3em; }
+    .article-img-block { margin: 2.5rem 0; }
+    .article-img-block img { width: 100%; display: block; border: 1px solid var(--rule); }
+    .article-img-caption { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-top: 0.6rem; }
+    .article-footer-bar { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .article-tags { display: flex; gap: 0.6rem; }
+    .tag { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); border: 1px solid var(--rule); padding: 0.3rem 0.7rem; }
+    .article-nav-links a { font-size: 11px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.2s; }
+    .article-nav-links a:hover { opacity: 0.5; }
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
+    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.65; }
+    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+    .ft-links li:hover { color: var(--rouge); }
+    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
+    @media (max-width: 768px) {
+      .nav-l { display: none; } .nav { grid-template-columns: 1fr auto; }
+      .article-title { font-size: 48px; } .article-header-content { padding: 2rem 1.5rem; }
+      .article-meta-bar { padding: 0.9rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .article-body { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+      .article-body-inner { grid-column: 1; } .article-body-inner p { font-size: 18px; }
+      .article-footer-bar { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="nav-l">
+      <li><a href="index.html#journal">Journal</a></li>
+      <li><a href="blog.html">Culture</a></li>
+      <li><a href="blog.html">Articles</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Journal Vinicult</span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <img src="vine4.jpeg" alt="Ribera del Duero" />
+    <div class="article-header-overlay"></div>
+    <div class="article-header-content">
+      <span class="article-cat">Voyages &amp; Culture</span>
+      <h1 class="article-title">Ribera <em>del Duero.</em></h1>
+    </div>
+  </header>
+
+  <div class="article-meta-bar">
+    <div class="article-meta-l">
+      <span class="article-byline">Par <strong>Paul Defais</strong></span>
+      <span class="article-date">18 Fév. 2026</span>
+      <span class="article-readtime">6 min de lecture</span>
+    </div>
+    <a class="article-back" href="blog.html">← Tous les articles</a>
+  </div>
+
+  <div class="article-body">
+    <div class="article-body-inner">
+
+      <p>La Castille en février, c'est un test. Le plateau à mille mètres d'altitude, le vent qui arrive de nulle part et va partout, et ce froid sec qui n'a rien à voir avec le froid humide de la côte. On comprend tout de suite pourquoi le Tempranillo est ce qu'il est ici — il a appris à tenir dans des conditions où d'autres cépages auraient capitulé depuis longtemps.</p>
+
+      <p>On avait réservé trois jours. On en a passé deux à goûter et un à essayer de comprendre pourquoi on ne connaissait pas mieux cet endroit. La réponse, c'est qu'on n'avait pas cherché. Ribera del Duero vit dans l'ombre de Rioja depuis des décennies, injustement. Ce n'est pas le même vin. Ce n'est même pas la même conversation.</p>
+
+      <div class="article-pull">
+        Rioja et Ribera, c'est pas la même chose.
+        <em>C'est même pas la même langue.</em>
+      </div>
+
+      <h2>Le Tempranillo n'a pas le complexe du provincial</h2>
+
+      <p>Premier soir, une bodega au nord de Peñafiel. Cave du XIVe siècle, plafonds bas, humidité qui colle aux murs. On nous pose une bouteille sur la table sans cérémonie — un Ribera del Duero Reserva, 2019. Robe profonde, presque noire. Nez de cassis et de cuir, tabac froid en fond. C'est dense, structuré, et pourtant pas écrasant.</p>
+
+      <p>Ce que le Tempranillo fait ici que la Rioja ne fait pas : il garde une acidité. Le plateau l'oblige. Les nuits froides du plateau castillan préservent une tension dans le raisin que le Rioja, plus doux, n'a plus vraiment. Résultat : des vins qui vieillissent mieux, qui s'ouvrent plus lentement, qui demandent de la patience.</p>
+
+      <div class="article-img-block">
+        <img src="vine2.jpg" alt="Vignoble en plateau" />
+        <p class="article-img-caption">Le plateau castillan — altitude 900m, Ribera del Duero.</p>
+      </div>
+
+      <h2>Ce qu'on ramène dans ses bagages</h2>
+
+      <p>Trois bouteilles dans la valise, deux idées dans la tête. La première : le terroir n'est pas qu'une question de sol. C'est aussi une altitude, un écart thermique entre le jour et la nuit, une contrainte climatique qui s'inscrit dans le raisin avant même qu'on le touche. La Castille enseigne ça avec brutalité.</p>
+
+      <p>La deuxième : on a tendance à rester dans ce qu'on connaît. Provence, Bourgogne, vallée du Rhône — le circuit habituel. Sortir de ça, traverser une frontière, boire ce que d'autres font avec le même soleil et pas les mêmes contraintes, c'est la seule façon de comprendre ce qu'on fait chez soi. Rentré à Marseille, le Grenache avait un goût différent. Pas meilleur. Différent. C'est tout ce qu'on demande à un voyage.</p>
+
+    </div>
+  </div>
+
+  <div class="article-footer-bar">
+    <div class="article-tags">
+      <span class="tag">Voyages</span>
+      <span class="tag">Espagne</span>
+      <span class="tag">Tempranillo</span>
+      <span class="tag">Castille</span>
+    </div>
+    <div class="article-nav-links">
+      <a href="blog.html">← Tous les articles</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Journal Vinicult</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Un journal entre les vignes et le monde, autour du vin, de la culture et des récits de Provence.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+          <li><a href="about.html">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Suivre</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com/agencesaintvincent" target="_blank">Instagram</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Journal Vinicult 2026</span>
+      <span>Provence, France</span>
+    </div>
+  </footer>
+
+</body>
+</html>

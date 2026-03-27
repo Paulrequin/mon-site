@@ -1,44 +1,257 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article - Mon Blog</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles — Journal Vinicult</title>
+  <meta name="description" content="Tous les articles du Journal Vinicult — terroir, dégustation, voyages et récits de Provence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8;
+      --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F;
+      --mid: #8A6A40; --rule: #D4B888;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      align-items: center; padding: 0 2rem; height: 52px;
+      border-bottom: 1px solid rgba(26,14,0,0.18);
+      background: rgba(255,248,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
+    .nav-l li { cursor: pointer; transition: color 0.2s; }
+    .nav-l li:hover, .nav-l li.active { color: var(--ink); }
+    .nav-logo { text-align: center; }
+    .logo-main { font-family: 'EB Garamond', serif; font-size: 20px; font-style: italic; font-weight: 500; display: block; color: var(--ink); line-height: 1.1; }
+    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
+    .nav-r li { cursor: pointer; transition: color 0.2s; }
+    .nav-r li:hover { color: var(--ink); }
+    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
+
+    /* EN-TÊTE */
+    .page-header {
+      padding: 4rem 2rem 3rem;
+      border-bottom: 1px solid var(--ink);
+      display: flex; align-items: flex-end; justify-content: space-between;
+    }
+    .page-header-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900;
+      text-transform: uppercase; line-height: 0.88; letter-spacing: -0.02em; color: var(--ink);
+    }
+    .page-header-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 72px; font-weight: 400; text-transform: none; color: var(--rouge);
+    }
+    .page-header-count { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); padding-bottom: 0.5rem; }
+
+    /* FILTRES */
+    .filters {
+      display: flex; gap: 0; border-bottom: 1px solid var(--ink);
+      overflow-x: auto;
+    }
+    .filter-btn {
+      font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mid); padding: 0.75rem 1.5rem; cursor: pointer;
+      border-right: 1px solid var(--ink); white-space: nowrap;
+      transition: background 0.15s, color 0.15s; background: none; border-top: none; border-left: none; border-bottom: none;
+    }
+    .filter-btn:first-child { border-left: none; }
+    .filter-btn.active, .filter-btn:hover { background: var(--ink); color: var(--bg); }
+
+    /* GRILLE ARTICLES */
+    .articles-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .article-card {
+      display: flex; border-bottom: 1px solid var(--ink); border-right: 1px solid var(--ink);
+      cursor: pointer; transition: background 0.2s var(--ease);
+      text-decoration: none; color: var(--ink);
+    }
+    .article-card:nth-child(2n) { border-right: none; }
+    .article-card:nth-last-child(-n+2) { border-bottom: none; }
+    .article-card:hover { background: var(--warm); }
+    .article-card-img {
+      width: 200px; min-height: 180px; flex-shrink: 0;
+      border-right: 1px solid var(--ink); overflow: hidden; position: relative;
+    }
+    .article-card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+    .article-card:hover .article-card-img img { transform: scale(1.05); }
+    .article-card-img-fill { position: absolute; inset: 0; }
+    .article-card-body { padding: 1.8rem 2rem; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
+    .article-card-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; }
+    .article-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.05; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; letter-spacing: -0.01em; }
+    .article-card-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 26px; font-weight: 400; text-transform: none; color: var(--rouge); }
+    .article-card-excerpt { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.65; color: var(--mid); flex: 1; margin-bottom: 1.2rem; }
+    .article-card-meta { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rule); }
+
+    /* FOOTER */
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
+    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.65; }
+    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+    .ft-links li:hover { color: var(--rouge); }
+    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
+
+    @media (max-width: 768px) {
+      .nav-l { display: none; }
+      .nav { grid-template-columns: 1fr auto; }
+      .page-header-title { font-size: 52px; }
+      .page-header-title em { font-size: 48px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .article-card { border-right: none; }
+      .article-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
+      .article-card:last-child { border-bottom: none; }
+      .article-card-img { width: 120px; min-height: 140px; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Mon Blog</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="blog.html">Articles</a></li>
-                        <li><a href="about.html">À propos</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <main class="container">
-        <a href="index.html" class="back-link">← Retour aux articles</a>
-        
-        <article class="full-article">
-            <h2 class="post-title">Titre de votre article complet</h2>
-            <div class="post-meta">Publié le [date] par [auteur]</div>
-            
-            <p>Contenu complet de votre article ici...</p>
-            <h2>Sous-titre</h2>
-            <p>Plus de contenu...</p>
-        </article>
-    </main>
+  <nav class="nav">
+    <ul class="nav-l">
+      <li><a href="index.html#journal">Journal</a></li>
+      <li class="active"><a href="blog.html">Culture</a></li>
+      <li class="active"><a href="blog.html">Articles</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Journal Vinicult</span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Mon Blog. Tous droits réservés.</p>
+  <div class="page-header">
+    <h1 class="page-header-title">Tous les<br><em>articles.</em></h1>
+    <span class="page-header-count">4 textes publiés</span>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active">Tout</button>
+    <button class="filter-btn">Terroir &amp; Saisons</button>
+    <button class="filter-btn">Dégustation</button>
+    <button class="filter-btn">Voyages &amp; Culture</button>
+  </div>
+
+  <div class="articles-grid">
+
+    <a class="article-card" href="vieilles-vignes-mars.html">
+      <div class="article-card-img">
+        <img src="vine1.jpg" alt="Vieilles vignes en mars" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Terroir &amp; Saisons</div>
+          <h2 class="article-card-title">Vieilles vignes<br>en <em>mars.</em></h2>
+          <p class="article-card-excerpt">Six heures du matin. Le sol est encore dur. Pas froid — dur, comme agacé d'être là. On souffle dans ses mains, on saisit le sécateur, et on recommence.</p>
         </div>
-    </footer>
+        <span class="article-card-meta">12 Mars 2026 · 5 min</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="grenache-2023.html">
+      <div class="article-card-img">
+        <img src="vine3.jpeg" alt="Grenache 2023" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Dégustation</div>
+          <h2 class="article-card-title">Grenache<br><em>2023.</em></h2>
+          <p class="article-card-excerpt">Un millésime qu'on n'attendait pas. Fruité, tendu, presque impudent. Le genre de vin qui vous regarde droit dans les yeux avant même que vous ayez bu une gorgée.</p>
+        </div>
+        <span class="article-card-meta">3 Mars 2026 · 4 min</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="ribera-del-duero.html">
+      <div class="article-card-img">
+        <img src="vine4.jpeg" alt="Ribera del Duero" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Voyages &amp; Culture</div>
+          <h2 class="article-card-title">Ribera<br><em>del Duero.</em></h2>
+          <p class="article-card-excerpt">Trois jours en Castille. Le soleil tape différemment là-bas — plus direct, sans la douceur de la Méditerranée. Le Tempranillo n'a pas le même complexe.</p>
+        </div>
+        <span class="article-card-meta">18 Fév. 2026 · 6 min</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="syrah-du-sud.html">
+      <div class="article-card-img">
+        <img src="vine5.jpeg" alt="La Syrah du sud" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Terroir</div>
+          <h2 class="article-card-title">La Syrah<br><em>du sud.</em></h2>
+          <p class="article-card-excerpt">Cépage du nord adopté par le sud. Ce que le mistral lui a appris que personne d'autre n'aurait pu lui enseigner.</p>
+        </div>
+        <span class="article-card-meta">5 Fév. 2026 · 4 min</span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Journal Vinicult</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Un journal entre les vignes et le monde, autour du vin, de la culture et des récits de Provence.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+          <li><a href="about.html">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Suivre</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com/agencesaintvincent" target="_blank">Instagram</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Journal Vinicult 2026</span>
+      <span>Provence, France</span>
+    </div>
+  </footer>
+
 </body>
 </html>
