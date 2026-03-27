@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vieilles vignes en mars — Journal Vinicult</title>
+  <meta name="description" content="Entre la taille tardive et les premières chaleurs, il y a ce moment suspendu où la vigne décide. Par Paul Defais." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8;
+      --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F;
+      --mid: #8A6A40; --rule: #D4B888;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      align-items: center; padding: 0 2rem; height: 52px;
+      border-bottom: 1px solid rgba(26,14,0,0.18);
+      background: rgba(255,248,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
+    .nav-l li { cursor: pointer; transition: color 0.2s; }
+    .nav-l li:hover { color: var(--ink); }
+    .nav-logo { text-align: center; }
+    .logo-main { font-family: 'EB Garamond', serif; font-size: 20px; font-style: italic; font-weight: 500; display: block; color: var(--ink); line-height: 1.1; }
+    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
+    .nav-r li { cursor: pointer; transition: color 0.2s; }
+    .nav-r li:hover { color: var(--ink); }
+    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
+
+    /* EN-TÊTE ARTICLE */
+    .article-header {
+      position: relative; height: 55vh; min-height: 360px;
+      border-bottom: 1px solid var(--ink); overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .article-header img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 50%;
+    }
+    .article-header-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,14,0,0.85) 0%, rgba(26,14,0,0.3) 60%, transparent 100%);
+    }
+    .article-header-content {
+      position: relative; z-index: 2;
+      padding: 2.5rem 3rem; width: 100%;
+    }
+    .article-cat {
+      font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--sun); margin-bottom: 0.8rem; display: block;
+    }
+    .article-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 72px; font-weight: 900;
+      line-height: 0.92; text-transform: uppercase; color: #fff; letter-spacing: -0.02em;
+      max-width: 700px;
+    }
+    .article-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 68px; font-weight: 400; text-transform: none;
+      color: var(--sun); display: inline;
+    }
+
+    /* META */
+    .article-meta-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 3rem; border-bottom: 1px solid var(--ink);
+      background: var(--warm);
+    }
+    .article-meta-l { display: flex; gap: 2rem; align-items: center; }
+    .article-byline { font-size: 11px; color: var(--ink); letter-spacing: 0.04em; }
+    .article-byline strong { font-weight: 400; }
+    .article-date { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+    .article-readtime { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+    .article-back { font-size: 11px; color: var(--mid); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+    .article-back:hover { color: var(--ink); }
+
+    /* CORPS */
+    .article-body {
+      display: grid; grid-template-columns: 1fr 580px 1fr;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--ink);
+    }
+    .article-body-inner { grid-column: 2; }
+    .article-body-inner p {
+      font-family: 'EB Garamond', serif; font-size: 20px;
+      line-height: 1.78; color: var(--ink); margin-bottom: 1.6rem;
+    }
+    .article-body-inner p:first-child::first-letter {
+      font-size: 4.5em; line-height: 0.75; float: left;
+      margin: 0.06em 0.1em 0 0; font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; color: var(--rouge); text-transform: uppercase;
+    }
+    .article-body-inner h2 {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700;
+      text-transform: uppercase; color: var(--ink); letter-spacing: -0.01em;
+      margin: 2.5rem 0 1rem; border-top: 1px solid var(--rule); padding-top: 2rem;
+    }
+    .article-pull {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 700;
+      line-height: 1.05; text-transform: uppercase; color: var(--rouge);
+      letter-spacing: -0.01em; margin: 2.5rem 0; padding: 2rem 0;
+      border-top: 2px solid var(--rouge); border-bottom: 2px solid var(--rouge);
+    }
+    .article-pull em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 34px; font-weight: 400; text-transform: none; color: var(--mid);
+      display: block; margin-top: 0.3em;
+    }
+    .article-img-block { margin: 2.5rem 0; }
+    .article-img-block img { width: 100%; display: block; border: 1px solid var(--rule); }
+    .article-img-caption { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-top: 0.6rem; }
+
+    /* FOOTER ARTICLE */
+    .article-footer-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 3rem; border-bottom: 1px solid var(--ink);
+      background: var(--warm);
+    }
+    .article-tags { display: flex; gap: 0.6rem; }
+    .tag { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); border: 1px solid var(--rule); padding: 0.3rem 0.7rem; }
+    .article-nav-links { display: flex; gap: 2rem; }
+    .article-nav-links a { font-size: 11px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.2s; }
+    .article-nav-links a:hover { opacity: 0.5; }
+
+    /* FOOTER */
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
+    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.65; }
+    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+    .ft-links li:hover { color: var(--rouge); }
+    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
+
+    @media (max-width: 768px) {
+      .nav-l { display: none; }
+      .nav { grid-template-columns: 1fr auto; }
+      .article-title { font-size: 48px; }
+      .article-title em { font-size: 46px; }
+      .article-header-content { padding: 2rem 1.5rem; }
+      .article-meta-bar { padding: 0.9rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .article-body { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+      .article-body-inner { grid-column: 1; }
+      .article-body-inner p { font-size: 18px; }
+      .article-footer-bar { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="nav-l">
+      <li><a href="index.html#journal">Journal</a></li>
+      <li><a href="index.html#articles">Culture</a></li>
+      <li><a href="index.html#articles">Articles</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Journal Vinicult</span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+      <li><a href="index.html#about">À propos</a></li>
+      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <img src="vine1.jpg" alt="Grappes de raisin, vignes de Provence" />
+    <div class="article-header-overlay"></div>
+    <div class="article-header-content">
+      <span class="article-cat">Terroir &amp; Saisons</span>
+      <h1 class="article-title">Vieilles vignes<br>en <em>mars.</em></h1>
+    </div>
+  </header>
+
+  <div class="article-meta-bar">
+    <div class="article-meta-l">
+      <span class="article-byline">Par <strong>Paul Defais</strong></span>
+      <span class="article-date">12 Mars 2026</span>
+      <span class="article-readtime">5 min de lecture</span>
+    </div>
+    <a class="article-back" href="index.html">← Retour au journal</a>
+  </div>
+
+  <div class="article-body">
+    <div class="article-body-inner">
+
+      <p>Entre la taille tardive et les premières chaleurs, il y a ce moment suspendu où la vigne décide. Ni l'homme, ni le calendrier — juste la sève qui monte ou qui attend. Sur les parcelles de Grenache de Saint Vincent, mars est un mois de patience. On observe. On touche l'écorce. On guette.</p>
+
+      <p>Les vieilles vignes — celles qui ont cinquante ans, soixante, parfois davantage — ont cette particularité de ne rien brusquer. Elles connaissent le sol mieux que n'importe quel cahier des charges. Elles savent quand le gel peut revenir, quand la mistral va pousser les bourgeons trop vite. Elles attendent. Et dans cette attente, elles concentrent.</p>
+
+      <div class="article-pull">
+        La vigne ne ment pas sur son âge.
+        <em>Elle le porte dans le bois, dans le fruit, dans le silence.</em>
+      </div>
+
+      <h2>La taille, dernier dialogue de l'hiver</h2>
+
+      <p>En mars, on finit les dernières tailles. Les sécateurs claquent dans le froid du matin, les sarments tombent en tas réguliers entre les rangs. C'est un travail lent, presque méditatif. Chaque cep est une décision : combien de baguettes garder, où orienter la croissance, comment équilibrer la vigueur sans épuiser la plante.</p>
+
+      <p>Sur les vieilles vignes, la taille est encore plus délicate. Le bois est dur, noueux, parfois tordu par des décennies de mistral. Les plaies cicatrisent moins vite. On est économe dans les coupes, attentif aux flux de sève. Une erreur ici, c'est une récolte compromise — parfois deux.</p>
+
+      <div class="article-img-block">
+        <img src="vine2.jpg" alt="Vignoble de Provence en mars" />
+        <p class="article-img-caption">Les parcelles de Grenache de Saint Vincent — mars 2026.</p>
+      </div>
+
+      <h2>Le premier débourrement</h2>
+
+      <p>Puis vient le moment qu'on attendait. Un matin, en passant dans les rangs, on aperçoit les premiers bourgeons qui s'entr'ouvrent. De petites pointes vertes, presque timides, qui percent l'écorce brune. Le débourrement. C'est le signal que l'hiver est vraiment fini, que la vigne a décidé de repartir.</p>
+
+      <p>Sur les vieilles vignes, ce moment est particulièrement émouvant. Ces ceps qui ont traversé des sécheresses, des gelées noires, des millésimes difficiles, qui ont produit pendant des décennies — les voir repartir chaque printemps tient du miracle ordinaire. Une fidélité silencieuse au sol, au soleil, à la saison.</p>
+
+      <p>Fin mars 2026, les premières parcelles de Grenache devraient débourrer. Tout dépendra des nuits — si le mercure remonte suffisamment après le coucher du soleil. On surveille les prévisions, mais au fond on sait que c'est la vigne qui décidera. Elle l'a toujours fait.</p>
+
+      <h2>Ce que disent les vieilles vignes</h2>
+
+      <p>Il y a une leçon que les vieilles vignes enseignent, à ceux qui prennent le temps de l'écouter : la profondeur vient avec les années. Les jeunes vignes produisent beaucoup, vite, avec une générosité un peu naïve. Les vieilles produisent moins, mais chaque grappe porte quelque chose de plus — une minéralité, une complexité, une tension que les sols peu profonds ne peuvent pas donner.</p>
+
+      <p>Ce n'est pas une question de technique. C'est une question de temps. Et mars, avec ses matins froids et ses après-midi qui commencent à réchauffer la garrigue, est le mois où on se rappelle pourquoi on fait ce métier : pour être là, dans ces rangs, au moment où tout recommence.</p>
+
+    </div>
+  </div>
+
+  <div class="article-footer-bar">
+    <div class="article-tags">
+      <span class="tag">Terroir</span>
+      <span class="tag">Grenache</span>
+      <span class="tag">Saisons</span>
+      <span class="tag">Saint Vincent</span>
+    </div>
+    <div class="article-nav-links">
+      <a href="index.html">← Retour au journal</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Journal Vinicult</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Un journal entre les vignes et le monde, autour du vin, de la culture et des récits de Provence.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="index.html#articles">Culture</a></li>
+          <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+          <li><a href="index.html#about">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Suivre</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Journal Vinicult 2026</span>
+      <span>Provence, France</span>
+    </div>
+  </footer>
+
+</body>
+</html>
