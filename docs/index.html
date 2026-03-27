@@ -92,10 +92,10 @@
     .hero-img-fill {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 30% 60%, rgba(212,160,96,0.9) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 20%, rgba(140,90,40,0.7) 0%, transparent 50%),
-        radial-gradient(ellipse at 60% 90%, rgba(180,120,60,0.5) 0%, transparent 45%),
-        var(--warm);
+        radial-gradient(ellipse at 30% 60%, rgba(212,160,96,0.4) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 20%, rgba(140,90,40,0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 90%, rgba(180,120,60,0.25) 0%, transparent 45%);
+      mix-blend-mode: multiply;
     }
     .hero-img-tag {
       position: absolute; top: 2rem; left: 2rem; z-index: 3;
@@ -119,11 +119,11 @@
     .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
     .feat:hover .feat-img img { transform: scale(1.03); }
     .feat-img-fill {
-      width: 100%; height: 100%;
+      width: 100%; height: 100%; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 30% 40%, #D4A060 0%, transparent 55%),
-        radial-gradient(ellipse at 75% 70%, #A07030 0%, transparent 50%),
-        linear-gradient(180deg, #C89050 0%, #B07840 100%);
+        radial-gradient(ellipse at 30% 40%, rgba(212,160,96,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 70%, rgba(160,112,48,0.25) 0%, transparent 50%);
+      mix-blend-mode: multiply;
       transition: transform 0.5s var(--ease);
     }
     .feat:hover .feat-img-fill { transform: scale(1.03); }
@@ -272,7 +272,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <!-- Remplacez par votre photo : <img src="hero.jpg" alt="Vignes Saint Vincent" /> -->
+      <img src="vine1.jpg" alt="Vignes Saint Vincent" />
       <div class="hero-img-fill"></div>
       <div class="hero-img-tag">Provence 2026</div>
       <div class="hero-img-label">Vos photos ici — vignes, bouteilles</div>
@@ -286,7 +286,7 @@
 
   <article class="feat">
     <div class="feat-img">
-      <!-- <img src="article1.jpg" alt="Vieilles vignes" /> -->
+      <img src="vine2.jpg" alt="Vieilles vignes" />
       <div class="feat-img-fill"></div>
     </div>
     <div class="feat-text">
