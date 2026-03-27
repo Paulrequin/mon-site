@@ -53,29 +53,49 @@
     }
     .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); opacity: 0.9; }
 
-    /* HERO */
-    .hero { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); min-height: 80vh; }
-    .hero-left {
-      background: linear-gradient(140deg, #D63A1E 0%, #A8280E 100%);
-      display: flex; flex-direction: column; justify-content: space-between;
-      padding: 3rem; border-right: 1px solid var(--ink); overflow: hidden; position: relative;
+    /* HERO — plein écran */
+    .hero {
+      position: relative; min-height: 92vh;
+      border-bottom: 1px solid var(--ink);
+      display: flex; align-items: flex-end;
+      overflow: hidden;
     }
-    .hero-deco {
-      position: absolute; top: -0.1em; right: -0.05em;
-      font-family: 'Barlow Condensed', sans-serif; font-size: 320px; font-weight: 900;
-      line-height: 1; color: rgba(0,0,0,0.1); text-transform: uppercase;
-      pointer-events: none; user-select: none;
+    .hero-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 35%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(26,14,0,0.90) 0%,
+        rgba(26,14,0,0.48) 45%,
+        rgba(26,14,0,0.10) 100%
+      );
+    }
+    .hero-img-tag {
+      position: absolute; top: 2rem; right: 2rem; z-index: 3;
+      background: var(--sun); color: var(--ink);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 3.5rem 3rem;
+      width: 100%; max-width: 720px;
     }
     .hero-big-type {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 110px; font-weight: 900;
-      line-height: 0.9; text-transform: uppercase; color: #fff; letter-spacing: -0.02em;
-      position: relative; z-index: 2;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 120px; font-weight: 900;
+      line-height: 0.88; text-transform: uppercase; color: #fff; letter-spacing: -0.02em;
+      margin-bottom: 2rem;
       animation: fadeUp 0.6s var(--ease) both;
     }
     .hero-big-type .hl { color: var(--sun); display: block; }
-    .hero-big-type .hr { font-family: 'EB Garamond', serif; font-style: italic; font-size: 96px; font-weight: 400; text-transform: none; color: #fff; display: block; opacity: 0.9; }
-    .hero-desc-wrap { position: relative; z-index: 2; animation: fadeUp 0.6s 0.15s var(--ease) both; }
-    .hero-desc { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.8); margin-bottom: 1.8rem; max-width: 380px; }
+    .hero-big-type .hr { font-family: 'EB Garamond', serif; font-style: italic; font-size: 105px; font-weight: 400; text-transform: none; color: #fff; display: block; opacity: 0.9; }
+    .hero-desc-wrap { animation: fadeUp 0.6s 0.15s var(--ease) both; }
+    .hero-desc { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.82); margin-bottom: 1.8rem; max-width: 460px; }
     .hero-ctas { display: flex; gap: 1rem; align-items: center; }
     .btn-sun {
       background: var(--sun); color: var(--ink);
@@ -84,27 +104,9 @@
       cursor: pointer; display: inline-block;
       transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
     }
-    .btn-sun:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+    .btn-sun:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
     .btn-ghost { font-size: 12px; color: rgba(255,255,255,0.65); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; transition: color 0.2s; letter-spacing: 0.03em; }
     .btn-ghost:hover { color: #fff; }
-    .hero-right { background: var(--warm); position: relative; display: flex; align-items: flex-end; padding: 2rem; min-height: 400px; overflow: hidden; }
-    .hero-right img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero-img-fill {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 60%, rgba(212,160,96,0.4) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 20%, rgba(140,90,40,0.3) 0%, transparent 50%),
-        radial-gradient(ellipse at 60% 90%, rgba(180,120,60,0.25) 0%, transparent 45%);
-      mix-blend-mode: multiply;
-    }
-    .hero-img-tag {
-      position: absolute; top: 2rem; left: 2rem; z-index: 3;
-      background: var(--sun); color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.8rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    }
-    .hero-img-label { position: relative; z-index: 2; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7840; }
 
     /* SECTION BAR */
     .sbar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
@@ -215,10 +217,10 @@
     @media (max-width: 768px) {
       .nav-l { display: none; }
       .nav { grid-template-columns: 1fr auto; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { min-height: 300px; border-top: 1px solid var(--ink); }
-      .hero-big-type { font-size: 72px; }
-      .hero-big-type .hr { font-size: 64px; }
+      .hero { min-height: 85vh; }
+      .hero-big-type { font-size: 76px; }
+      .hero-big-type .hr { font-size: 68px; }
+      .hero-content { padding: 2rem; }
       .feat { grid-template-columns: 1fr; }
       .feat-img { border-right: none; border-bottom: 1px solid var(--ink); }
       .grid { grid-template-columns: 1fr; }
@@ -256,8 +258,10 @@
   </nav>
 
   <section id="journal" class="hero">
-    <div class="hero-left">
-      <div class="hero-deco">V</div>
+    <img class="hero-bg" src="vine2.jpg" alt="Vignoble de Provence" />
+    <div class="hero-overlay"></div>
+    <div class="hero-img-tag">Provence 2026</div>
+    <div class="hero-content">
       <div class="hero-big-type">
         <span>Vin</span>
         <span class="hl">Culture</span>
@@ -271,12 +275,6 @@
         </div>
       </div>
     </div>
-    <div class="hero-right">
-      <img src="vine1.jpg" alt="Vignes Saint Vincent" />
-      <div class="hero-img-fill"></div>
-      <div class="hero-img-tag">Provence 2026</div>
-      <div class="hero-img-label">Vos photos ici — vignes, bouteilles</div>
-    </div>
   </section>
 
   <div class="sbar">
@@ -286,7 +284,7 @@
 
   <article class="feat">
     <div class="feat-img">
-      <img src="vine2.jpg" alt="Vieilles vignes" />
+      <img src="vine1.jpg" alt="Grappes de raisin" />
       <div class="feat-img-fill"></div>
     </div>
     <div class="feat-text">
