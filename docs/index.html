@@ -6,158 +6,7 @@
   <title>Tastodisso™ — par Paul Defais</title>
   <meta name="description" content="Tastodisso™ — Vin, Culture, Récits de Provence. Notes d'un vigneron entre Marseille et le monde." />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <style>
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* HERO */
-    .hero {
-      position: relative; min-height: 92vh;
-      border-bottom: 1px solid var(--ink);
-      display: flex; align-items: flex-end; overflow: hidden;
-    }
-    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(26,14,0,0.90) 0%, rgba(26,14,0,0.48) 45%, rgba(26,14,0,0.10) 100%);
-    }
-    .hero-img-tag {
-      position: absolute; top: 2rem; right: 2rem; z-index: 3;
-      background: var(--sun); color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.8rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    .hero-content { position: relative; z-index: 2; padding: 3.5rem 3rem; width: 100%; max-width: 720px; }
-    .hero-big-type {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 120px; font-weight: 900;
-      line-height: 0.88; text-transform: uppercase; color: #fff; letter-spacing: -0.02em;
-      margin-bottom: 2rem; animation: fadeUp 0.6s var(--ease) both;
-    }
-    .hero-big-type .hl { color: var(--sun); display: block; }
-    .hero-big-type .hr {
-      font-family: 'EB Garamond', serif; font-style: italic; font-size: 105px;
-      font-weight: 400; text-transform: none; color: #fff; display: block; opacity: 0.9;
-    }
-    .hero-desc-wrap { animation: fadeUp 0.6s 0.15s var(--ease) both; }
-    .hero-desc { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.82); margin-bottom: 1.8rem; max-width: 460px; }
-    .hero-ctas { display: flex; gap: 1rem; align-items: center; }
-    .btn-sun {
-      background: var(--sun); color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.8rem; display: inline-block;
-      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
-    }
-    .btn-sun:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
-    .btn-ghost { font-size: 12px; color: rgba(255,255,255,0.65); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; transition: color 0.2s; letter-spacing: 0.03em; }
-    .btn-ghost:hover { color: #fff; }
-
-    /* SECTION BAR */
-    .sbar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
-    .sbar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
-    .sbar-r { font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: var(--ink); transition: opacity 0.2s; letter-spacing: 0.03em; }
-    .sbar-r:hover { opacity: 0.45; }
-
-    /* FEATURED */
-    .feat { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); cursor: pointer; transition: background 0.25s var(--ease); }
-    .feat:hover { background: var(--warm); }
-    .feat-img { aspect-ratio: 4/3; background: var(--warm); border-right: 1px solid var(--ink); overflow: hidden; position: relative; }
-    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
-    .feat:hover .feat-img img { transform: scale(1.03); }
-    .feat-img-fill {
-      width: 100%; height: 100%; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 30% 40%, rgba(212,160,96,0.35) 0%, transparent 55%), radial-gradient(ellipse at 75% 70%, rgba(160,112,48,0.25) 0%, transparent 50%);
-      mix-blend-mode: multiply; transition: transform 0.5s var(--ease);
-    }
-    .feat:hover .feat-img-fill { transform: scale(1.03); }
-    .feat-text { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: space-between; }
-    .feat-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.8rem; }
-    .feat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 46px; font-weight: 700; line-height: 1.0; text-transform: uppercase; color: var(--ink); margin-bottom: 1.2rem; letter-spacing: -0.01em; }
-    .feat-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 50px; font-weight: 400; text-transform: none; color: var(--rouge); }
-    .feat-body { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.75; color: var(--mid); flex: 1; margin-bottom: 2rem; }
-    .feat-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
-    .feat-meta { font-size: 9px; color: var(--rule); letter-spacing: 0.08em; text-transform: uppercase; }
-    .feat-read { font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: var(--ink); letter-spacing: 0.03em; transition: opacity 0.2s; }
-    .feat-read:hover { opacity: 0.5; }
-
-    /* GRILLE */
-    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--ink); }
-    .art { padding: 2rem; border-right: 1px solid var(--ink); cursor: pointer; transition: background 0.25s var(--ease); }
-    .art:last-child { border-right: none; }
-    .art:hover { background: var(--warm); }
-    .art-img { width: 100%; aspect-ratio: 3/2; margin-bottom: 1.2rem; overflow: hidden; position: relative; }
-    .art-img-fill { width: 100%; height: 100%; position: absolute; inset: 0; transition: transform 0.5s var(--ease); }
-    .art:hover .art-img-fill { transform: scale(1.04); }
-    .art-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
-    .art:hover .art-img img { transform: scale(1.04); }
-    .art-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; }
-    .art-title { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.1; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; }
-    .art-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.7; color: var(--mid); margin-bottom: 1rem; }
-    .art-rule { width: 24px; height: 1px; background: var(--rule); margin-bottom: 0.8rem; }
-    .art-meta { font-size: 9px; color: var(--rule); letter-spacing: 0.06em; }
-
-    /* CITATION */
-    .quote {
-      background: linear-gradient(125deg, #2D6A3F 0%, #1E4D2C 100%);
-      padding: 4.5rem 2rem; border-bottom: 1px solid var(--ink);
-      display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: center;
-    }
-    .q-text { font-family: 'Barlow Condensed', sans-serif; font-size: 62px; font-weight: 900; line-height: 0.95; text-transform: uppercase; color: #fff; letter-spacing: -0.02em; }
-    .q-text em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 58px; font-weight: 400; text-transform: none; color: var(--sun); display: block; margin-top: 0.1em; }
-    .q-side { border-left: 1px solid rgba(255,255,255,0.18); padding-left: 2rem; }
-    .q-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.8rem; }
-    .q-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,0.7); line-height: 1.7; }
-
-    /* SAINT VINCENT */
-    .sv { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
-    .sv-l {
-      background: linear-gradient(150deg, #2A1800 0%, #1A0E00 100%);
-      padding: 3.5rem 2.5rem; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--ink);
-    }
-    .sv-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; }
-    .sv-title { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900; line-height: 0.92; text-transform: uppercase; color: #fff; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
-    .sv-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 52px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
-    .sv-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 2rem; }
-    .sv-r { padding: 3.5rem 2.5rem; background: var(--bg); display: flex; flex-direction: column; justify-content: space-between; }
-    .sv-r-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem; }
-    .sv-spec { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
-    .sv-spec:last-child { border-bottom: none; }
-    .sv-spec-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
-    .sv-spec-v { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); }
-
-    /* NEWSLETTER */
-    .nl { background: var(--sun); padding: 2.5rem 2rem; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .nl-text { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
-    .nl-form { display: flex; flex: 1; max-width: 420px; }
-    .nl-input { flex: 1; padding: 0.8rem 1rem; border: 1.5px solid var(--ink); border-right: none; background: rgba(255,255,255,0.45); font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--ink); outline: none; transition: background 0.2s; }
-    .nl-input:focus { background: rgba(255,255,255,0.75); }
-    .nl-input::placeholder { color: rgba(0,0,0,0.35); }
-    .nl-btn { padding: 0.8rem 1.4rem; border: 1.5px solid var(--ink); background: var(--ink); color: var(--sun); font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; }
-    .nl-btn:hover { background: #fff; color: var(--ink); }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero { min-height: 85vh; }
-      .hero-big-type { font-size: 76px; }
-      .hero-big-type .hr { font-size: 68px; }
-      .hero-content { padding: 2rem; }
-      .feat { grid-template-columns: 1fr; }
-      .feat-img { border-right: none; border-bottom: 1px solid var(--ink); }
-      .grid { grid-template-columns: 1fr; }
-      .art { border-right: none; border-bottom: 1px solid var(--ink); }
-      .art:last-child { border-bottom: none; }
-      .quote { grid-template-columns: 1fr; }
-      .q-text { font-size: 42px; }
-      .q-text em { font-size: 40px; }
-      .q-side { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; }
-      .sv { grid-template-columns: 1fr; }
-      .sv-l { border-right: none; border-bottom: 1px solid var(--ink); }
-      .nl { flex-direction: column; align-items: flex-start; }
-      .nl-form { max-width: 100%; width: 100%; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/home.css" />
 </head>
 <body>
 
@@ -168,8 +17,10 @@
       <li><a href="blog.html">Articles</a></li>
     </ul>
     <div class="nav-logo">
-      <span class="logo-main">Tastodisso<span class="logo-tm">™</span></span>
-      <span class="logo-sub">par Paul Defais</span>
+      <a href="index.html">
+        <span class="logo-main">Tastodisso<span class="logo-tm">™</span></span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
     </div>
     <ul class="nav-r">
       <li><a href="#saint-vincent">Saint Vincent</a></li>
@@ -245,7 +96,7 @@
     </a>
     <a class="art" href="articles/syrah-du-sud.html">
       <div class="art-img"><img src="assets/img/vine5.jpeg" alt="La Syrah du sud" /></div>
-      <div class="art-cat">Terroir</div>
+      <div class="art-cat">Terroir &amp; Saisons</div>
       <h3 class="art-title">La Syrah du sud</h3>
       <p class="art-body">Cépage du nord planté dans le mistral. Il aurait pu se plaindre. Il a choisi de s'endurcir. Les meilleurs font toujours ça.</p>
       <div class="art-rule"></div>

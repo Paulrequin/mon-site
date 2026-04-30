@@ -1,0 +1,59 @@
+/* ── BLOG / ARTICLES PAGE ─────────────────────────────── */
+
+/* EN-TÊTE */
+.page-header {
+  padding: 4rem 2rem 3rem;
+  border-bottom: 1px solid var(--ink);
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+.page-header-title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900;
+  text-transform: uppercase; line-height: 0.88; letter-spacing: -0.02em; color: var(--ink);
+}
+.page-header-title em {
+  font-family: 'EB Garamond', serif; font-style: italic;
+  font-size: 72px; font-weight: 400; text-transform: none; color: var(--rouge);
+}
+.page-header-count { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); padding-bottom: 0.5rem; }
+
+/* FILTRES */
+.filters { display: flex; gap: 0; border-bottom: 1px solid var(--ink); overflow-x: auto; }
+.filter-btn {
+  font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--mid); padding: 0.75rem 1.5rem; cursor: pointer;
+  border-right: 1px solid var(--ink); white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  background: none; border-top: none; border-left: none; border-bottom: none;
+}
+.filter-btn.active, .filter-btn:hover { background: var(--ink); color: var(--bg); }
+
+/* GRILLE ARTICLES */
+.articles-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
+.article-card {
+  display: flex; border-bottom: 1px solid var(--ink); border-right: 1px solid var(--ink);
+  cursor: pointer; transition: background 0.2s var(--ease);
+  text-decoration: none; color: var(--ink);
+}
+.article-card:nth-child(2n) { border-right: none; }
+.article-card:nth-last-child(-n+2) { border-bottom: none; }
+.article-card:hover { background: var(--warm); }
+.article-card-img { width: 200px; min-height: 180px; flex-shrink: 0; border-right: 1px solid var(--ink); overflow: hidden; position: relative; }
+.article-card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+.article-card:hover .article-card-img img { transform: scale(1.05); }
+.article-card-body { padding: 1.8rem 2rem; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
+.article-card-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; }
+.article-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.05; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; letter-spacing: -0.01em; }
+.article-card-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 26px; font-weight: 400; text-transform: none; color: var(--rouge); }
+.article-card-excerpt { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.65; color: var(--mid); flex: 1; margin-bottom: 1.2rem; }
+.article-card-meta { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rule); }
+
+/* RESPONSIVE BLOG */
+@media (max-width: 768px) {
+  .page-header-title { font-size: 52px; }
+  .page-header-title em { font-size: 48px; }
+  .articles-grid { grid-template-columns: 1fr; }
+  .article-card { border-right: none; }
+  .article-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
+  .article-card:last-child { border-bottom: none; }
+  .article-card-img { width: 120px; min-height: 140px; }
+}
