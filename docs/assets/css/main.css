@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap');
+
+/* ── RESET & BASE ─────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:   #FFF8F0;
+  --ink:  #1A0E00;
+  --warm: #F5E6C8;
+  --sun:  #F5A623;
+  --rouge:#C8341A;
+  --vert: #2D6A3F;
+  --mid:  #8A6A40;
+  --rule: #D4B888;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ──────────────────────────────────────────────── */
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0 2rem;
+  height: 52px;
+  border-bottom: 1px solid rgba(26,14,0,0.18);
+  background: rgba(255,248,240,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-l {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+}
+.nav-l li { cursor: pointer; transition: color 0.2s var(--ease); }
+.nav-l li:hover,
+.nav-l li.active { color: var(--ink); }
+
+.nav-logo { text-align: center; }
+.logo-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  color: var(--ink);
+  line-height: 1;
+}
+.logo-tm { font-size: 11px; vertical-align: super; font-weight: 700; letter-spacing: 0; }
+.logo-sub {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid);
+  display: block;
+  margin-top: 2px;
+}
+
+.nav-r {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav-r li { cursor: pointer; transition: color 0.2s var(--ease); }
+.nav-r li:hover { color: var(--ink); }
+
+.nav-cta {
+  background: var(--rouge);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), opacity 0.2s;
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(200,52,26,0.35);
+  opacity: 0.9;
+}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+.foot {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  border-bottom: 1px solid var(--ink);
+  background: var(--warm);
+}
+.ft-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3rem;
+  color: var(--ink);
+}
+.ft-sub {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 1.2rem;
+}
+.ft-body {
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.65;
+}
+.ft-head {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 1rem;
+}
+.ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s, padding-left 0.2s var(--ease); }
+.ft-links li:hover { color: var(--rouge); padding-left: 4px; }
+
+.ft-bottom {
+  padding: 0.9rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--mid);
+  background: var(--warm);
+  border-top: 1px solid var(--rule);
+}
+
+/* ── SPEC LIST (shared: home + about) ────────────────── */
+.sv-spec { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+.sv-spec:last-child { border-bottom: none; }
+.sv-spec-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+.sv-spec-v { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); }
+
+/* ── RESPONSIVE BASE ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-l { display: none; }
+  .nav { grid-template-columns: 1fr auto; }
+  .foot { grid-template-columns: 1fr 1fr; }
+}
