@@ -5,42 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Articles — Vinicult™</title>
   <meta name="description" content="Tous les articles du Vinicult™ — terroir, dégustation, voyages et récits de Provence." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8;
-      --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F;
-      --mid: #8A6A40; --rule: #D4B888;
-      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
-    a { color: inherit; text-decoration: none; }
-
-    /* NAV */
-    .nav {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      align-items: center; padding: 0 2rem; height: 52px;
-      border-bottom: 1px solid rgba(26,14,0,0.18);
-      background: rgba(255,248,240,0.92);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      position: sticky; top: 0; z-index: 100;
-    }
-    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
-    .nav-l li { cursor: pointer; transition: color 0.2s; }
-    .nav-l li:hover, .nav-l li.active { color: var(--ink); }
-    .nav-logo { text-align: center; }
-    .logo-main { font-family: 'Bebas Neue', sans-serif; font-size: 28px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; display: block; color: var(--ink); line-height: 1; } .logo-tm { font-size: 11px; vertical-align: super; font-weight: 700; letter-spacing: 0; }
-    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
-    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
-    .nav-r li { cursor: pointer; transition: color 0.2s; }
-    .nav-r li:hover { color: var(--ink); }
-    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
-
     /* EN-TÊTE */
     .page-header {
       padding: 4rem 2rem 3rem;
@@ -58,24 +24,18 @@
     .page-header-count { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); padding-bottom: 0.5rem; }
 
     /* FILTRES */
-    .filters {
-      display: flex; gap: 0; border-bottom: 1px solid var(--ink);
-      overflow-x: auto;
-    }
+    .filters { display: flex; gap: 0; border-bottom: 1px solid var(--ink); overflow-x: auto; }
     .filter-btn {
       font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--mid); padding: 0.75rem 1.5rem; cursor: pointer;
       border-right: 1px solid var(--ink); white-space: nowrap;
-      transition: background 0.15s, color 0.15s; background: none; border-top: none; border-left: none; border-bottom: none;
+      transition: background 0.15s, color 0.15s;
+      background: none; border-top: none; border-left: none; border-bottom: none;
     }
-    .filter-btn:first-child { border-left: none; }
     .filter-btn.active, .filter-btn:hover { background: var(--ink); color: var(--bg); }
 
     /* GRILLE ARTICLES */
-    .articles-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      border-bottom: 1px solid var(--ink);
-    }
+    .articles-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
     .article-card {
       display: flex; border-bottom: 1px solid var(--ink); border-right: 1px solid var(--ink);
       cursor: pointer; transition: background 0.2s var(--ease);
@@ -84,13 +44,9 @@
     .article-card:nth-child(2n) { border-right: none; }
     .article-card:nth-last-child(-n+2) { border-bottom: none; }
     .article-card:hover { background: var(--warm); }
-    .article-card-img {
-      width: 200px; min-height: 180px; flex-shrink: 0;
-      border-right: 1px solid var(--ink); overflow: hidden; position: relative;
-    }
+    .article-card-img { width: 200px; min-height: 180px; flex-shrink: 0; border-right: 1px solid var(--ink); overflow: hidden; position: relative; }
     .article-card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
     .article-card:hover .article-card-img img { transform: scale(1.05); }
-    .article-card-img-fill { position: absolute; inset: 0; }
     .article-card-body { padding: 1.8rem 2rem; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
     .article-card-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; }
     .article-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.05; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; letter-spacing: -0.01em; }
@@ -98,20 +54,8 @@
     .article-card-excerpt { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.65; color: var(--mid); flex: 1; margin-bottom: 1.2rem; }
     .article-card-meta { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rule); }
 
-    /* FOOTER */
-    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
-    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
-    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
-    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.65; }
-    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
-    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
-    .ft-links li:hover { color: var(--rouge); }
-    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
-
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .nav-l { display: none; }
-      .nav { grid-template-columns: 1fr auto; }
       .page-header-title { font-size: 52px; }
       .page-header-title em { font-size: 48px; }
       .articles-grid { grid-template-columns: 1fr; }
@@ -119,7 +63,6 @@
       .article-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
       .article-card:last-child { border-bottom: none; }
       .article-card-img { width: 120px; min-height: 140px; }
-      .foot { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -146,7 +89,7 @@
 
   <div class="page-header">
     <h1 class="page-header-title">Tous les<br><em>articles.</em></h1>
-    <span class="page-header-count">4 textes publiés</span>
+    <span class="page-header-count">8 textes publiés</span>
   </div>
 
   <div class="filters">
@@ -158,9 +101,9 @@
 
   <div class="articles-grid">
 
-    <a class="article-card" href="vieilles-vignes-mars.html">
+    <a class="article-card" href="articles/vieilles-vignes-mars.html">
       <div class="article-card-img">
-        <img src="vine1.jpg" alt="Vieilles vignes en mars" />
+        <img src="assets/img/vine1.jpg" alt="Vieilles vignes en mars" />
       </div>
       <div class="article-card-body">
         <div>
@@ -172,9 +115,9 @@
       </div>
     </a>
 
-    <a class="article-card" href="grenache-2023.html">
+    <a class="article-card" href="articles/grenache-2023.html">
       <div class="article-card-img">
-        <img src="vine3.jpeg" alt="Grenache 2023" />
+        <img src="assets/img/vine3.jpeg" alt="Grenache 2023" />
       </div>
       <div class="article-card-body">
         <div>
@@ -186,9 +129,9 @@
       </div>
     </a>
 
-    <a class="article-card" href="ribera-del-duero.html">
+    <a class="article-card" href="articles/ribera-del-duero.html">
       <div class="article-card-img">
-        <img src="vine4.jpeg" alt="Ribera del Duero" />
+        <img src="assets/img/vine4.jpeg" alt="Ribera del Duero" />
       </div>
       <div class="article-card-body">
         <div>
@@ -200,9 +143,9 @@
       </div>
     </a>
 
-    <a class="article-card" href="syrah-du-sud.html">
+    <a class="article-card" href="articles/syrah-du-sud.html">
       <div class="article-card-img">
-        <img src="vine5.jpeg" alt="La Syrah du sud" />
+        <img src="assets/img/vine5.jpeg" alt="La Syrah du sud" />
       </div>
       <div class="article-card-body">
         <div>
@@ -214,23 +157,63 @@
       </div>
     </a>
 
-  </div>
+    <a class="article-card" href="articles/barolo-piemonte.html">
+      <div class="article-card-img">
+        <img src="assets/img/vine2.jpg" alt="Barolo, Piémont" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Voyages &amp; Culture</div>
+          <h2 class="article-card-title">Barolo,<br><em>Piémont.</em></h2>
+          <p class="article-card-excerpt">Au pied des Alpes, le Nebbiolo règne. Austère, tannique, impénétrable les premières années. Puis quelque chose s'ouvre, et plus rien ne ressemble à ce qu'on connaissait.</p>
+        </div>
+        <span class="article-card-meta">22 Jan. 2026 · 5 min</span>
+      </div>
+    </a>
 
-  <script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.article-card');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.textContent.trim();
-        cards.forEach(card => {
-          const cat = card.querySelector('.article-card-cat').textContent.trim();
-          card.style.display = (filter === 'Tout' || cat === filter) ? 'flex' : 'none';
-        });
-      });
-    });
-  </script>
+    <a class="article-card" href="articles/rose-de-provence-2025.html">
+      <div class="article-card-img">
+        <img src="assets/img/vine1.jpg" alt="Rosé de Provence 2025" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Dégustation</div>
+          <h2 class="article-card-title">Rosé Provence<br><em>2025.</em></h2>
+          <p class="article-card-excerpt">Le rosé de Provence a la réputation d'être facile. C'est un malentendu. Le meilleur d'entre eux vous donne plus de questions que de réponses.</p>
+        </div>
+        <span class="article-card-meta">8 Jan. 2026 · 4 min</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="articles/debourrement-avril.html">
+      <div class="article-card-img">
+        <img src="assets/img/vine3.jpeg" alt="Débourrement avril" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Terroir &amp; Saisons</div>
+          <h2 class="article-card-title">Débourrement<br><em>en avril.</em></h2>
+          <p class="article-card-excerpt">Les premiers bourgeons percent. La vigne sort de son silence. Ce moment dure trois jours et change tout pour l'année.</p>
+        </div>
+        <span class="article-card-meta">14 Avr. 2026 · 4 min</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="articles/epamprage-avril.html">
+      <div class="article-card-img">
+        <img src="assets/img/vine4.jpeg" alt="Épamprage avril" />
+      </div>
+      <div class="article-card-body">
+        <div>
+          <div class="article-card-cat">Terroir &amp; Saisons</div>
+          <h2 class="article-card-title">Épamprage<br><em>d'avril.</em></h2>
+          <p class="article-card-excerpt">Supprimer pour mieux concentrer. L'épamprage est ce geste contre-intuitif qui demande de sacrifier le présent pour construire l'automne.</p>
+        </div>
+        <span class="article-card-meta">28 Avr. 2026 · 5 min</span>
+      </div>
+    </a>
+
+  </div>
 
   <footer>
     <div class="foot">
@@ -269,5 +252,6 @@
     </div>
   </footer>
 
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
