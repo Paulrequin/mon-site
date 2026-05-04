@@ -173,6 +173,33 @@
     .ft-links li:hover { color: var(--rouge); padding-left: 4px; }
     .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
 
+    /* DOMAINE SINGLE / FULL */
+    .domaines-grid--single { grid-template-columns: 1fr; }
+    .domaine-card--full { padding: 3rem 2.5rem; }
+    .domaine-card--full .domaine-name { font-size: 34px; line-height: 1.05; margin-bottom: 0.6rem; }
+    .domaine-card--full .domaine-desc { font-size: 16px; max-width: 780px; }
+
+    .domaine-specs {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      border-top: 1px solid var(--rule); border-left: 1px solid var(--rule);
+      margin: 2rem 0;
+    }
+    .domaine-spec {
+      padding: 0.9rem 1rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .domaine-spec-k { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+    .domaine-spec-v { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; color: var(--ink); }
+
+    .domaine-cuvees-list { display: flex; flex-direction: column; margin-bottom: 2rem; border-top: 1px solid var(--rule); }
+    .domaine-cuvee {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 0.85rem 0; border-bottom: 1px solid var(--rule);
+      gap: 1rem;
+    }
+    .domaine-cuvee span { font-size: 13px; color: var(--ink); font-weight: 400; }
+    .domaine-cuvee em { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); text-align: right; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-l { display: none; }
@@ -184,6 +211,10 @@
       .domaines-grid { grid-template-columns: 1fr; }
       .domaine-card { border-right: none; border-bottom: 1px solid var(--ink); }
       .domaine-card:last-child { border-bottom: none; }
+      .domaine-card--full { padding: 2rem 1.2rem; }
+      .domaine-specs { grid-template-columns: 1fr 1fr; }
+      .domaine-cuvee { flex-direction: column; gap: 0.2rem; }
+      .domaine-cuvee em { text-align: left; }
       .b2b { grid-template-columns: 1fr; gap: 2.5rem; }
       .b2b-title { font-size: 48px; }
       .b2b-title em { font-size: 44px; }
@@ -227,70 +258,36 @@
   </div>
 
   <div class="sbar">
-    <span class="sbar-l">6 domaines · France &amp; Europe</span>
+    <span class="sbar-l">1 domaine · Italie</span>
     <a href="mailto:paul@pauldefais.fr" class="sbar-r">Demander un tarif →</a>
   </div>
 
-  <div class="domaines-grid">
+  <div class="domaines-grid domaines-grid--single">
 
-    <div class="domaine-card">
-      <div class="domaine-region">Provence · Var</div>
-      <div class="domaine-name">Domaine des Trois Sources</div>
-      <div class="domaine-appellation">AOP Côtes de Provence</div>
+    <div class="domaine-card domaine-card--full">
+      <div class="domaine-region">Alto Piemonte · Province de Novara · Italie</div>
+      <div class="domaine-name">Azienda Agricola<br>Davide Carlone</div>
+      <div class="domaine-appellation">Boca DOC · Colline Novaresi DOC</div>
       <div class="domaine-rule"></div>
-      <div class="domaine-cepages">Grenache · Cinsault · Mourvèdre</div>
-      <p class="domaine-desc">Un rosé de garrigue qu'on boit en pensant à autre chose — c'est ce que la vigne fait de mieux ici. Les rouges sont plus lents, plus têtus, ils demandent du temps en cave.</p>
-      <a href="#" class="domaine-link">Découvrir →</a>
-    </div>
-
-    <div class="domaine-card">
-      <div class="domaine-region">Languedoc · Hérault</div>
-      <div class="domaine-name">Mas de la Garrigue Haute</div>
-      <div class="domaine-appellation">IGP Pays d'Oc — Coteaux du Languedoc</div>
-      <div class="domaine-rule"></div>
-      <div class="domaine-cepages">Syrah · Carignan</div>
-      <p class="domaine-desc">La Syrah du sud n'est pas la même bête qu'en Rhône. Ici elle est solaire, directe, sans détour. Le Carignan vieilles vignes apporte ce que les années donnent.</p>
-      <a href="#" class="domaine-link">Découvrir →</a>
-    </div>
-
-    <div class="domaine-card">
-      <div class="domaine-region">Vallée du Rhône · Ardèche</div>
-      <div class="domaine-name">Clos Saint-Théodore</div>
-      <div class="domaine-appellation">AOP Saint-Joseph · IGP Ardèche</div>
-      <div class="domaine-rule"></div>
-      <div class="domaine-cepages">Syrah · Viognier</div>
-      <p class="domaine-desc">Les granites de l'Ardèche donnent des vins nerveux, minéraux, avec cette tension qu'on cherche parfois en vain plus au sud. Le blanc de Viognier surprend à chaque millésime.</p>
-      <a href="#" class="domaine-link">Découvrir →</a>
-    </div>
-
-    <div class="domaine-card">
-      <div class="domaine-region">Beaujolais · Rhône</div>
-      <div class="domaine-name">Domaine du Châtelet Vieux</div>
-      <div class="domaine-appellation">Morgon · Fleurie</div>
-      <div class="domaine-rule"></div>
-      <div class="domaine-cepages">Gamay</div>
-      <p class="domaine-desc">On a longtemps sous-estimé Morgon. Ce domaine fait partie de ceux qui ont changé l'idée qu'on se faisait du Gamay — une matière sérieuse, des vins qui tiennent cinq ans sans effort.</p>
-      <a href="#" class="domaine-link">Découvrir →</a>
-    </div>
-
-    <div class="domaine-card">
-      <div class="domaine-region">Alsace · Bas-Rhin</div>
-      <div class="domaine-name">Weingut Brunner &amp; Fils</div>
-      <div class="domaine-appellation">Alsace Grand Cru Muenchberg</div>
-      <div class="domaine-rule"></div>
-      <div class="domaine-cepages">Riesling · Gewurztraminer · Pinot Gris</div>
-      <p class="domaine-desc">Trois générations sur le même coteau volcanique. Le Riesling sec est droit, taillé pour la table — pas pour la dégustation. Ça change tout à l'usage.</p>
-      <a href="#" class="domaine-link">Découvrir →</a>
-    </div>
-
-    <div class="domaine-card">
-      <div class="domaine-region">Espagne · Catalogne</div>
-      <div class="domaine-name">Celler de la Muralla</div>
-      <div class="domaine-appellation">DO Priorat</div>
-      <div class="domaine-rule"></div>
-      <div class="domaine-cepages">Garnacha · Cariñena</div>
-      <p class="domaine-desc">Le Priorat intimide souvent. Ici les vins sont puissants sans être fermés, taillés pour les tables de restaurant qui ont besoin d'un rouge qui tient la conversation.</p>
-      <a href="#" class="domaine-link">Découvrir →</a>
+      <div class="domaine-cepages">Nebbiolo (Spanna) · Vespolina · Croatina · Erbaluce</div>
+      <p class="domaine-desc">À Grignasco, au nord du Piémont, Davide Carlone a passé trente ans à ramener à la vie une appellation que la forêt avait presque avalée. Boca, douze hectares en tout — l'une des plus petites DOC d'Italie, sur un sol de porphyre volcanique que Pline l'Ancien citait déjà. Lui a commencé seul, en 1988, sur une vigne laissée à l'abandon par un oncle. Depuis, il est devenu le plus grand propriétaire de l'appellation. Ce qu'il produit, le Nebbiolo le dit sans détour : minéral, tendu, long. Des tanins de silex et une acidité qui ne lâche pas. Un vin de conviction tranquille.</p>
+      <div class="domaine-specs">
+        <div class="domaine-spec"><span class="domaine-spec-k">Superficie</span><span class="domaine-spec-v">11 hectares</span></div>
+        <div class="domaine-spec"><span class="domaine-spec-k">Altitude</span><span class="domaine-spec-v">380 – 450 m</span></div>
+        <div class="domaine-spec"><span class="domaine-spec-k">Sol</span><span class="domaine-spec-v">Porphyre volcanique (ignimbrite rhyolitique)</span></div>
+        <div class="domaine-spec"><span class="domaine-spec-k">Culture</span><span class="domaine-spec-v">Agriculture biologique · levures indigènes</span></div>
+        <div class="domaine-spec"><span class="domaine-spec-k">Vieilles vignes</span><span class="domaine-spec-v">Jusqu'à 100 ans et plus</span></div>
+        <div class="domaine-spec"><span class="domaine-spec-k">Élevage</span><span class="domaine-spec-v">Botti de chêne slavon anciens</span></div>
+      </div>
+      <div class="domaine-cuvees-list">
+        <div class="domaine-cuvee"><span>Boca DOC</span><em>Nebbiolo 85 % · Vespolina 15 %</em></div>
+        <div class="domaine-cuvee"><span>Boca DOC « Adele » Riserva</span><em>Sélection parcellaire · 34 mois en botti · 96 pts Vinous</em></div>
+        <div class="domaine-cuvee"><span>Colline Novaresi Nebbiolo</span><em>100 % Nebbiolo · élevage inox</em></div>
+        <div class="domaine-cuvee"><span>Colline Novaresi Vespolina</span><em>100 % Vespolina · élevage inox</em></div>
+        <div class="domaine-cuvee"><span>Colline Novaresi Croatina</span><em>100 % Croatina · vignes de 90 à 130 ans</em></div>
+        <div class="domaine-cuvee"><span>Colline Novaresi Bianco « Selmu »</span><em>100 % Erbaluce</em></div>
+      </div>
+      <a href="mailto:paul@pauldefais.fr?subject=Tarifs%20Davide%20Carlone" class="domaine-link">Demander les tarifs →</a>
     </div>
 
   </div>
