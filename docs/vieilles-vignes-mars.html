@@ -207,6 +207,23 @@
     .article-cta-ghost:hover { color: #fff; }
     @media (max-width: 768px) { .article-cta { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; } }
 
+
+    /* Série saisonnière */
+    .serie-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: .5rem; display: block; }
+    .serie-nav { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .serie-nav-head { padding: .75rem 2rem; border-bottom: 1px solid var(--ink); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .serie-nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .serie-nav-item { padding: 1.5rem 2rem; border-right: 1px solid var(--ink); transition: background .2s; text-decoration: none; color: var(--ink); display: block; }
+    .serie-nav-item:last-child { border-right: none; }
+    .serie-nav-item:hover { background: #EDD9A3; }
+    .serie-nav-item.current { background: var(--ink); color: var(--bg); pointer-events: none; }
+    .serie-nav-item.current .serie-ep { color: rgba(255,255,255,.35); }
+    .serie-nav-item.current .serie-ep-title { color: #fff; }
+    .serie-ep { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--mid); margin-bottom: .4rem; }
+    .serie-ep-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 15px; line-height: 1.4; color: var(--ink); }
+    .serie-nav-item.current .serie-ep-title { color: #fff; }
+    @media (max-width: 768px) { .serie-nav-grid { grid-template-columns: 1fr 1fr; } .serie-nav-item:nth-child(2) { border-right: none; } .serie-nav-item:nth-child(3) { border-right: 1px solid var(--ink); border-top: 1px solid var(--ink); } .serie-nav-item:nth-child(4) { border-right: none; border-top: 1px solid var(--ink); } }
+
   </style>
 </head>
 <body>
@@ -214,7 +231,6 @@
   <nav class="nav">
     <ul class="nav-l">
       <li><a href="atelier-degustation.html">Atelier</a></li>
-      <li><a href="blog.html">Culture</a></li>
       <li><a href="blog.html">Articles</a></li>
       <li><a href="domaines.html">Domaines</a></li>
     </ul>
@@ -236,6 +252,7 @@
     <div class="article-header-overlay"></div>
     <div class="article-header-content">
       <span class="article-cat">Terroir &amp; Saisons</span>
+      <span class="serie-label">— Série · Le calendrier de la vigne · Épisode 01</span>
       <h1 class="article-title">Vieilles vignes<br>en <em>mars.</em></h1>
     </div>
   </header>
@@ -295,6 +312,28 @@
     </div>
   </div>
 
+  <div class="serie-nav">
+    <div class="serie-nav-head">— Série : Le calendrier de la vigne</div>
+    <div class="serie-nav-grid">
+      <div class="serie-nav-item current">
+        <div class="serie-ep">Épisode 01</div>
+        <div class="serie-ep-title">Vieilles vignes en mars</div>
+      </div>
+      <a href="debourrement-avril.html" class="serie-nav-item">
+        <div class="serie-ep">Épisode 02</div>
+        <div class="serie-ep-title">Le débourrement d'avril</div>
+      </a>
+      <a href="epamprage-avril.html" class="serie-nav-item">
+        <div class="serie-ep">Épisode 03</div>
+        <div class="serie-ep-title">L'épamprage</div>
+      </a>
+      <a href="floraison-mai-2026.html" class="serie-nav-item">
+        <div class="serie-ep">Épisode 04</div>
+        <div class="serie-ep-title">La floraison</div>
+      </a>
+    </div>
+  </div>
+
   <div class="article-cta">
     <div class="article-cta-left">
       <div class="article-cta-label">— Aller plus loin</div>
@@ -317,7 +356,6 @@
         <div class="ft-head">Navigation</div>
         <ul class="ft-links">
           <li><a href="atelier-degustation.html">Atelier</a></li>
-          <li><a href="blog.html">Culture</a></li>
           <li><a href="travailler-avec-moi.html">Agence Saint Vincent</a></li>
       <li><a href="about.html">À propos</a></li>
         </ul>
