@@ -193,6 +193,20 @@
       .article-footer-bar { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
       .foot { grid-template-columns: 1fr 1fr; }
     }
+
+    /* CTA fin d'article */
+    .article-cta { background: var(--ink); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--ink); }
+    .article-cta-left { }
+    .article-cta-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .8rem; }
+    .article-cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900; text-transform: uppercase; color: #fff; line-height: .95; letter-spacing: -.01em; }
+    .article-cta-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 32px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
+    .article-cta-links { display: flex; gap: 1rem; align-items: center; }
+    .article-cta-btn { display: inline-block; background: var(--sun); color: var(--ink); font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .75rem 1.6rem; transition: transform .2s; }
+    .article-cta-btn:hover { transform: translateY(-2px); }
+    .article-cta-ghost { font-size: 11px; color: rgba(255,255,255,.5); text-decoration: underline; text-underline-offset: 3px; }
+    .article-cta-ghost:hover { color: #fff; }
+    @media (max-width: 768px) { .article-cta { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; } }
+
   </style>
 </head>
 <body>
@@ -290,6 +304,17 @@
     </div>
   </div>
 
+  <div class="article-cta">
+    <div class="article-cta-left">
+      <div class="article-cta-label">— Aller plus loin</div>
+      <div class="article-cta-title">Explorer ça<em>en dégustation ?</em></div>
+    </div>
+    <div class="article-cta-links">
+      <a href="atelier-degustation.html" class="article-cta-btn">Voir les ateliers →</a>
+      <a href="mailto:paul@pauldefais.fr" class="article-cta-ghost">Écrire à Paul</a>
+    </div>
+  </div>
+
   <footer>
     <div class="foot">
       <div>
@@ -327,5 +352,7 @@
     </div>
   </footer>
 
+
+  <script src="script.js"></script>
 </body>
 </html>

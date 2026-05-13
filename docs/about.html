@@ -170,6 +170,21 @@
       .sv-bloc-l { border-right: none; border-bottom: 1px solid var(--ink); }
       .foot { grid-template-columns: 1fr 1fr; }
     }
+
+    /* Services */
+    .services { border-bottom: 1px solid var(--ink); }
+    .srv-header { padding: 1rem 3rem; border-bottom: 1px solid var(--ink); }
+    .srv-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .srv-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    .srv-item { padding: 2.5rem 2rem; border-right: 1px solid var(--ink); }
+    .srv-item:last-child { border-right: none; }
+    .srv-num { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900; color: var(--rule); line-height: 1; margin-bottom: .8rem; }
+    .srv-title { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: .8rem; }
+    .srv-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.7; color: var(--mid); margin-bottom: 1.2rem; }
+    .srv-link { font-size: 11px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
+    .srv-link:hover { color: var(--rouge); }
+    @media (max-width: 768px) { .srv-grid { grid-template-columns: 1fr; } .srv-item { border-right: none; border-bottom: 1px solid var(--ink); } .srv-item:last-child { border-bottom: none; } .srv-header { padding: 1rem 1.5rem; } }
+
   </style>
 </head>
 <body>
@@ -228,6 +243,30 @@
     </div>
   </div>
 
+  <div class="services">
+    <div class="srv-header"><div class="srv-label">— Ce que je propose</div></div>
+    <div class="srv-grid">
+      <div class="srv-item">
+        <div class="srv-num">01</div>
+        <div class="srv-title">Ateliers dégustation</div>
+        <p class="srv-body">Sessions pour particuliers et entreprises pour mieux comprendre ce que le vin exprime — arômes, textures, terroirs, millésimes.</p>
+        <a href="atelier-degustation.html" class="srv-link">Voir le catalogue →</a>
+      </div>
+      <div class="srv-item">
+        <div class="srv-num">02</div>
+        <div class="srv-title">Agent commercial</div>
+        <p class="srv-body">Représentation de 12 domaines viticoles en Grèce, Italie et Espagne. Pour cavistes, restaurateurs et importateurs qui cherchent des vins défendables.</p>
+        <a href="domaines.html" class="srv-link">Voir les domaines →</a>
+      </div>
+      <div class="srv-item">
+        <div class="srv-num">03</div>
+        <div class="srv-title">Conseil & création</div>
+        <p class="srv-body">Contenu éditorial, storytelling et stratégie de communication pour les acteurs du monde du vin. Textes, récits, identité.</p>
+        <a href="mailto:paul@pauldefais.fr" class="srv-link">Me contacter →</a>
+      </div>
+    </div>
+  </div>
+
   <div class="sv-bloc">
     <div class="sv-bloc-l">
       <div class="sv-bloc-tag">— L'agence</div>
@@ -283,5 +322,7 @@
     </div>
   </footer>
 
+
+  <script src="script.js"></script>
 </body>
 </html>

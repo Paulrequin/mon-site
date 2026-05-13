@@ -371,6 +371,24 @@
     </div>
   </div>
 
+  
+  <!-- B2B — Professionnels -->
+  <div class="b2b-strip" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--ink)">
+    <div style="padding:3rem 3rem;border-right:1px solid var(--ink);background:var(--warm)">
+      <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem">— Pour les professionnels</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;margin-bottom:1.2rem">Restaurateur,<br><em style="font-family:'EB Garamond',serif;font-style:italic;font-size:40px;font-weight:400;text-transform:none;color:var(--rouge)">caviste, importateur ?</em></div>
+      <p style="font-family:'EB Garamond',serif;font-size:17px;font-style:italic;line-height:1.7;color:var(--mid);margin-bottom:2rem">Saint Vincent représente 12 domaines en Grèce, Italie et Espagne. Des vins solides, traçables, défendables — tarifs et dégustations sur demande.</p>
+      <a href="domaines.html" style="display:inline-block;background:var(--ink);color:var(--bg);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem">Voir les domaines →</a>
+    </div>
+    <div style="padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:0">
+      <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem">— La sélection</div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--rule)"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Domaines</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)">12 producteurs</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--rule)"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Origines</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)">Grèce · Italie · Espagne</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--rule)"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Ateliers</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)">Dégustation sur demande</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Contact</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)"><a href="mailto:paul@pauldefais.fr">paul@pauldefais.fr</a></span></div>
+    </div>
+  </div>
+
   <section id="saint-vincent" class="sv">
     <div class="sv-l">
       <div>
@@ -393,8 +411,8 @@
 
   <section class="nl" id="newsletter">
     <p class="nl-text">Les nouvelles<br>du journal.</p>
-    <form class="nl-form" onsubmit="return false;">
-      <input class="nl-input" type="email" placeholder="Votre adresse e-mail" required />
+    <form class="nl-form">
+      <input class="nl-input" type="email" name="email" placeholder="Votre adresse e-mail" required />
       <button class="nl-btn" type="submit">S'inscrire</button>
     </form>
   </section>
@@ -437,5 +455,7 @@
     </div>
   </footer>
 
+
+  <script src="script.js"></script>
 </body>
 </html>
