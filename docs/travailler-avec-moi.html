@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travailler avec nous — Saint Vincent · Tastodisso™</title>
+  <meta name="description" content="Ateliers vin entreprise, agent commercial domaines, conseil éditorial. Trois façons de travailler avec Saint Vincent — Marseille." />
+  <link rel="canonical" href="https://www.pauldefais.fr/travailler-avec-moi.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pauldefais.fr/travailler-avec-moi.html" />
+  <meta property="og:title" content="Travailler avec nous — Saint Vincent" />
+  <meta property="og:description" content="Ateliers vin entreprise, agent commercial domaines, conseil éditorial. Trois façons de travailler avec Saint Vincent — Marseille." />
+  <meta property="og:image" content="https://www.pauldefais.fr/vine2.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Travailler avec nous — Saint Vincent" />
+  <meta name="twitter:description" content="Ateliers vin, agent commercial, conseil éditorial. Par Paul Defais, Marseille." />
+  <meta name="twitter:image" content="https://www.pauldefais.fr/vine2.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Travailler avec nous — Saint Vincent",
+    "description": "Ateliers vin entreprise, agent commercial domaines, conseil éditorial.",
+    "url": "https://www.pauldefais.fr/travailler-avec-moi.html",
+    "author": { "@type": "Person", "name": "Paul Defais", "url": "https://www.pauldefais.fr/about.html" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --noir: #0e0d0b;
+      --blanc: #f5f2ec;
+      --ocre: #c4a86b;
+      --ocre-pale: #e8dfc8;
+      --gris: #7a7468;
+      --gris-clair: #d4cfc4;
+      --rouge-brique: #8b3a2a;
+      --vert-garrigue: #3d4a35;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--blanc);
+      color: var(--noir);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      border-bottom: 1px solid var(--gris-clair);
+      position: sticky;
+      top: 0;
+      background: var(--blanc);
+      z-index: 100;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--gris);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--noir); }
+
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      color: var(--noir);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      font-size: 0.65rem;
+      vertical-align: super;
+      color: var(--gris);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 6rem 3rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tag::before {
+      content: "— ";
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--ocre);
+    }
+
+    .hero-right {
+      padding-bottom: 0.5rem;
+    }
+
+    .hero-intro {
+      font-size: 1.05rem;
+      color: var(--gris);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      max-width: 38ch;
+    }
+
+    .hero-intro strong {
+      color: var(--noir);
+      font-weight: 500;
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: var(--noir);
+      color: var(--blanc);
+      padding: 0.85rem 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cta-primary:hover {
+      background: var(--ocre);
+      color: var(--noir);
+    }
+
+    /* DIVIDER */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--gris-clair);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* OFFRES */
+    .offres-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-bottom: 3.5rem;
+    }
+
+    .section-label::before { content: "— "; }
+
+    .offres-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--gris-clair);
+    }
+
+    .offre-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--gris-clair);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background 0.3s;
+    }
+
+    .offre-card:last-child { border-right: none; }
+
+    .offre-card:hover { background: #f0ebe0; }
+
+    .offre-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--gris);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+
+    .offre-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ocre);
+      margin-bottom: 0.75rem;
+    }
+
+    .offre-titre {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .offre-titre em { font-style: italic; }
+
+    .offre-desc {
+      font-size: 0.88rem;
+      color: var(--gris);
+      line-height: 1.7;
+      flex-grow: 1;
+      margin-bottom: 2rem;
+    }
+
+    .offre-details {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .offre-details li {
+      font-size: 0.82rem;
+      color: var(--noir);
+      padding: 0.35rem 0;
+      border-top: 1px solid var(--gris-clair);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .offre-details li:last-child { border-bottom: 1px solid var(--gris-clair); }
+
+    .offre-details .detail-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--gris);
+    }
+
+    .offre-tarif {
+      margin-bottom: 1.75rem;
+    }
+
+    .tarif-montant {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--noir);
+      line-height: 1;
+    }
+
+    .tarif-unite {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--gris);
+      letter-spacing: 0.06em;
+      margin-top: 0.3rem;
+    }
+
+    .offre-cta {
+      display: inline-block;
+      border: 1px solid var(--noir);
+      color: var(--noir);
+      padding: 0.7rem 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-start;
+    }
+
+    .offre-cta:hover {
+      background: var(--noir);
+      color: var(--blanc);
+    }
+
+    /* BANDE CHIFFRES */
+    .chiffres-bande {
+      background: var(--noir);
+      color: var(--blanc);
+      padding: 3.5rem 3rem;
+    }
+
+    .chiffres-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .chiffre-item {
+      border-left: 1px solid rgba(255,255,255,0.15);
+      padding-left: 1.5rem;
+    }
+
+    .chiffre-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--ocre);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .chiffre-label {
+      font-size: 0.82rem;
+      color: rgba(245,242,236,0.6);
+      line-height: 1.4;
+    }
+
+    /* POURQUOI */
+    .pourquoi-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .pourquoi-titre {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.15;
+      position: sticky;
+      top: 5rem;
+    }
+
+    .pourquoi-titre em { font-style: italic; color: var(--ocre); }
+
+    .pourquoi-blocs {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .pourquoi-bloc {
+      padding: 2rem;
+      border: 1px solid var(--gris-clair);
+      position: relative;
+    }
+
+    .pourquoi-bloc::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--ocre);
+    }
+
+    .pourquoi-bloc h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .pourquoi-bloc p {
+      font-size: 0.88rem;
+      color: var(--gris);
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--vert-garrigue);
+      color: var(--blanc);
+      padding: 5rem 3rem;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .contact-titre {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .contact-titre em { font-style: italic; color: var(--ocre); }
+
+    .contact-sous-titre {
+      font-size: 0.9rem;
+      color: rgba(245,242,236,0.65);
+      margin-top: 1.25rem;
+      line-height: 1.65;
+      max-width: 38ch;
+    }
+
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .contact-option:hover {
+      background: rgba(196,168,107,0.15);
+      border-color: var(--ocre);
+    }
+
+    .contact-option-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ocre);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-option-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--blanc);
+    }
+
+    .contact-option-arrow {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.4);
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .contact-option:hover .contact-option-arrow {
+      transform: translateX(4px);
+      color: var(--ocre);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gris-clair);
+      padding: 2rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gris);
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 3.5rem 1.5rem 2.5rem;
+        gap: 2rem;
+      }
+
+      .offres-section { padding: 3rem 1.5rem; }
+
+      .offres-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .offre-card {
+        border-right: none;
+        border-bottom: 1px solid var(--gris-clair);
+      }
+
+      .offre-card:last-child { border-bottom: none; }
+
+      .chiffres-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pourquoi-section {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem;
+      }
+
+      .pourquoi-titre { position: static; }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .contact-section { padding: 3.5rem 1.5rem; }
+
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="atelier-degustation.html">Atelier</a></li>
+      <li><a href="blog.html">Culture</a></li>
+      <li><a href="domaines.html">Domaines</a></li>
+    </ul>
+    <a href="index.html" class="nav-logo">Saint Vincent</a>
+    <ul class="nav-links">
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="travailler-avec-moi.html" style="color:var(--noir);font-weight:500">Travailler ensemble</a></li>
+      <li><a href="mailto:paul@pauldefais.fr">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-tag">Saint Vincent · Marseille</p>
+      <h1>Travailler<br><em>avec nous.</em></h1>
+    </div>
+    <div class="hero-right">
+      <p class="hero-intro">
+        Trois façons concrètes de collaborer — un atelier pour vos équipes, une représentation commerciale pour vos vins, ou un accompagnement éditorial pour raconter ce que vous faites. <strong>Une approche directe, un interlocuteur unique.</strong>
+      </p>
+      <a href="mailto:paul@pauldefais.fr?subject=Travailler ensemble" class="cta-primary">Nous contacter →</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- OFFRES -->
+  <section class="offres-section">
+    <p class="section-label">Les offres</p>
+
+    <div class="offres-grid">
+
+      <!-- Offre 1 -->
+      <div class="offre-card fade-in">
+        <p class="offre-num">01</p>
+        <p class="offre-label">Entreprises · Équipes</p>
+        <h2 class="offre-titre">Atelier<br><em>dégustation.</em></h2>
+        <p class="offre-desc">
+          Une session sur-mesure pour vos équipes — team building, séminaire, événement client. On part du verre, pas du manuel. Deux heures qui laissent quelque chose.
+        </p>
+        <ul class="offre-details">
+          <li>Participants <span class="detail-val">8–15 personnes</span></li>
+          <li>Durée <span class="detail-val">1h30–2h</span></li>
+          <li>Lieu <span class="detail-val">Vos locaux ou Marseille</span></li>
+          <li>Vins <span class="detail-val">5–7 références</span></li>
+        </ul>
+        <a href="mailto:paul@pauldefais.fr?subject=Atelier entreprise" class="offre-cta">Demander un devis →</a>
+      </div>
+
+      <!-- Offre 2 -->
+      <div class="offre-card fade-in" style="transition-delay: 0.1s">
+        <p class="offre-num">02</p>
+        <p class="offre-label">Cavistes · Restaurateurs</p>
+        <h2 class="offre-titre">Agent<br><em>commercial.</em></h2>
+        <p class="offre-desc">
+          Je représente 12 domaines en Grèce, Italie et Espagne. Pour cavistes et restaurateurs qui cherchent des vins défendables et pas encore vus partout. Je sers d'intermédiaire, du premier contact jusqu'à la commande.
+        </p>
+        <ul class="offre-details">
+          <li>Domaines représentés <span class="detail-val">12 propriétés</span></li>
+          <li>Origines <span class="detail-val">GR · IT · ES</span></li>
+          <li>Modèle <span class="detail-val">Commission ou retainer</span></li>
+          <li>Engagement <span class="detail-val">Aucun minimum</span></li>
+        </ul>
+        <a href="domaines.html" class="offre-cta">Voir les domaines →</a>
+      </div>
+
+      <!-- Offre 3 -->
+      <div class="offre-card fade-in" style="transition-delay: 0.2s">
+        <p class="offre-num">03</p>
+        <p class="offre-label">Domaines · Producteurs</p>
+        <h2 class="offre-titre">Conseil<br><em>éditorial.</em></h2>
+        <p class="offre-desc">
+          Raconter ce que vous faites — textes de domaine, fiches cépages, newsletter, contenu site. Pour les vignerons et acteurs du vin qui ont une histoire à dire mais pas le temps de l'écrire.
+        </p>
+        <ul class="offre-details">
+          <li>Format <span class="detail-val">Mission ponctuelle</span></li>
+          <li>Livrables <span class="detail-val">Textes, fiches, stratégie</span></li>
+          <li>Délai <span class="detail-val">1–2 semaines</span></li>
+          <li>Suivi <span class="detail-val">Sur demande</span></li>
+        </ul>
+        <a href="mailto:paul@pauldefais.fr?subject=Conseil éditorial" class="offre-cta">Parler du projet →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHIFFRES -->
+  <div class="chiffres-bande">
+    <div class="chiffres-inner">
+      <div class="chiffre-item">
+        <div class="chiffre-val">12</div>
+        <div class="chiffre-label">domaines représentés<br>GR · IT · ES</div>
+      </div>
+      <div class="chiffre-item">
+        <div class="chiffre-val">6</div>
+        <div class="chiffre-label">thèmes d'ateliers<br>au catalogue</div>
+      </div>
+      <div class="chiffre-item">
+        <div class="chiffre-val">2h</div>
+        <div class="chiffre-label">format standard<br>atelier entreprise</div>
+      </div>
+      <div class="chiffre-item">
+        <div class="chiffre-val">Marseille</div>
+        <div class="chiffre-label">base d'opération<br>+ déplacement France</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POURQUOI -->
+  <section class="pourquoi-section">
+    <div>
+      <h2 class="pourquoi-titre">Ce que<br>ça <em>change.</em></h2>
+    </div>
+    <div class="pourquoi-blocs">
+      <div class="pourquoi-bloc fade-in">
+        <h3>Un interlocuteur unique, pas une agence.</h3>
+        <p>Vous parlez à Paul — pas à un commercial qui transmet à un prestataire. De la première conversation jusqu'au livrable, c'est la même personne qui porte le projet.</p>
+      </div>
+      <div class="pourquoi-bloc fade-in">
+        <h3>Le vin sans le jargon inutile.</h3>
+        <p>Les ateliers ne sont pas des cours magistraux. L'objectif n'est pas de faire réciter des appellations — c'est de faire ressentir quelque chose dans un verre et de comprendre pourquoi.</p>
+      </div>
+      <div class="pourquoi-bloc fade-in">
+        <h3>Des domaines qu'on défend vraiment.</h3>
+        <p>Je ne représente que des vignerons dont je connaîs les vins de fond en comble. Pas de catalogue générique. Ce que je vous propose, je l'ai goûté, compris, et choisi.</p>
+      </div>
+      <div class="pourquoi-bloc fade-in">
+        <h3>Marseille d'abord, mais pas que.</h3>
+        <p>Basé sur le Vieux-Port, disponible partout en France sur demande. Les ateliers se font dans vos locaux, dans un lieu partenaire, ou ailleurs — selon ce qui a du sens pour vous.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-titre">On commence<br><em>par où ?</em></h2>
+        <p class="contact-sous-titre">
+          Un email suffit. Décrivez votre projet en deux lignes — je réponds dans la journée avec une proposition concrète ou une question.
+        </p>
+      </div>
+      <div class="contact-options">
+        <a href="mailto:paul@pauldefais.fr?subject=Atelier entreprise" class="contact-option">
+          <div>
+            <p class="contact-option-label">Offre 01</p>
+            <p class="contact-option-title">Réserver un atelier</p>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+        <a href="mailto:paul@pauldefais.fr?subject=Agent commercial – domaines" class="contact-option">
+          <div>
+            <p class="contact-option-label">Offre 02</p>
+            <p class="contact-option-title">Travailler les domaines</p>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+        <a href="mailto:paul@pauldefais.fr?subject=Conseil éditorial" class="contact-option">
+          <div>
+            <p class="contact-option-label">Offre 03</p>
+            <p class="contact-option-title">Mission éditoriale</p>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+        <a href="mailto:paul@pauldefais.fr" class="contact-option">
+          <div>
+            <p class="contact-option-label">Autre</p>
+            <p class="contact-option-title">Autre chose en tête</p>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© Saint Vincent 2026</span>
+    <span>Marseille, France</span>
+    <span><a href="mailto:paul@pauldefais.fr" style="color: var(--gris); text-decoration: none;">paul@pauldefais.fr</a></span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
