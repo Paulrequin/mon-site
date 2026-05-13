@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atelier Dégustation — Tastodisso™</title>
-  <meta name="description" content="Ateliers dégustation autour du vin de Provence et d'ailleurs. Soirées privées, entreprises, sur-mesure. Par Paul Defais — Agence Saint Vincent, Marseille." />
+  <meta name="description" content="Ateliers dégustation pour mieux comprendre le vin et ce qu'il exprime. Catalogue des sessions passées et à venir. Par Paul Defais — Agence Saint Vincent, Marseille." />
   <link rel="canonical" href="https://www.pauldefais.fr/atelier-degustation.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.pauldefais.fr/atelier-degustation.html" />
   <meta property="og:title" content="Atelier Dégustation — Tastodisso™" />
-  <meta property="og:description" content="Ateliers dégustation autour du vin de Provence et d'ailleurs. Soirées privées, entreprises, sur-mesure. Par Paul Defais — Agence Saint Vincent, Marseille." />
+  <meta property="og:description" content="Ateliers dégustation pour mieux comprendre le vin et ce qu'il exprime. Par Paul Defais, Marseille." />
   <meta property="og:image" content="https://www.pauldefais.fr/vine1.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Atelier Dégustation — Tastodisso™" />
-  <meta name="twitter:description" content="Ateliers dégustation autour du vin de Provence et d'ailleurs. Par Paul Defais, Marseille." />
+  <meta name="twitter:description" content="Ateliers dégustation pour mieux comprendre le vin et ce qu'il exprime." />
   <meta name="twitter:image" content="https://www.pauldefais.fr/vine1.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Atelier Dégustation — Tastodisso™",
-    "description": "Ateliers dégustation autour du vin de Provence et d'ailleurs. Soirées privées, entreprises, sur-mesure.",
+    "description": "Ateliers dégustation pour mieux comprendre le vin et ce qu'il exprime.",
     "url": "https://www.pauldefais.fr/atelier-degustation.html",
     "provider": {
       "@type": "Person",
@@ -67,113 +67,149 @@
     .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
     .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
 
-    /* EN-TÊTE */
+    /* HERO EN-TÊTE */
     .page-header {
-      padding: 4rem 3rem 3rem;
-      border-bottom: 1px solid var(--ink);
       display: grid; grid-template-columns: 1fr 1fr;
-      align-items: flex-end; gap: 2rem;
-      background: linear-gradient(150deg, #2A1800 0%, #1A0E00 100%);
+      border-bottom: 1px solid var(--ink);
     }
-    .page-header-title {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900;
+    .header-l {
+      padding: 4rem 3rem;
+      border-right: 1px solid var(--ink);
+      background: linear-gradient(150deg, #2A1800 0%, #1A0E00 100%);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 3rem;
+    }
+    .header-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .header-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 76px; font-weight: 900;
       text-transform: uppercase; line-height: 0.88; letter-spacing: -0.02em; color: #fff;
     }
-    .page-header-title em {
+    .header-title em {
       font-family: 'EB Garamond', serif; font-style: italic;
-      font-size: 72px; font-weight: 400; text-transform: none; color: var(--sun); display: block;
+      font-size: 70px; font-weight: 400; text-transform: none; color: var(--sun); display: block;
     }
-    .page-header-desc {
+    .header-r {
+      padding: 4rem 3rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .motto-block { }
+    .motto-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem; }
+    .motto {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 44px; font-weight: 900;
+      text-transform: uppercase; line-height: 0.92; letter-spacing: -0.01em; color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .motto em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 40px; font-weight: 400; text-transform: none; color: var(--rouge); display: block;
+    }
+    .motto-body {
       font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic;
-      line-height: 1.7; color: rgba(255,255,255,0.55); max-width: 400px; justify-self: end;
+      line-height: 1.7; color: var(--mid);
     }
+    .header-stats { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+    .stat { }
+    .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 38px; font-weight: 900; line-height: 1; color: var(--ink); }
+    .stat-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-top: 0.2rem; }
 
-    /* INTRO */
-    .intro {
+    /* SECTION BAR */
+    .sbar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
+    .sbar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+    .sbar-r { font-size: 11px; color: var(--mid); font-style: italic; font-family: 'EB Garamond', serif; }
+
+    /* CATALOGUE PASSÉ — grille */
+    .catalogue { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .cat-card {
+      padding: 2.5rem 2.5rem;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      display: flex; flex-direction: column;
+      transition: background 0.25s var(--ease);
+      cursor: default;
+    }
+    .cat-card:nth-child(even) { border-right: none; }
+    .cat-card:nth-last-child(-n+2) { border-bottom: none; }
+    .cat-card:hover { background: var(--warm); }
+    .cat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rule); margin-bottom: 0.6rem; }
+    .cat-theme { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .cat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700; text-transform: uppercase; line-height: 1.0; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 1rem; }
+    .cat-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 30px; font-weight: 400; text-transform: none; color: var(--rouge); display: block; }
+    .cat-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; line-height: 1.72; color: var(--mid); flex: 1; margin-bottom: 1.5rem; }
+    .cat-footer { display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid var(--rule); }
+    .cat-tag { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); background: var(--warm); padding: 0.3rem 0.7rem; }
+    .cat-card:hover .cat-tag { background: var(--bg); }
+
+    /* FEATURED CARD — pleine largeur */
+    .cat-card-full {
+      grid-column: 1 / -1;
       display: grid; grid-template-columns: 1fr 1fr;
       border-bottom: 1px solid var(--ink);
     }
-    .intro-text {
-      padding: 3.5rem 3rem;
+    .cat-card-full-img {
       border-right: 1px solid var(--ink);
+      overflow: hidden; aspect-ratio: 4/3;
+      position: relative;
     }
-    .intro-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem; }
-    .intro-text p {
-      font-family: 'EB Garamond', serif; font-size: 19px; font-style: italic;
-      line-height: 1.78; color: var(--ink); margin-bottom: 1.2rem;
+    .cat-card-full-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
+    .cat-card-full:hover .cat-card-full-img img { transform: scale(1.03); }
+    .cat-card-full-text {
+      padding: 3rem 2.5rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+      transition: background 0.25s var(--ease);
     }
-    .intro-text p:first-of-type::first-letter {
-      font-size: 3.8em; line-height: 0.75; float: left;
-      margin: 0.08em 0.1em 0 0;
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
-      color: var(--rouge); text-transform: uppercase;
-    }
-    .intro-aside {
-      padding: 3.5rem 2.5rem;
-      display: flex; flex-direction: column; justify-content: center; gap: 2rem;
-    }
-    .aside-stat { border-left: 2px solid var(--sun); padding-left: 1.2rem; }
-    .aside-stat-num {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900;
-      line-height: 1; color: var(--ink); letter-spacing: -0.02em;
-    }
-    .aside-stat-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-top: 0.2rem; }
+    .cat-card-full:hover .cat-card-full-text { background: var(--warm); }
+    .cat-card-full .cat-title { font-size: 46px; }
+    .cat-card-full .cat-title em { font-size: 42px; }
+    .cat-card-full .cat-body { font-size: 17px; }
 
-    /* FORMATS */
-    .formats-bar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
-    .formats-bar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
-
-    .formats { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--ink); }
-    .format-card {
+    /* À VENIR */
+    .avenir { border-bottom: 1px solid var(--ink); }
+    .avenir-coming {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .coming-card {
       padding: 2.5rem 2rem;
       border-right: 1px solid var(--ink);
-      display: flex; flex-direction: column;
+      position: relative;
     }
-    .format-card:last-child { border-right: none; }
-    .format-num { font-family: 'Barlow Condensed', sans-serif; font-size: 64px; font-weight: 900; line-height: 1; color: var(--rule); margin-bottom: 1rem; }
-    .format-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; line-height: 1.05; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.01em; }
-    .format-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; line-height: 1.7; color: var(--mid); flex: 1; margin-bottom: 1.5rem; }
-    .format-specs { display: flex; flex-direction: column; gap: 0.4rem; margin-top: auto; }
-    .format-spec { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
-    .format-spec:last-child { border-bottom: none; }
-    .spec-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
-    .spec-v { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--ink); }
-
-    /* CITATION */
-    .quote {
-      background: linear-gradient(125deg, #2D6A3F 0%, #1E4D2C 100%);
-      padding: 4rem 3rem; border-bottom: 1px solid var(--ink);
+    .coming-card:last-child { border-right: none; }
+    .coming-badge {
+      display: inline-block; background: var(--sun); color: var(--ink);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; padding: 0.25rem 0.7rem;
+      margin-bottom: 1.2rem;
     }
-    .q-text { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900; line-height: 0.95; text-transform: uppercase; color: #fff; letter-spacing: -0.02em; max-width: 780px; }
-    .q-text em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 52px; font-weight: 400; text-transform: none; color: var(--sun); display: block; margin-top: 0.1em; }
+    .coming-date { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 900; line-height: 1; color: var(--ink); margin-bottom: 0.2rem; }
+    .coming-month { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .coming-title { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; line-height: 1.05; color: var(--ink); margin-bottom: 0.8rem; }
+    .coming-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.65; color: var(--mid); margin-bottom: 1.2rem; }
+    .coming-detail { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+    .coming-detail span { color: var(--ink); }
+    .coming-cta {
+      display: inline-block; margin-top: 1.5rem;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+      color: var(--ink); transition: color 0.2s, border-color 0.2s;
+    }
+    .coming-cta:hover { color: var(--rouge); border-color: var(--rouge); }
 
-    /* CTA */
-    .cta-block {
-      display: grid; grid-template-columns: 1fr 1fr;
+    /* CTA BAS DE PAGE */
+    .bottom-cta {
+      background: var(--sun);
+      padding: 2.5rem 2rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
       border-bottom: 1px solid var(--ink);
     }
-    .cta-l {
-      padding: 3.5rem 3rem;
-      border-right: 1px solid var(--ink);
-    }
-    .cta-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
-    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 900; text-transform: uppercase; line-height: 0.92; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
-    .cta-body { font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic; line-height: 1.7; color: var(--mid); margin-bottom: 2rem; }
-    .btn-rouge {
-      display: inline-block; background: var(--rouge); color: #fff;
+    .bottom-cta-text { font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 700; text-transform: uppercase; color: var(--ink); line-height: 1; }
+    .btn-ink {
+      display: inline-block; background: var(--ink); color: var(--bg);
       font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem;
+      white-space: nowrap; flex-shrink: 0;
       transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
     }
-    .btn-rouge:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(200,52,26,0.35); }
-    .cta-r {
-      padding: 3.5rem 2.5rem;
-      display: flex; flex-direction: column; justify-content: center; gap: 0;
-    }
-    .cta-detail { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
-    .cta-detail:last-child { border-bottom: none; }
-    .cd-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
-    .cd-v { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); }
+    .btn-ink:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
 
     /* FOOTER */
     .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
@@ -189,21 +225,24 @@
     @media (max-width: 768px) {
       .nav-l { display: none; }
       .nav { grid-template-columns: 1fr auto; }
-      .page-header { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
-      .page-header-title { font-size: 52px; }
-      .page-header-title em { font-size: 48px; }
-      .page-header-desc { justify-self: start; }
-      .intro { grid-template-columns: 1fr; }
-      .intro-text { border-right: none; border-bottom: 1px solid var(--ink); padding: 2.5rem 1.5rem; }
-      .intro-aside { padding: 2rem 1.5rem; flex-direction: row; flex-wrap: wrap; }
-      .formats { grid-template-columns: 1fr; }
-      .format-card { border-right: none; border-bottom: 1px solid var(--ink); }
-      .format-card:last-child { border-bottom: none; }
-      .q-text { font-size: 38px; }
-      .q-text em { font-size: 36px; }
-      .cta-block { grid-template-columns: 1fr; }
-      .cta-l { border-right: none; border-bottom: 1px solid var(--ink); padding: 2.5rem 1.5rem; }
-      .cta-r { padding: 2rem 1.5rem; }
+      .page-header { grid-template-columns: 1fr; }
+      .header-l { padding: 2.5rem 1.5rem; border-right: none; border-bottom: 1px solid var(--ink); }
+      .header-title { font-size: 52px; }
+      .header-title em { font-size: 48px; }
+      .header-r { padding: 2.5rem 1.5rem; }
+      .motto { font-size: 32px; }
+      .motto em { font-size: 28px; }
+      .header-stats { gap: 1.5rem; }
+      .catalogue { grid-template-columns: 1fr; }
+      .cat-card { border-right: none; border-bottom: 1px solid var(--ink); }
+      .cat-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
+      .cat-card:last-child { border-bottom: none; }
+      .cat-card-full { grid-template-columns: 1fr; }
+      .cat-card-full-img { border-right: none; border-bottom: 1px solid var(--ink); aspect-ratio: 3/2; }
+      .avenir-coming { grid-template-columns: 1fr; }
+      .coming-card { border-right: none; border-bottom: 1px solid var(--ink); }
+      .coming-card:last-child { border-bottom: none; }
+      .bottom-cta { flex-direction: column; align-items: flex-start; }
       .foot { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -230,92 +269,175 @@
     </ul>
   </nav>
 
+  <!-- EN-TÊTE + MOTTO -->
   <div class="page-header">
-    <h1 class="page-header-title">Atelier<br><em>Dégustation.</em></h1>
-    <p class="page-header-desc">Apprendre à boire autrement. Pas de vocabulaire technique, pas de snobisme — juste ce qui se passe dans le verre et dans la tête.</p>
-  </div>
-
-  <div class="intro">
-    <div class="intro-text">
-      <div class="intro-label">— L'idée</div>
-      <p>Un atelier de dégustation, ça pourrait être une liste de cépages et un tableau comparatif. Ce n'est pas ce qu'on fait ici. On part du principe que le vin n'a de sens que dans un contexte — un sol, une saison, une table, des gens.</p>
-      <p>Chaque atelier est construit autour d'une question : qu'est-ce que la Provence fait à un Grenache ? Pourquoi le même cépage donne quelque chose de radicalement différent à cent kilomètres d'écart ? Ce que le mistral change dans un verre. Des questions simples, des réponses complexes — c'est ça, le vin.</p>
-      <p>On goûte. On parle. On repart avec quelque chose qu'on n'avait pas avant.</p>
-    </div>
-    <div class="intro-aside">
-      <div class="aside-stat">
-        <div class="aside-stat-num">6–14</div>
-        <div class="aside-stat-label">Participants par session</div>
-      </div>
-      <div class="aside-stat">
-        <div class="aside-stat-num">5–7</div>
-        <div class="aside-stat-label">Vins dégustés par atelier</div>
-      </div>
-      <div class="aside-stat">
-        <div class="aside-stat-num">2h</div>
-        <div class="aside-stat-label">Durée moyenne</div>
+    <div class="header-l">
+      <div class="header-label">— Saint Vincent · Marseille</div>
+      <div>
+        <h1 class="header-title">Atelier<em>Dégustation.</em></h1>
       </div>
     </div>
-  </div>
-
-  <div class="formats-bar">
-    <span class="formats-bar-l">— Les formats</span>
-  </div>
-
-  <div class="formats">
-    <div class="format-card">
-      <div class="format-num">01</div>
-      <div class="format-title">Soirée Privée</div>
-      <p class="format-body">Chez vous ou dans nos locaux à Marseille. Pour un groupe d'amis, une occasion, une curiosité à explorer ensemble. On sélectionne les vins selon le thème que vous choisissez, ou on s'en charge entièrement.</p>
-      <div class="format-specs">
-        <div class="format-spec"><span class="spec-k">Participants</span><span class="spec-v">6 à 14 personnes</span></div>
-        <div class="format-spec"><span class="spec-k">Lieu</span><span class="spec-v">Votre domicile ou Saint Vincent</span></div>
-        <div class="format-spec"><span class="spec-k">Durée</span><span class="spec-v">2h environ</span></div>
-        <div class="format-spec"><span class="spec-k">Tarif</span><span class="spec-v">Sur devis</span></div>
+    <div class="header-r">
+      <div class="motto-block">
+        <div class="motto-label">— Le principe</div>
+        <div class="motto">Mieux comprendre<em>ce que le vin exprime.</em></div>
+        <p class="motto-body">Pas de vocabulaire technique imposé, pas de hiérarchie entre les vins. On part de ce qu'on ressent dans le verre — et on remonte jusqu'au sol, au climat, au geste du vigneron. Chaque atelier est une question posée ensemble.</p>
       </div>
-    </div>
-    <div class="format-card">
-      <div class="format-num">02</div>
-      <div class="format-title">Format Entreprise</div>
-      <p class="format-body">Team building, séminaire, événement client. Un moment différent qui crée de la conversation. On adapte le niveau, le thème et le rythme à votre groupe — du débutant complet au connaisseur averti.</p>
-      <div class="format-specs">
-        <div class="format-spec"><span class="spec-k">Participants</span><span class="spec-v">Jusqu'à 40 personnes</span></div>
-        <div class="format-spec"><span class="spec-k">Lieu</span><span class="spec-v">Vos locaux ou lieu partenaire</span></div>
-        <div class="format-spec"><span class="spec-k">Durée</span><span class="spec-v">1h30 à 3h</span></div>
-        <div class="format-spec"><span class="spec-k">Tarif</span><span class="spec-v">Sur devis</span></div>
-      </div>
-    </div>
-    <div class="format-card">
-      <div class="format-num">03</div>
-      <div class="format-title">Sur-Mesure</div>
-      <p class="format-body">Un cépage, un terroir, un millésime, un accord mets-vins. Ou quelque chose qu'on n'a pas encore proposé. On construit l'atelier autour de votre curiosité — ou de la vôtre.</p>
-      <div class="format-specs">
-        <div class="format-spec"><span class="spec-k">Participants</span><span class="spec-v">À définir ensemble</span></div>
-        <div class="format-spec"><span class="spec-k">Lieu</span><span class="spec-v">Partout en France</span></div>
-        <div class="format-spec"><span class="spec-k">Durée</span><span class="spec-v">Variable</span></div>
-        <div class="format-spec"><span class="spec-k">Tarif</span><span class="spec-v">Sur devis</span></div>
+      <div class="header-stats">
+        <div class="stat">
+          <div class="stat-num">6–14</div>
+          <div class="stat-label">Participants</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5–7</div>
+          <div class="stat-label">Vins par session</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2h</div>
+          <div class="stat-label">Durée moyenne</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="quote">
-    <p class="q-text">On ne goûte pas<br>un vin.<em>On le comprend — ou pas.</em></p>
+  <!-- CATALOGUE PASSÉ -->
+  <div class="sbar">
+    <span class="sbar-l">— Les ateliers</span>
+    <span class="sbar-r">Sessions passées</span>
   </div>
 
-  <div class="cta-block">
-    <div class="cta-l">
-      <div class="cta-label">— Organiser un atelier</div>
-      <div class="cta-title">Parlons-en.</div>
-      <p class="cta-body">Chaque demande est différente. Envoyez-moi un message avec votre idée, la taille de votre groupe et la date approximative. Je reviens sous 48h avec une proposition.</p>
-      <a href="mailto:paul@pauldefais.fr?subject=Atelier dégustation" class="btn-rouge">Écrire à Paul →</a>
+  <div class="catalogue">
+
+    <!-- CARTE VEDETTE — pleine largeur -->
+    <div class="cat-card-full">
+      <div class="cat-card-full-img">
+        <img src="vine1.jpg" alt="Rosé de Provence — atelier dégustation" />
+      </div>
+      <div class="cat-card-full-text">
+        <div>
+          <div class="cat-num">No. 01</div>
+          <div class="cat-theme">Terroir · Provence</div>
+          <div class="cat-title">Le rosé, enfin<em>pris au sérieux.</em></div>
+          <p class="cat-body">On commence par là parce que tout le monde a un avis sur le rosé — et que la plupart de ces avis sont faux. Pâle ou non, sec ou pas, de Provence ou d'ailleurs : on démonte les préjugés un verre à la fois. Ce que la couleur dit vraiment. Ce que le sol ajoute. Ce que le millésime change.</p>
+        </div>
+        <div class="cat-footer">
+          <span class="cat-tag">Grenache · Cinsault · Mourvèdre</span>
+          <span class="cat-tag">Provence</span>
+          <span class="cat-tag">Débutants bienvenus</span>
+        </div>
+      </div>
     </div>
-    <div class="cta-r">
-      <div class="cta-detail"><span class="cd-k">Email</span><span class="cd-v">paul@pauldefais.fr</span></div>
-      <div class="cta-detail"><span class="cd-k">Instagram</span><span class="cd-v">@agencesaintvincent</span></div>
-      <div class="cta-detail"><span class="cd-k">Lieu principal</span><span class="cd-v">Marseille, France</span></div>
-      <div class="cta-detail"><span class="cd-k">Déplacements</span><span class="cd-v">France entière</span></div>
-      <div class="cta-detail"><span class="cd-k">Réponse</span><span class="cd-v">Sous 48h</span></div>
+
+    <!-- CARTE 2 -->
+    <div class="cat-card">
+      <div class="cat-num">No. 02</div>
+      <div class="cat-theme">Cépage · Sud</div>
+      <div class="cat-title">Grenache :<em>le caméléon.</em></div>
+      <p class="cat-body">Même cépage, sols différents, expressions radicalement opposées. On compare un Grenache de garrigue, un autre d'altitude, un troisième élevé en barrique. L'exercice révèle ce que le terroir fait — et ce que le vigneron décide.</p>
+      <div class="cat-footer">
+        <span class="cat-tag">Grenache</span>
+        <span class="cat-tag">Comparatif vertical</span>
+      </div>
     </div>
+
+    <!-- CARTE 3 -->
+    <div class="cat-card">
+      <div class="cat-num">No. 03</div>
+      <div class="cat-theme">Cépage · Mistral</div>
+      <div class="cat-title">La Syrah<em>du sud.</em></div>
+      <p class="cat-body">Cépage du nord adopté par le Rhône méridional et la Provence. On explore ce que le soleil et le vent lui font — les épices, le poivre, le côté animal qui disparaît ou s'amplifie selon l'altitude et la main du vigneron.</p>
+      <div class="cat-footer">
+        <span class="cat-tag">Syrah</span>
+        <span class="cat-tag">Rhône · Provence</span>
+      </div>
+    </div>
+
+    <!-- CARTE 4 -->
+    <div class="cat-card">
+      <div class="cat-num">No. 04</div>
+      <div class="cat-theme">Voyage · Piémont</div>
+      <div class="cat-title">Barolo :<em>la patience.</em></div>
+      <p class="cat-body">Un détour par les Langhe pour comprendre ce que le Nebbiolo exige — du temps, de la rigueur, un sol précis. Pourquoi ce cépage ne pousse vraiment nulle part ailleurs. Et ce que ça apprend à quelqu'un qui vient de Provence.</p>
+      <div class="cat-footer">
+        <span class="cat-tag">Nebbiolo</span>
+        <span class="cat-tag">Piémont · Italie</span>
+        <span class="cat-tag">Comparatif</span>
+      </div>
+    </div>
+
+    <!-- CARTE 5 -->
+    <div class="cat-card">
+      <div class="cat-num">No. 05</div>
+      <div class="cat-theme">Terroir · Saison</div>
+      <div class="cat-title">Vieilles vignes :<em>ce que l'âge change.</em></div>
+      <p class="cat-body">On goûte côte à côte des vins issus de jeunes et de vieilles vignes sur un même domaine. La différence est là, mais elle est subtile — et c'est précisément ce qu'on cherche à saisir. Concentration, profondeur, silence dans le verre.</p>
+      <div class="cat-footer">
+        <span class="cat-tag">Vieilles vignes</span>
+        <span class="cat-tag">Analyse comparative</span>
+      </div>
+    </div>
+
+    <!-- CARTE 6 -->
+    <div class="cat-card">
+      <div class="cat-num">No. 06</div>
+      <div class="cat-theme">Voyage · Castille</div>
+      <div class="cat-title">Ribera del Duero :<em>l'altitude.</em></div>
+      <p class="cat-body">À 900 mètres, entre les étés brûlants et les nuits froides, le Tempranillo donne quelque chose d'unique. Un atelier autour de la tension entre le soleil et le froid — et de ce que ça produit dans le verre.</p>
+      <div class="cat-footer">
+        <span class="cat-tag">Tempranillo</span>
+        <span class="cat-tag">Espagne</span>
+        <span class="cat-tag">Altitude</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- À VENIR -->
+  <div class="sbar" id="avenir">
+    <span class="sbar-l">— À venir</span>
+    <span class="sbar-r">Prochaines sessions</span>
+  </div>
+
+  <div class="avenir">
+    <div class="avenir-coming">
+
+      <div class="coming-card">
+        <div class="coming-badge">Bientôt</div>
+        <div class="coming-date">—</div>
+        <div class="coming-month">Date à confirmer</div>
+        <div class="coming-title">Session à annoncer</div>
+        <p class="coming-body">La prochaine session est en cours de programmation. Laissez votre email pour être informé en priorité.</p>
+        <div class="coming-detail">Lieu : <span>Marseille</span></div>
+        <a href="mailto:paul@pauldefais.fr?subject=Intérêt atelier dégustation" class="coming-cta">Me prévenir →</a>
+      </div>
+
+      <div class="coming-card">
+        <div class="coming-badge">Bientôt</div>
+        <div class="coming-date">—</div>
+        <div class="coming-month">Date à confirmer</div>
+        <div class="coming-title">Session à annoncer</div>
+        <p class="coming-body">Thème et date en cours de définition. Écrivez pour exprimer un intérêt ou proposer un sujet.</p>
+        <div class="coming-detail">Lieu : <span>Marseille</span></div>
+        <a href="mailto:paul@pauldefais.fr?subject=Intérêt atelier dégustation" class="coming-cta">Me prévenir →</a>
+      </div>
+
+      <div class="coming-card">
+        <div class="coming-badge">Sur demande</div>
+        <div class="coming-date">Votre</div>
+        <div class="coming-month">Date & thème</div>
+        <div class="coming-title">Atelier sur-mesure</div>
+        <p class="coming-body">Un thème en particulier ? Un groupe constitué ? On construit l'atelier autour de votre curiosité — soirée privée, entreprise ou événement.</p>
+        <div class="coming-detail">Lieu : <span>Partout en France</span></div>
+        <a href="mailto:paul@pauldefais.fr?subject=Atelier sur-mesure" class="coming-cta">Écrire à Paul →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="bottom-cta">
+    <p class="bottom-cta-text">Une question,<br>un projet d'atelier ?</p>
+    <a href="mailto:paul@pauldefais.fr?subject=Atelier dégustation" class="btn-ink">Écrire à Paul →</a>
   </div>
 
   <footer>
@@ -323,7 +445,7 @@
       <div>
         <div class="ft-logo">Tastodisso™</div>
         <div class="ft-sub">par Paul Defais</div>
-        <p class="ft-body">Ateliers dégustation, conseil et récits autour du vin et de la culture. Agence Saint Vincent, Marseille.</p>
+        <p class="ft-body">Ateliers dégustation pour mieux comprendre le vin et ce qu'il exprime. Agence Saint Vincent, Marseille.</p>
       </div>
       <div>
         <div class="ft-head">Navigation</div>
