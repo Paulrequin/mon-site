@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier Dégustation — Tastodisso™</title>
+  <meta name="description" content="Ateliers dégustation autour du vin de Provence et d'ailleurs. Soirées privées, entreprises, sur-mesure. Par Paul Defais — Agence Saint Vincent, Marseille." />
+  <link rel="canonical" href="https://www.pauldefais.fr/atelier-degustation.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pauldefais.fr/atelier-degustation.html" />
+  <meta property="og:title" content="Atelier Dégustation — Tastodisso™" />
+  <meta property="og:description" content="Ateliers dégustation autour du vin de Provence et d'ailleurs. Soirées privées, entreprises, sur-mesure. Par Paul Defais — Agence Saint Vincent, Marseille." />
+  <meta property="og:image" content="https://www.pauldefais.fr/vine1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Atelier Dégustation — Tastodisso™" />
+  <meta name="twitter:description" content="Ateliers dégustation autour du vin de Provence et d'ailleurs. Par Paul Defais, Marseille." />
+  <meta name="twitter:image" content="https://www.pauldefais.fr/vine1.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Atelier Dégustation — Tastodisso™",
+    "description": "Ateliers dégustation autour du vin de Provence et d'ailleurs. Soirées privées, entreprises, sur-mesure.",
+    "url": "https://www.pauldefais.fr/atelier-degustation.html",
+    "provider": {
+      "@type": "Person",
+      "name": "Paul Defais",
+      "url": "https://www.pauldefais.fr/about.html"
+    },
+    "areaServed": "Marseille, France"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8;
+      --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F;
+      --mid: #8A6A40; --rule: #D4B888;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      align-items: center; padding: 0 2rem; height: 52px;
+      border-bottom: 1px solid rgba(26,14,0,0.18);
+      background: rgba(255,248,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
+    .nav-l li { cursor: pointer; transition: color 0.2s; }
+    .nav-l li:hover, .nav-l li.active { color: var(--ink); }
+    .nav-logo { text-align: center; }
+    .logo-main { font-family: 'Bebas Neue', sans-serif; font-size: 28px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; display: block; color: var(--ink); line-height: 1; }
+    .logo-tm { font-size: 11px; vertical-align: super; font-weight: 700; letter-spacing: 0; }
+    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
+    .nav-r li { cursor: pointer; transition: color 0.2s; }
+    .nav-r li:hover { color: var(--ink); }
+    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
+
+    /* EN-TÊTE */
+    .page-header {
+      padding: 4rem 3rem 3rem;
+      border-bottom: 1px solid var(--ink);
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: flex-end; gap: 2rem;
+      background: linear-gradient(150deg, #2A1800 0%, #1A0E00 100%);
+    }
+    .page-header-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900;
+      text-transform: uppercase; line-height: 0.88; letter-spacing: -0.02em; color: #fff;
+    }
+    .page-header-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 72px; font-weight: 400; text-transform: none; color: var(--sun); display: block;
+    }
+    .page-header-desc {
+      font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic;
+      line-height: 1.7; color: rgba(255,255,255,0.55); max-width: 400px; justify-self: end;
+    }
+
+    /* INTRO */
+    .intro {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .intro-text {
+      padding: 3.5rem 3rem;
+      border-right: 1px solid var(--ink);
+    }
+    .intro-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem; }
+    .intro-text p {
+      font-family: 'EB Garamond', serif; font-size: 19px; font-style: italic;
+      line-height: 1.78; color: var(--ink); margin-bottom: 1.2rem;
+    }
+    .intro-text p:first-of-type::first-letter {
+      font-size: 3.8em; line-height: 0.75; float: left;
+      margin: 0.08em 0.1em 0 0;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      color: var(--rouge); text-transform: uppercase;
+    }
+    .intro-aside {
+      padding: 3.5rem 2.5rem;
+      display: flex; flex-direction: column; justify-content: center; gap: 2rem;
+    }
+    .aside-stat { border-left: 2px solid var(--sun); padding-left: 1.2rem; }
+    .aside-stat-num {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900;
+      line-height: 1; color: var(--ink); letter-spacing: -0.02em;
+    }
+    .aside-stat-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-top: 0.2rem; }
+
+    /* FORMATS */
+    .formats-bar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
+    .formats-bar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+
+    .formats { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .format-card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column;
+    }
+    .format-card:last-child { border-right: none; }
+    .format-num { font-family: 'Barlow Condensed', sans-serif; font-size: 64px; font-weight: 900; line-height: 1; color: var(--rule); margin-bottom: 1rem; }
+    .format-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; line-height: 1.05; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.01em; }
+    .format-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; line-height: 1.7; color: var(--mid); flex: 1; margin-bottom: 1.5rem; }
+    .format-specs { display: flex; flex-direction: column; gap: 0.4rem; margin-top: auto; }
+    .format-spec { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
+    .format-spec:last-child { border-bottom: none; }
+    .spec-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+    .spec-v { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--ink); }
+
+    /* CITATION */
+    .quote {
+      background: linear-gradient(125deg, #2D6A3F 0%, #1E4D2C 100%);
+      padding: 4rem 3rem; border-bottom: 1px solid var(--ink);
+    }
+    .q-text { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900; line-height: 0.95; text-transform: uppercase; color: #fff; letter-spacing: -0.02em; max-width: 780px; }
+    .q-text em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 52px; font-weight: 400; text-transform: none; color: var(--sun); display: block; margin-top: 0.1em; }
+
+    /* CTA */
+    .cta-block {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .cta-l {
+      padding: 3.5rem 3rem;
+      border-right: 1px solid var(--ink);
+    }
+    .cta-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 900; text-transform: uppercase; line-height: 0.92; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+    .cta-body { font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic; line-height: 1.7; color: var(--mid); margin-bottom: 2rem; }
+    .btn-rouge {
+      display: inline-block; background: var(--rouge); color: #fff;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+    .btn-rouge:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(200,52,26,0.35); }
+    .cta-r {
+      padding: 3.5rem 2.5rem;
+      display: flex; flex-direction: column; justify-content: center; gap: 0;
+    }
+    .cta-detail { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+    .cta-detail:last-child { border-bottom: none; }
+    .cd-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+    .cd-v { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); }
+
+    /* FOOTER */
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
+    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.65; }
+    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+    .ft-links li:hover { color: var(--rouge); }
+    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
+
+    @media (max-width: 768px) {
+      .nav-l { display: none; }
+      .nav { grid-template-columns: 1fr auto; }
+      .page-header { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+      .page-header-title { font-size: 52px; }
+      .page-header-title em { font-size: 48px; }
+      .page-header-desc { justify-self: start; }
+      .intro { grid-template-columns: 1fr; }
+      .intro-text { border-right: none; border-bottom: 1px solid var(--ink); padding: 2.5rem 1.5rem; }
+      .intro-aside { padding: 2rem 1.5rem; flex-direction: row; flex-wrap: wrap; }
+      .formats { grid-template-columns: 1fr; }
+      .format-card { border-right: none; border-bottom: 1px solid var(--ink); }
+      .format-card:last-child { border-bottom: none; }
+      .q-text { font-size: 38px; }
+      .q-text em { font-size: 36px; }
+      .cta-block { grid-template-columns: 1fr; }
+      .cta-l { border-right: none; border-bottom: 1px solid var(--ink); padding: 2.5rem 1.5rem; }
+      .cta-r { padding: 2rem 1.5rem; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="nav-l">
+      <li class="active"><a href="atelier-degustation.html">Atelier</a></li>
+      <li><a href="blog.html">Culture</a></li>
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="domaines.html">Domaines</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Tastodisso<span class="logo-tm">™</span></span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-header-title">Atelier<br><em>Dégustation.</em></h1>
+    <p class="page-header-desc">Apprendre à boire autrement. Pas de vocabulaire technique, pas de snobisme — juste ce qui se passe dans le verre et dans la tête.</p>
+  </div>
+
+  <div class="intro">
+    <div class="intro-text">
+      <div class="intro-label">— L'idée</div>
+      <p>Un atelier de dégustation, ça pourrait être une liste de cépages et un tableau comparatif. Ce n'est pas ce qu'on fait ici. On part du principe que le vin n'a de sens que dans un contexte — un sol, une saison, une table, des gens.</p>
+      <p>Chaque atelier est construit autour d'une question : qu'est-ce que la Provence fait à un Grenache ? Pourquoi le même cépage donne quelque chose de radicalement différent à cent kilomètres d'écart ? Ce que le mistral change dans un verre. Des questions simples, des réponses complexes — c'est ça, le vin.</p>
+      <p>On goûte. On parle. On repart avec quelque chose qu'on n'avait pas avant.</p>
+    </div>
+    <div class="intro-aside">
+      <div class="aside-stat">
+        <div class="aside-stat-num">6–14</div>
+        <div class="aside-stat-label">Participants par session</div>
+      </div>
+      <div class="aside-stat">
+        <div class="aside-stat-num">5–7</div>
+        <div class="aside-stat-label">Vins dégustés par atelier</div>
+      </div>
+      <div class="aside-stat">
+        <div class="aside-stat-num">2h</div>
+        <div class="aside-stat-label">Durée moyenne</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="formats-bar">
+    <span class="formats-bar-l">— Les formats</span>
+  </div>
+
+  <div class="formats">
+    <div class="format-card">
+      <div class="format-num">01</div>
+      <div class="format-title">Soirée Privée</div>
+      <p class="format-body">Chez vous ou dans nos locaux à Marseille. Pour un groupe d'amis, une occasion, une curiosité à explorer ensemble. On sélectionne les vins selon le thème que vous choisissez, ou on s'en charge entièrement.</p>
+      <div class="format-specs">
+        <div class="format-spec"><span class="spec-k">Participants</span><span class="spec-v">6 à 14 personnes</span></div>
+        <div class="format-spec"><span class="spec-k">Lieu</span><span class="spec-v">Votre domicile ou Saint Vincent</span></div>
+        <div class="format-spec"><span class="spec-k">Durée</span><span class="spec-v">2h environ</span></div>
+        <div class="format-spec"><span class="spec-k">Tarif</span><span class="spec-v">Sur devis</span></div>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="format-num">02</div>
+      <div class="format-title">Format Entreprise</div>
+      <p class="format-body">Team building, séminaire, événement client. Un moment différent qui crée de la conversation. On adapte le niveau, le thème et le rythme à votre groupe — du débutant complet au connaisseur averti.</p>
+      <div class="format-specs">
+        <div class="format-spec"><span class="spec-k">Participants</span><span class="spec-v">Jusqu'à 40 personnes</span></div>
+        <div class="format-spec"><span class="spec-k">Lieu</span><span class="spec-v">Vos locaux ou lieu partenaire</span></div>
+        <div class="format-spec"><span class="spec-k">Durée</span><span class="spec-v">1h30 à 3h</span></div>
+        <div class="format-spec"><span class="spec-k">Tarif</span><span class="spec-v">Sur devis</span></div>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="format-num">03</div>
+      <div class="format-title">Sur-Mesure</div>
+      <p class="format-body">Un cépage, un terroir, un millésime, un accord mets-vins. Ou quelque chose qu'on n'a pas encore proposé. On construit l'atelier autour de votre curiosité — ou de la vôtre.</p>
+      <div class="format-specs">
+        <div class="format-spec"><span class="spec-k">Participants</span><span class="spec-v">À définir ensemble</span></div>
+        <div class="format-spec"><span class="spec-k">Lieu</span><span class="spec-v">Partout en France</span></div>
+        <div class="format-spec"><span class="spec-k">Durée</span><span class="spec-v">Variable</span></div>
+        <div class="format-spec"><span class="spec-k">Tarif</span><span class="spec-v">Sur devis</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p class="q-text">On ne goûte pas<br>un vin.<em>On le comprend — ou pas.</em></p>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-l">
+      <div class="cta-label">— Organiser un atelier</div>
+      <div class="cta-title">Parlons-en.</div>
+      <p class="cta-body">Chaque demande est différente. Envoyez-moi un message avec votre idée, la taille de votre groupe et la date approximative. Je reviens sous 48h avec une proposition.</p>
+      <a href="mailto:paul@pauldefais.fr?subject=Atelier dégustation" class="btn-rouge">Écrire à Paul →</a>
+    </div>
+    <div class="cta-r">
+      <div class="cta-detail"><span class="cd-k">Email</span><span class="cd-v">paul@pauldefais.fr</span></div>
+      <div class="cta-detail"><span class="cd-k">Instagram</span><span class="cd-v">@agencesaintvincent</span></div>
+      <div class="cta-detail"><span class="cd-k">Lieu principal</span><span class="cd-v">Marseille, France</span></div>
+      <div class="cta-detail"><span class="cd-k">Déplacements</span><span class="cd-v">France entière</span></div>
+      <div class="cta-detail"><span class="cd-k">Réponse</span><span class="cd-v">Sous 48h</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Tastodisso™</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Ateliers dégustation, conseil et récits autour du vin et de la culture. Agence Saint Vincent, Marseille.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="atelier-degustation.html">Atelier</a></li>
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="domaines.html">Domaines</a></li>
+          <li><a href="index.html#saint-vincent">Saint Vincent</a></li>
+          <li><a href="about.html">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Suivre</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com/agencesaintvincent" target="_blank">Instagram</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Tastodisso™ 2026</span>
+      <span>Provence, France</span>
+    </div>
+  </footer>
+
+</body>
+</html>
