@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atelier Dégustation — Tastodisso™</title>
-  <meta name="description" content="Ateliers dégustation pour mieux comprendre le vin et ce qu'il exprime. Catalogue des sessions passées et à venir. Par Paul Defais — Agence Saint Vincent, Marseille." />
+  <meta name="description" content="Ateliers dégustation à Marseille : découvrir le vin nature, décoder le terroir, déguster à l'aveugle. Pour débutants et curieux. Par Paul Defais — Agence Saint Vincent." />
   <link rel="canonical" href="https://www.pauldefais.fr/atelier-degustation.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.pauldefais.fr/atelier-degustation.html" />
@@ -116,50 +116,98 @@
     .sbar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
     .sbar-r { font-size: 11px; color: var(--mid); font-style: italic; font-family: 'EB Garamond', serif; }
 
-    /* CATALOGUE PASSÉ — grille */
-    .catalogue { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
-    .cat-card {
-      padding: 2.5rem 2.5rem;
-      border-right: 1px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
-      display: flex; flex-direction: column;
-      transition: background 0.25s var(--ease);
-      cursor: default;
-    }
-    .cat-card:nth-child(even) { border-right: none; }
-    .cat-card:nth-last-child(-n+2) { border-bottom: none; }
-    .cat-card:hover { background: var(--warm); }
-    .cat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rule); margin-bottom: 0.6rem; }
-    .cat-theme { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
-    .cat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700; text-transform: uppercase; line-height: 1.0; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 1rem; }
-    .cat-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 30px; font-weight: 400; text-transform: none; color: var(--rouge); display: block; }
-    .cat-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; line-height: 1.72; color: var(--mid); flex: 1; margin-bottom: 1.5rem; }
-    .cat-footer { display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid var(--rule); }
-    .cat-tag { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); background: var(--warm); padding: 0.3rem 0.7rem; }
-    .cat-card:hover .cat-tag { background: var(--bg); }
+    /* NOS ATELIERS — offres */
+    .ateliers { border-bottom: 1px solid var(--ink); }
 
-    /* FEATURED CARD — pleine largeur */
-    .cat-card-full {
-      grid-column: 1 / -1;
-      display: grid; grid-template-columns: 1fr 1fr;
+    /* OFFRE VEDETTE */
+    .offer-full {
+      display: grid; grid-template-columns: 2fr 3fr;
       border-bottom: 1px solid var(--ink);
     }
-    .cat-card-full-img {
+    .offer-full-l {
+      padding: 4rem 3rem;
+      background: var(--ink);
       border-right: 1px solid var(--ink);
-      overflow: hidden; aspect-ratio: 4/3;
-      position: relative;
-    }
-    .cat-card-full-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
-    .cat-card-full:hover .cat-card-full-img img { transform: scale(1.03); }
-    .cat-card-full-text {
-      padding: 3rem 2.5rem;
       display: flex; flex-direction: column; justify-content: space-between;
-      transition: background 0.25s var(--ease);
     }
-    .cat-card-full:hover .cat-card-full-text { background: var(--warm); }
-    .cat-card-full .cat-title { font-size: 46px; }
-    .cat-card-full .cat-title em { font-size: 42px; }
-    .cat-card-full .cat-body { font-size: 17px; }
+    .offer-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 2rem; }
+    .offer-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 66px; font-weight: 900;
+      text-transform: uppercase; line-height: 0.88; letter-spacing: -0.02em; color: #fff;
+    }
+    .offer-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 60px; font-weight: 400; text-transform: none;
+      color: var(--sun); display: block; margin-top: 0.1em;
+    }
+    .offer-tags { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 2.5rem; }
+    .offer-tag {
+      font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 0.5rem;
+    }
+    .offer-tag:first-child { border-top: 1px solid rgba(255,255,255,0.12); }
+
+    .offer-full-r {
+      padding: 4rem 3rem;
+      display: flex; flex-direction: column; gap: 2.5rem;
+    }
+    .offer-intro p {
+      font-family: 'EB Garamond', serif; font-size: 22px; font-style: italic;
+      line-height: 1.7; color: var(--ink);
+    }
+    .offer-program { }
+    .offer-prog-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .offer-prog-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .offer-prog-list li {
+      font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic;
+      color: var(--mid); padding-left: 1.4rem; position: relative; line-height: 1.5;
+    }
+    .offer-prog-list li::before { content: '—'; position: absolute; left: 0; color: var(--rule); font-style: normal; }
+    .offer-footer {
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap;
+    }
+    .offer-format { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+    .offer-format-item { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); }
+    .offer-format-sep { color: var(--rule); }
+    .offer-cta {
+      display: inline-block; background: var(--vert); color: #fff;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem;
+      white-space: nowrap;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+    .offer-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(45,106,63,0.35); }
+
+    /* GRILLE DES AUTRES ATELIERS */
+    .ateliers-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .offer-card {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column; gap: 1.2rem;
+    }
+    .offer-card:last-child { border-right: none; }
+    .offer-card-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); }
+    .offer-card-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900;
+      text-transform: uppercase; line-height: 1.0; letter-spacing: -0.01em; color: var(--ink);
+    }
+    .offer-card-title em {
+      font-family: 'EB Garamond', serif; font-style: italic; font-size: 32px;
+      font-weight: 400; text-transform: none; color: var(--mid); display: block;
+    }
+    .offer-card-body {
+      font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic;
+      line-height: 1.7; color: var(--mid); flex: 1;
+    }
+    .offer-card--soon { background: var(--warm); }
+    .offer-card-badge {
+      display: inline-block; align-self: flex-start;
+      font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--mid); border: 1px solid var(--rule); padding: 0.3rem 0.8rem;
+      margin-top: 0.5rem;
+    }
 
     /* À VENIR */
     .avenir { border-bottom: 1px solid var(--ink); }
@@ -233,12 +281,15 @@
       .motto { font-size: 32px; }
       .motto em { font-size: 28px; }
       .header-stats { gap: 1.5rem; }
-      .catalogue { grid-template-columns: 1fr; }
-      .cat-card { border-right: none; border-bottom: 1px solid var(--ink); }
-      .cat-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
-      .cat-card:last-child { border-bottom: none; }
-      .cat-card-full { grid-template-columns: 1fr; }
-      .cat-card-full-img { border-right: none; border-bottom: 1px solid var(--ink); aspect-ratio: 3/2; }
+      .offer-full { grid-template-columns: 1fr; }
+      .offer-full-l { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--ink); }
+      .offer-title { font-size: 52px; }
+      .offer-title em { font-size: 46px; }
+      .offer-full-r { padding: 2.5rem 1.5rem; }
+      .offer-footer { flex-direction: column; align-items: flex-start; }
+      .ateliers-grid { grid-template-columns: 1fr; }
+      .offer-card { border-right: none; border-bottom: 1px solid var(--ink); }
+      .offer-card:last-child { border-bottom: none; }
       .avenir-coming { grid-template-columns: 1fr; }
       .coming-card { border-right: none; border-bottom: 1px solid var(--ink); }
       .coming-card:last-child { border-bottom: none; }
@@ -335,113 +386,87 @@
     <div class="header-r">
       <div class="motto-block">
         <div class="motto-label">— Le principe</div>
-        <div class="motto">Mieux comprendre<em>ce que le vin exprime.</em></div>
-        <p class="motto-body">Pas de vocabulaire technique imposé, pas de hiérarchie entre les vins. On part de ce qu'on ressent dans le verre — et on remonte jusqu'au sol, au climat, au geste du vigneron. Chaque atelier est une question posée ensemble.</p>
+        <div class="motto">Comprendre le vin<em>sans le subir.</em></div>
+        <p class="motto-body">Des ateliers conçus pour les curieux — pas pour les connaisseurs. On part de ce qu'on ressent dans le verre, sans jargon imposé, sans hiérarchie entre les vins. Chaque session est construite autour d'une question simple : qu'est-ce qu'il y a vraiment là-dedans ?</p>
       </div>
       <div class="header-stats">
         <div class="stat">
-          <div class="stat-num">6–14</div>
-          <div class="stat-label">Participants</div>
+          <div class="stat-num">3</div>
+          <div class="stat-label">Ateliers au catalogue</div>
         </div>
         <div class="stat">
-          <div class="stat-num">5–7</div>
+          <div class="stat-num">5–6</div>
           <div class="stat-label">Vins par session</div>
         </div>
         <div class="stat">
           <div class="stat-num">2h</div>
-          <div class="stat-label">Durée moyenne</div>
+          <div class="stat-label">Format standard</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CATALOGUE PASSÉ -->
+  <!-- NOS ATELIERS -->
   <div class="sbar">
-    <span class="sbar-l">— Les ateliers</span>
-    <span class="sbar-r">Sessions passées</span>
+    <span class="sbar-l">— Nos ateliers</span>
+    <span class="sbar-r">Offres à la réservation</span>
   </div>
 
-  <div class="catalogue">
+  <div class="ateliers">
 
-    <!-- CARTE VEDETTE — pleine largeur -->
-    <div class="cat-card-full">
-      <div class="cat-card-full-img">
-        <img src="vine1.jpg" alt="Rosé de Provence — atelier dégustation" />
-      </div>
-      <div class="cat-card-full-text">
-        <div>
-          <div class="cat-num">No. 01</div>
-          <div class="cat-theme">Terroir · Provence</div>
-          <div class="cat-title">Le rosé, enfin<em>pris au sérieux.</em></div>
-          <p class="cat-body">On commence par là parce que tout le monde a un avis sur le rosé — et que la plupart de ces avis sont faux. Pâle ou non, sec ou pas, de Provence ou d'ailleurs : on démonte les préjugés un verre à la fois. Ce que la couleur dit vraiment. Ce que le sol ajoute. Ce que le millésime change.</p>
-        </div>
-        <div class="cat-footer">
-          <span class="cat-tag">Grenache · Cinsault · Mourvèdre</span>
-          <span class="cat-tag">Provence</span>
-          <span class="cat-tag">Débutants bienvenus</span>
+    <!-- OFFRE 01 — VEDETTE : Atelier Débutant Vin Nature -->
+    <div class="offer-full">
+      <div class="offer-full-l">
+        <div class="offer-label">— Atelier 01 · Débutant</div>
+        <div class="offer-title">Découvrir<em>le vin nature.</em></div>
+        <div class="offer-tags">
+          <span class="offer-tag">Aucun prérequis</span>
+          <span class="offer-tag">6 à 12 personnes</span>
+          <span class="offer-tag">2h · à partir de 40€/pers.</span>
+          <span class="offer-tag">Marseille</span>
         </div>
       </div>
-    </div>
-
-    <!-- CARTE 2 -->
-    <div class="cat-card">
-      <div class="cat-num">No. 02</div>
-      <div class="cat-theme">Cépage · Sud</div>
-      <div class="cat-title">Grenache :<em>le caméléon.</em></div>
-      <p class="cat-body">Même cépage, sols différents, expressions radicalement opposées. On compare un Grenache de garrigue, un autre d'altitude, un troisième élevé en barrique. L'exercice révèle ce que le terroir fait — et ce que le vigneron décide.</p>
-      <div class="cat-footer">
-        <span class="cat-tag">Grenache</span>
-        <span class="cat-tag">Comparatif vertical</span>
+      <div class="offer-full-r">
+        <div class="offer-intro">
+          <p>Un premier pas dans le vin sans la pression du vocabulaire. On part de ce qu'on ressent dans le verre — et on remonte vers le geste du vigneron qui a décidé de ne rien ajouter, de ne rien corriger.</p>
+        </div>
+        <div class="offer-program">
+          <div class="offer-prog-label">— Ce qu'on explore</div>
+          <ul class="offer-prog-list">
+            <li>Pourquoi "nature" ne veut pas dire bizarre ou défectueux</li>
+            <li>La différence entre conventionnel, bio, biodynamique et nature</li>
+            <li>Comment reconnaître un vin vivant — à l'œil, au nez, en bouche</li>
+            <li>5 à 6 vins de producteurs engagés : blanc, rosé, rouge, parfois pétillant naturel</li>
+            <li>Lecture d'étiquette : ce que les vignerons nature disent (et ne disent pas)</li>
+            <li>Ressources et références pour continuer à explorer après l'atelier</li>
+          </ul>
+        </div>
+        <div class="offer-footer">
+          <div class="offer-format">
+            <span class="offer-format-item">2h de dégustation guidée</span>
+            <span class="offer-format-sep">·</span>
+            <span class="offer-format-item">6–12 participants</span>
+            <span class="offer-format-sep">·</span>
+            <span class="offer-format-item">À partir de 40 € / pers.</span>
+          </div>
+          <a href="mailto:paul@pauldefais.fr?subject=Atelier Débutant Vin Nature" class="offer-cta">Réserver une session →</a>
+        </div>
       </div>
     </div>
 
-    <!-- CARTE 3 -->
-    <div class="cat-card">
-      <div class="cat-num">No. 03</div>
-      <div class="cat-theme">Cépage · Mistral</div>
-      <div class="cat-title">La Syrah<em>du sud.</em></div>
-      <p class="cat-body">Cépage du nord adopté par le Rhône méridional et la Provence. On explore ce que le soleil et le vent lui font — les épices, le poivre, le côté animal qui disparaît ou s'amplifie selon l'altitude et la main du vigneron.</p>
-      <div class="cat-footer">
-        <span class="cat-tag">Syrah</span>
-        <span class="cat-tag">Rhône · Provence</span>
+    <!-- GRILLE — prochains ateliers en préparation -->
+    <div class="ateliers-grid">
+      <div class="offer-card offer-card--soon">
+        <div class="offer-card-label">— Atelier 02 · En préparation</div>
+        <div class="offer-card-title">Terroir & Cépage :<em>décoder le Sud.</em></div>
+        <p class="offer-card-body">Grenache, Syrah, Mourvèdre — les trois cépages qui structurent le vin méridional. Comparatif sur terroirs différents pour comprendre ce que le sol change dans le verre.</p>
+        <span class="offer-card-badge">Bientôt disponible</span>
       </div>
-    </div>
-
-    <!-- CARTE 4 -->
-    <div class="cat-card">
-      <div class="cat-num">No. 04</div>
-      <div class="cat-theme">Voyage · Piémont</div>
-      <div class="cat-title">Barolo :<em>la patience.</em></div>
-      <p class="cat-body">Un détour par les Langhe pour comprendre ce que le Nebbiolo exige — du temps, de la rigueur, un sol précis. Pourquoi ce cépage ne pousse vraiment nulle part ailleurs. Et ce que ça apprend à quelqu'un qui vient de Provence.</p>
-      <div class="cat-footer">
-        <span class="cat-tag">Nebbiolo</span>
-        <span class="cat-tag">Piémont · Italie</span>
-        <span class="cat-tag">Comparatif</span>
-      </div>
-    </div>
-
-    <!-- CARTE 5 -->
-    <div class="cat-card">
-      <div class="cat-num">No. 05</div>
-      <div class="cat-theme">Terroir · Saison</div>
-      <div class="cat-title">Vieilles vignes :<em>ce que l'âge change.</em></div>
-      <p class="cat-body">On goûte côte à côte des vins issus de jeunes et de vieilles vignes sur un même domaine. La différence est là, mais elle est subtile — et c'est précisément ce qu'on cherche à saisir. Concentration, profondeur, silence dans le verre.</p>
-      <div class="cat-footer">
-        <span class="cat-tag">Vieilles vignes</span>
-        <span class="cat-tag">Analyse comparative</span>
-      </div>
-    </div>
-
-    <!-- CARTE 6 -->
-    <div class="cat-card">
-      <div class="cat-num">No. 06</div>
-      <div class="cat-theme">Voyage · Castille</div>
-      <div class="cat-title">Ribera del Duero :<em>l'altitude.</em></div>
-      <p class="cat-body">À 900 mètres, entre les étés brûlants et les nuits froides, le Tempranillo donne quelque chose d'unique. Un atelier autour de la tension entre le soleil et le froid — et de ce que ça produit dans le verre.</p>
-      <div class="cat-footer">
-        <span class="cat-tag">Tempranillo</span>
-        <span class="cat-tag">Espagne</span>
-        <span class="cat-tag">Altitude</span>
+      <div class="offer-card offer-card--soon">
+        <div class="offer-card-label">— Atelier 03 · En préparation</div>
+        <div class="offer-card-title">Dégustation à l'aveugle :<em>tromper ses certitudes.</em></div>
+        <p class="offer-card-body">Sans étiquettes, tout change. On goûte avec les yeux fermés — et on découvre à quel point on boit avec les yeux. L'exercice le plus révélateur.</p>
+        <span class="offer-card-badge">Bientôt disponible</span>
       </div>
     </div>
 
