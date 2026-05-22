@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier Débutant — Découvrir le vin nature · Tastodisso™</title>
+  <meta name="description" content="Atelier dégustation pour découvrir le vin nature à Marseille. 5 à 6 vins, 2h, aucun prérequis. On part de ce qu'on ressent dans le verre — sans jargon. Par Paul Defais." />
+  <link rel="canonical" href="https://www.pauldefais.fr/atelier-debutant-vin-nature.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pauldefais.fr/atelier-debutant-vin-nature.html" />
+  <meta property="og:title" content="Atelier Débutant — Découvrir le vin nature · Tastodisso™" />
+  <meta property="og:description" content="Atelier dégustation pour découvrir le vin nature à Marseille. 5 à 6 vins, 2h, aucun prérequis." />
+  <meta property="og:image" content="https://www.pauldefais.fr/vine1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Atelier Débutant — Découvrir le vin nature" />
+  <meta name="twitter:description" content="Atelier dégustation pour découvrir le vin nature à Marseille. 5 à 6 vins, 2h, aucun prérequis." />
+  <meta name="twitter:image" content="https://www.pauldefais.fr/vine1.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Atelier Débutant — Découvrir le vin nature",
+    "description": "Atelier dégustation pour découvrir le vin nature à Marseille. 5 à 6 vins, 2h, aucun prérequis.",
+    "url": "https://www.pauldefais.fr/atelier-debutant-vin-nature.html",
+    "provider": {
+      "@type": "Person",
+      "name": "Paul Defais",
+      "url": "https://www.pauldefais.fr/about.html"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "40",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "courseMode": "in-person",
+    "locationCreated": { "@type": "Place", "name": "Marseille, France" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FFF8F0; --ink: #1A0E00; --warm: #F5E6C8;
+      --sun: #F5A623; --rouge: #C8341A; --vert: #2D6A3F;
+      --mid: #8A6A40; --rule: #D4B888;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      align-items: center; padding: 0 2rem; height: 52px;
+      border-bottom: 1px solid rgba(26,14,0,0.18);
+      background: rgba(255,248,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-l { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); }
+    .nav-l li { cursor: pointer; transition: color 0.2s; }
+    .nav-l li:hover, .nav-l li.active { color: var(--ink); }
+    .nav-logo { text-align: center; }
+    .logo-main { font-family: 'Bebas Neue', sans-serif; font-size: 28px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; display: block; color: var(--ink); line-height: 1; }
+    .logo-tm { font-size: 11px; vertical-align: super; font-weight: 700; letter-spacing: 0; }
+    .logo-sub { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+    .nav-r { display: flex; gap: 1.8rem; list-style: none; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); justify-content: flex-end; align-items: center; }
+    .nav-r li { cursor: pointer; transition: color 0.2s; }
+    .nav-r li:hover { color: var(--ink); }
+    .nav-cta { background: var(--rouge); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.1rem; display: inline-block; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,52,26,0.35); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink); min-height: 420px;
+    }
+    .hero-l {
+      background: var(--vert);
+      padding: 4rem 3rem;
+      border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .hero-breadcrumb { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .hero-breadcrumb a { color: inherit; }
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 80px; font-weight: 900;
+      text-transform: uppercase; line-height: 0.86;
+      letter-spacing: -0.02em; color: #fff;
+    }
+    .hero-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 72px; font-weight: 400; text-transform: none;
+      color: #d4f0dc; display: block; margin-top: 0.08em;
+    }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .hero-chip {
+      font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.3rem 0.8rem;
+    }
+
+    .hero-r {
+      padding: 4rem 3rem;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem;
+    }
+    .hero-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+    .hero-intro {
+      font-family: 'EB Garamond', serif; font-size: 22px; font-style: italic;
+      line-height: 1.72; color: var(--ink);
+    }
+    .hero-facts { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; }
+    .fact { }
+    .fact-val { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900; line-height: 1; color: var(--ink); }
+    .fact-key { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-top: 0.2rem; }
+
+    /* SECTION BAR */
+    .sbar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
+    .sbar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+    .sbar-r { font-size: 11px; color: var(--mid); font-style: italic; font-family: 'EB Garamond', serif; }
+
+    /* POUR QUI */
+    .pourqui {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .pq-col {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--ink);
+    }
+    .pq-col:last-child { border-right: none; }
+    .pq-icon { font-size: 28px; margin-bottom: 1.2rem; }
+    .pq-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; line-height: 1.1;
+    }
+    .pq-body {
+      font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic;
+      line-height: 1.7; color: var(--mid);
+    }
+    .pq-col--yes { background: #f0f8f1; }
+    .pq-col--no .pq-title { color: var(--mid); }
+
+    /* PROGRAMME */
+    .programme { border-bottom: 1px solid var(--ink); }
+    .prog-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .prog-intro {
+      padding: 3.5rem 3rem;
+      border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--ink);
+    }
+    .prog-intro-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem; }
+    .prog-intro-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900;
+      text-transform: uppercase; line-height: 0.9; letter-spacing: -0.02em; color: #fff;
+    }
+    .prog-intro-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 46px; font-weight: 400; text-transform: none;
+      color: var(--sun); display: block; margin-top: 0.08em;
+    }
+    .prog-intro-body {
+      font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic;
+      line-height: 1.7; color: rgba(255,255,255,0.55); margin-top: 2rem;
+    }
+    .prog-steps {
+      padding: 3.5rem 3rem;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .prog-step {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: start;
+    }
+    .prog-step:first-child { padding-top: 0; }
+    .prog-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .prog-num {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--rule); padding-top: 0.1rem;
+    }
+    .prog-content { }
+    .prog-step-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 0.4rem;
+    }
+    .prog-step-body {
+      font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic;
+      line-height: 1.65; color: var(--mid);
+    }
+
+    /* LES VINS */
+    .les-vins { border-bottom: 1px solid var(--ink); }
+    .vins-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
+    .vin-card {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column; gap: 0.8rem;
+    }
+    .vin-card:last-child { border-right: none; }
+    .vin-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: var(--rule); }
+    .vin-type {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 900;
+      text-transform: uppercase; line-height: 1.05; color: var(--ink);
+    }
+    .vin-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      margin: 0.2rem 0;
+    }
+    .vin-desc {
+      font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic;
+      line-height: 1.65; color: var(--mid); flex: 1;
+    }
+    .vin-note { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rule); }
+
+    /* PULL QUOTE */
+    .pullquote {
+      padding: 4rem 3rem;
+      border-bottom: 1px solid var(--ink);
+      display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center;
+    }
+    .pq-left { }
+    .pq-marker { font-family: 'Barlow Condensed', sans-serif; font-size: 120px; font-weight: 900; line-height: 0.8; color: var(--rule); margin-bottom: 0.5rem; }
+    .pq-credit { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+    .pq-text {
+      font-family: 'EB Garamond', serif; font-size: 32px; font-style: italic;
+      line-height: 1.45; color: var(--ink);
+    }
+    .pq-text strong { font-style: normal; font-weight: 500; color: var(--vert); }
+
+    /* PRATIQUE */
+    .pratique { border-bottom: 1px solid var(--ink); }
+    .pratique-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .pratique-col {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--ink);
+    }
+    .pratique-col:last-child { border-right: none; }
+    .pratique-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 900;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 1.8rem;
+    }
+    .pratique-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+    .pratique-list li {
+      display: grid; grid-template-columns: 9rem 1fr; gap: 1rem;
+      font-family: 'EB Garamond', serif; font-size: 16px; line-height: 1.5;
+      border-bottom: 1px solid var(--warm); padding-bottom: 1.1rem;
+    }
+    .pratique-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .pratique-key { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); padding-top: 0.25rem; font-family: 'DM Sans', sans-serif; }
+    .pratique-val { color: var(--ink); font-style: italic; }
+
+    /* CTA BAS */
+    .bottom-cta {
+      background: var(--vert); padding: 3.5rem 3rem;
+      display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+      border-bottom: 1px solid var(--ink);
+    }
+    .bottom-cta-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900;
+      text-transform: uppercase; line-height: 0.9; color: #fff;
+    }
+    .bottom-cta-title em {
+      font-family: 'EB Garamond', serif; font-style: italic; font-size: 46px;
+      font-weight: 400; text-transform: none; color: #d4f0dc; display: block;
+    }
+    .bottom-cta-right { display: flex; flex-direction: column; gap: 1rem; align-items: flex-end; }
+    .bottom-cta-price {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900;
+      color: #fff; line-height: 1;
+    }
+    .bottom-cta-price span { font-size: 13px; font-weight: 400; font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,0.55); }
+    .btn-reserve {
+      display: inline-block; background: #fff; color: var(--vert);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2.5rem;
+      white-space: nowrap;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+    .btn-reserve:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+    /* LIRE AUSSI */
+    .lire-aussi { border-bottom: 1px solid var(--ink); }
+    .lire-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .lire-card {
+      padding: 2.5rem 2.5rem;
+      border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column; gap: 1rem;
+      transition: background 0.2s var(--ease);
+    }
+    .lire-card:last-child { border-right: none; }
+    .lire-card:hover { background: var(--warm); }
+    .lire-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); }
+    .lire-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 900;
+      text-transform: uppercase; line-height: 1.0; color: var(--ink);
+    }
+    .lire-title em {
+      font-family: 'EB Garamond', serif; font-style: italic; font-size: 26px;
+      font-weight: 400; text-transform: none; color: var(--rouge); display: block;
+    }
+    .lire-body {
+      font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic;
+      line-height: 1.65; color: var(--mid); flex: 1;
+    }
+    .lire-cta {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+      align-self: flex-start; transition: color 0.2s, border-color 0.2s;
+    }
+    .lire-cta:hover { color: var(--rouge); border-color: var(--rouge); }
+
+    /* FOOTER */
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 3rem 2rem; gap: 2rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
+    .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.3rem; color: var(--ink); }
+    .ft-sub { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.2rem; }
+    .ft-body { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--mid); line-height: 1.65; }
+    .ft-head { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+    .ft-links li:hover { color: var(--rouge); }
+    .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
+
+    @media (max-width: 768px) {
+      .nav-l { display: none; }
+      .nav { grid-template-columns: 1fr auto; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-l { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--ink); }
+      .hero-title { font-size: 56px; }
+      .hero-title em { font-size: 50px; }
+      .hero-r { padding: 2.5rem 1.5rem; }
+      .hero-intro { font-size: 18px; }
+      .pourqui { grid-template-columns: 1fr; }
+      .pq-col { border-right: none; border-bottom: 1px solid var(--ink); }
+      .pq-col:last-child { border-bottom: none; }
+      .prog-grid { grid-template-columns: 1fr; }
+      .prog-intro { border-right: none; border-bottom: 1px solid var(--ink); }
+      .vins-grid { grid-template-columns: 1fr 1fr; }
+      .vin-card:nth-child(2n) { border-right: none; }
+      .vin-card { border-bottom: 1px solid var(--ink); }
+      .vin-card:nth-last-child(-n+1) { border-bottom: none; }
+      .pullquote { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 1.5rem; }
+      .pq-marker { font-size: 80px; }
+      .pq-text { font-size: 24px; }
+      .pratique-grid { grid-template-columns: 1fr; }
+      .pratique-col { border-right: none; border-bottom: 1px solid var(--ink); }
+      .pratique-col:last-child { border-bottom: none; }
+      .bottom-cta { grid-template-columns: 1fr; }
+      .bottom-cta-right { align-items: flex-start; }
+      .lire-grid { grid-template-columns: 1fr; }
+      .lire-card { border-right: none; border-bottom: 1px solid var(--ink); }
+      .lire-card:last-child { border-bottom: none; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="nav-l">
+      <li class="active"><a href="atelier-degustation.html">Atelier</a></li>
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="domaines.html">Domaines</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Tastodisso<span class="logo-tm">™</span></span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="travailler-avec-moi.html">Agence Saint Vincent</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-l">
+      <div class="hero-breadcrumb">
+        <a href="atelier-degustation.html">← Ateliers</a> · Atelier 01
+      </div>
+      <div>
+        <h1 class="hero-title">Découvrir<em>le vin nature.</em></h1>
+      </div>
+      <div class="hero-chips">
+        <span class="hero-chip">Débutants</span>
+        <span class="hero-chip">Aucun prérequis</span>
+        <span class="hero-chip">6–12 personnes</span>
+        <span class="hero-chip">Marseille</span>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="hero-label">— Atelier 01 · Dégustation</div>
+      <p class="hero-intro">Le vin nature, ça intimide — ou ça agace. Trop de discours, trop de pétillant trouble, trop de vignerons en salopette. On met tout ça de côté. On ouvre des bouteilles. On goûte. Et on comprend ce que "rien ajouté, rien enlevé" change vraiment dans le verre.</p>
+      <div class="hero-facts">
+        <div class="fact">
+          <div class="fact-val">2h</div>
+          <div class="fact-key">De dégustation</div>
+        </div>
+        <div class="fact">
+          <div class="fact-val">5–6</div>
+          <div class="fact-key">Vins ouverts</div>
+        </div>
+        <div class="fact">
+          <div class="fact-val">40€</div>
+          <div class="fact-key">Par personne</div>
+        </div>
+        <div class="fact">
+          <div class="fact-val">0</div>
+          <div class="fact-key">Prérequis</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POUR QUI -->
+  <div class="sbar">
+    <span class="sbar-l">— Pour qui</span>
+    <span class="sbar-r">Profil des participants</span>
+  </div>
+
+  <div class="pourqui">
+    <div class="pq-col pq-col--yes">
+      <div class="pq-icon">✓</div>
+      <div class="pq-title">Tu n'y connais rien —<br>et c'est parfait.</div>
+      <p class="pq-body">Zéro vocabulaire requis. Pas besoin de savoir reconnaître un cépage ou nommer une région. On part des sensations — ce que tu ressens dans le verre avant de savoir quoi y mettre comme mot.</p>
+    </div>
+    <div class="pq-col pq-col--yes">
+      <div class="pq-icon">✓</div>
+      <div class="pq-title">Tu bois déjà du vin conventionnel<br>et tu veux comprendre la différence.</div>
+      <p class="pq-body">Quelqu'un t'a conseillé un Gamay nature, une Clairette biodynamique, un orange. Tu as goûté quelque chose d'inattendu — trouble, vif, différent. Cet atelier t'explique pourquoi.</p>
+    </div>
+    <div class="pq-col">
+      <div class="pq-icon">→</div>
+      <div class="pq-title">Pas pour les experts<br>qui cherchent à perfectionner.</div>
+      <p class="pq-body">Si tu notes déjà les vins, si tu connais la différence entre Chablis et Meursault, cet atelier est trop introductif pour toi. Les ateliers Terroir & Cépage ou Dégustation à l'aveugle sont plus adaptés — bientôt disponibles.</p>
+    </div>
+  </div>
+
+  <!-- PROGRAMME -->
+  <div class="sbar">
+    <span class="sbar-l">— Le programme</span>
+    <span class="sbar-r">Déroulé sur 2h</span>
+  </div>
+
+  <div class="programme">
+    <div class="prog-grid">
+      <div class="prog-intro">
+        <div class="prog-intro-label">— La méthode</div>
+        <div class="prog-intro-title">Pas de cours.<em>Une question.</em></div>
+        <p class="prog-intro-body">Chaque verre posé devant toi est une hypothèse. On l'observe, on le sent, on le goûte — et on remonte vers ce qui l'a produit. La théorie arrive après la sensation, jamais avant.</p>
+      </div>
+      <div class="prog-steps">
+        <div class="prog-step">
+          <div class="prog-num">01</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Introduction : pourquoi "nature" est un mot compliqué</div>
+            <p class="prog-step-body">Il n'existe pas de définition légale du vin nature. On commence par là — pour comprendre ce que le terme recouvre vraiment, et ce qu'il ne garantit pas. Conventionnel, bio, biodynamique, nature : un spectre, pas une frontière.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">02</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Premier verre : un pét-nat</div>
+            <p class="prog-step-body">Un pétillant naturel, trouble, sans dosage. On l'observe (la couleur, le dépôt), on le sent à froid, on le sent plus chaud. Premier contact avec ce que "vivant" signifie dans le verre.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">03</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Comparatif : blanc conventionnel vs blanc nature</div>
+            <p class="prog-step-body">Deux verres côte à côte, même cépage, même région. L'un vinifié avec soufre et filtration, l'autre sans. On cherche les différences — à l'œil, au nez, en bouche, dans la persistance.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">04</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Orange et macération : quand le blanc se tanne</div>
+            <p class="prog-step-body">Un blanc macéré sur peaux — couleur cuivrée, structure en bouche, tanins sur un raisin blanc. Pourquoi certains vignerons font ça, et ce que ça change dans l'expression du fruit et du terroir.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">05</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Deux rouges : fruit cru vs profondeur</div>
+            <p class="prog-step-body">Un Gamay nature léger et juteux, un rouge plus structuré sur un autre cépage. On explore comment la vinification sans intrants amplifie ou révèle ce que le raisin porte déjà — et ce que le vigneron choisit de laisser s'exprimer.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">06</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Lecture d'étiquette et ressources pour continuer</div>
+            <p class="prog-step-body">Ce que les labels AB, Demeter, "vin méthode nature" veulent dire. Les caves à Marseille et en ligne pour trouver ce qu'on a goûté. Une liste des vins de la session envoyée à chaque participant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LES VINS -->
+  <div class="sbar">
+    <span class="sbar-l">— Les vins</span>
+    <span class="sbar-r">Sélection type · varie selon les sessions</span>
+  </div>
+
+  <div class="les-vins">
+    <div class="vins-grid">
+      <div class="vin-card">
+        <div class="vin-num">01</div>
+        <div class="vin-type">Pét-nat</div>
+        <div class="vin-dot" style="background: #f5e0a0;"></div>
+        <p class="vin-desc">Pétillant naturel, trouble, non dosé. Souvent en blanc sur Chenin, Mauzac ou Clairette. Le point d'entrée le plus désarmant — et le plus libre.</p>
+        <div class="vin-note">Effervescent · Trouble</div>
+      </div>
+      <div class="vin-card">
+        <div class="vin-num">02</div>
+        <div class="vin-type">Blanc conventionnel</div>
+        <div class="vin-dot" style="background: #f0e8c8;"></div>
+        <p class="vin-desc">Le repère. Un blanc vinifié de façon classique — soufre, filtration, stabilisation. On le goûte pour mesurer l'écart avec ce qui suit.</p>
+        <div class="vin-note">Référence · Comparatif</div>
+      </div>
+      <div class="vin-card">
+        <div class="vin-num">03</div>
+        <div class="vin-type">Blanc nature</div>
+        <div class="vin-dot" style="background: #e8dbb0;"></div>
+        <p class="vin-desc">Même cépage que le 02, sans soufre ajouté, non filtré. Le même — et totalement autre chose. C'est là que la conversation commence vraiment.</p>
+        <div class="vin-note">Comparatif direct</div>
+      </div>
+      <div class="vin-card">
+        <div class="vin-num">04</div>
+        <div class="vin-type">Orange</div>
+        <div class="vin-dot" style="background: #d4a870;"></div>
+        <p class="vin-desc">Blanc vinifié sur peaux — couleur ambrée, tanins perceptibles, texture en bouche inhabituelle. Le vin qui déroute le plus et explique le mieux.</p>
+        <div class="vin-note">Macération pelliculaire</div>
+      </div>
+      <div class="vin-card">
+        <div class="vin-num">05–06</div>
+        <div class="vin-type">Rouge nature ×2</div>
+        <div class="vin-dot" style="background: #8b2020;"></div>
+        <p class="vin-desc">Un rouge léger et fruité (souvent Gamay ou Pineau d'Aunis) et un rouge plus structuré. Pour comprendre que le vin nature n'est pas un style — c'est une décision.</p>
+        <div class="vin-note">Fruit · Structure · Terroir</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pullquote">
+    <div class="pq-left">
+      <div class="pq-marker">"</div>
+      <div class="pq-credit">— Paul Defais</div>
+    </div>
+    <p class="pq-text">Le vin nature, ce n'est pas un goût. C'est une intention. Et quand on comprend l'intention du vigneron, on goûte <strong>autrement</strong> — même les vins qu'on connaît déjà.</p>
+  </div>
+
+  <!-- PRATIQUE -->
+  <div class="sbar">
+    <span class="sbar-l">— Infos pratiques</span>
+    <span class="sbar-r">Format et conditions</span>
+  </div>
+
+  <div class="pratique">
+    <div class="pratique-grid">
+      <div class="pratique-col">
+        <div class="pratique-title">Le format</div>
+        <ul class="pratique-list">
+          <li>
+            <span class="pratique-key">Durée</span>
+            <span class="pratique-val">2h de dégustation guidée</span>
+          </li>
+          <li>
+            <span class="pratique-key">Participants</span>
+            <span class="pratique-val">6 à 12 personnes · ambiance intime, pas de conférence</span>
+          </li>
+          <li>
+            <span class="pratique-key">Vins</span>
+            <span class="pratique-val">5 à 6 vins ouverts · sélection selon la saison et les arrivages</span>
+          </li>
+          <li>
+            <span class="pratique-key">Lieu</span>
+            <span class="pratique-val">Marseille · adresse confirmée à l'inscription</span>
+          </li>
+          <li>
+            <span class="pratique-key">Ce qui est fourni</span>
+            <span class="pratique-val">Verres, eau, liste des vins dégustés par email après la session</span>
+          </li>
+        </ul>
+      </div>
+      <div class="pratique-col">
+        <div class="pratique-title">La réservation</div>
+        <ul class="pratique-list">
+          <li>
+            <span class="pratique-key">Tarif</span>
+            <span class="pratique-val">40 € par personne · réglé sur place en cash ou virement</span>
+          </li>
+          <li>
+            <span class="pratique-key">Groupe privé</span>
+            <span class="pratique-val">Possible · à partir de 6 personnes · date et lieu adaptables</span>
+          </li>
+          <li>
+            <span class="pratique-key">Annulation</span>
+            <span class="pratique-val">Remboursement intégral si annulé 48h avant</span>
+          </li>
+          <li>
+            <span class="pratique-key">Contact</span>
+            <span class="pratique-val">Par email à paul@pauldefais.fr · réponse sous 24h</span>
+          </li>
+          <li>
+            <span class="pratique-key">Prochaines dates</span>
+            <span class="pratique-val">Voir <a href="atelier-degustation.html#avenir" style="border-bottom:1px solid var(--rule)">la page ateliers</a> · nouvelles sessions chaque mois</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="bottom-cta">
+    <div>
+      <div class="bottom-cta-title">Réserver<em>une session.</em></div>
+    </div>
+    <div class="bottom-cta-right">
+      <div class="bottom-cta-price">40 €<span> / pers.</span></div>
+      <a href="mailto:paul@pauldefais.fr?subject=Atelier Débutant Vin Nature — Réservation" class="btn-reserve">Écrire à Paul →</a>
+    </div>
+  </div>
+
+  <!-- LIRE AUSSI -->
+  <div class="sbar">
+    <span class="sbar-l">— Lire aussi</span>
+    <span class="sbar-r">Articles en lien</span>
+  </div>
+
+  <div class="lire-aussi">
+    <div class="lire-grid">
+      <a href="blind-tasting.html" class="lire-card">
+        <div class="lire-label">Dégustation · 8 Mai 2026</div>
+        <div class="lire-title">Blind tasting :<em>pourquoi on se trompe toujours.</em></div>
+        <p class="lire-body">On a goûté dix vins à l'aveugle. Personne n'a trouvé le Barolo. Ce que ça dit sur la façon dont on perçoit le vin — et sur ce qu'on croit savoir.</p>
+        <span class="lire-cta">Lire l'article →</span>
+      </a>
+      <a href="temperature-du-vin.html" class="lire-card">
+        <div class="lire-label">Dégustation · 2 Mai 2026</div>
+        <div class="lire-title">Trop froid.<em>Toujours trop froid.</em></div>
+        <p class="lire-body">Le vin servi trop froid, c'est le problème le plus répandu et le plus ignoré. Ce que la température fait vraiment à ce qu'on goûte.</p>
+        <span class="lire-cta">Lire l'article →</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Tastodisso™</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Ateliers dégustation pour mieux comprendre le vin et ce qu'il exprime. Agence Saint Vincent, Marseille.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="atelier-degustation.html">Atelier</a></li>
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="domaines.html">Domaines</a></li>
+          <li><a href="travailler-avec-moi.html">Agence Saint Vincent</a></li>
+          <li><a href="about.html">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Suivre</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com/agencesaintvincent" target="_blank">Instagram</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Tastodisso™ 2026</span>
+      <span>Provence, France</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
