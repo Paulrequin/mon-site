@@ -245,6 +245,62 @@
       .bottom-cta { flex-direction: column; align-items: flex-start; }
       .foot { grid-template-columns: 1fr 1fr; }
     }
+
+    /* LE DÉROULÉ */
+    .deroulé { border-bottom: 1px solid var(--ink); }
+    .deroulé-intro { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .deroulé-intro-l { padding: 3rem; border-right: 1px solid var(--ink); background: var(--ink); display: flex; flex-direction: column; justify-content: center; }
+    .deroulé-intro-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 1.2rem; }
+    .deroulé-intro-title { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900; text-transform: uppercase; line-height: .92; letter-spacing: -.02em; color: #fff; }
+    .deroulé-intro-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 48px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
+    .deroulé-intro-r { padding: 3rem; display: flex; align-items: center; }
+    .deroulé-intro-body { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.75; color: var(--mid); }
+    .deroulé-steps { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .deroulé-step { padding: 2.5rem 2rem; border-right: 1px solid var(--ink); }
+    .deroulé-step:last-child { border-right: none; }
+    .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 900; color: var(--rule); line-height: 1; margin-bottom: .5rem; }
+    .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: .8rem; letter-spacing: -.01em; }
+    .step-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.7; color: var(--mid); }
+
+    /* LES FORMULES */
+    .formules { border-bottom: 1px solid var(--ink); }
+    .formules-head { padding: .85rem 2rem; border-bottom: 1px solid var(--ink); display: flex; align-items: baseline; justify-content: space-between; }
+    .formules-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .formules-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    .formule-card { padding: 2.5rem 2rem; border-right: 1px solid var(--ink); display: flex; flex-direction: column; }
+    .formule-card:last-child { border-right: none; }
+    .formule-card--highlight { background: var(--ink); }
+    .formule-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rule); margin-bottom: .6rem; }
+    .formule-card--highlight .formule-num { color: rgba(255,255,255,.25); }
+    .formule-title { font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 900; text-transform: uppercase; line-height: 1.0; letter-spacing: -.01em; color: var(--ink); margin-bottom: .4rem; }
+    .formule-card--highlight .formule-title { color: #fff; }
+    .formule-target { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.4rem; }
+    .formule-card--highlight .formule-target { color: rgba(255,255,255,.4); }
+    .formule-includes { list-style: none; display: flex; flex-direction: column; gap: .55rem; margin-bottom: 2rem; flex: 1; }
+    .formule-includes li { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; color: var(--mid); padding-left: 1.2rem; position: relative; line-height: 1.5; }
+    .formule-includes li::before { content: '—'; position: absolute; left: 0; color: var(--rule); font-style: normal; }
+    .formule-card--highlight .formule-includes li { color: rgba(255,255,255,.65); }
+    .formule-card--highlight .formule-includes li::before { color: var(--sun); }
+    .formule-price { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 1.2rem; }
+    .formule-card--highlight .formule-price { color: var(--sun); }
+    .formule-price span { font-size: 11px; font-weight: 400; font-family: 'DM Sans', sans-serif; color: var(--mid); }
+    .formule-card--highlight .formule-price span { color: rgba(255,255,255,.4); }
+    .formule-cta { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .75rem 1.6rem; transition: transform .2s var(--ease); align-self: flex-start; background: var(--ink); color: var(--bg); }
+    .formule-card--highlight .formule-cta { background: var(--sun); color: var(--ink); }
+    .formule-cta:hover { transform: translateY(-2px); }
+
+    @media (max-width: 768px) {
+      .deroulé-intro { grid-template-columns: 1fr; }
+      .deroulé-intro-l { border-right: none; border-bottom: 1px solid var(--ink); }
+      .deroulé-steps { grid-template-columns: 1fr 1fr; }
+      .deroulé-step:nth-child(2) { border-right: none; }
+      .deroulé-step:nth-child(3) { border-right: 1px solid var(--ink); border-top: 1px solid var(--ink); }
+      .deroulé-step:nth-child(4) { border-right: none; border-top: 1px solid var(--ink); }
+      .formules-grid { grid-template-columns: 1fr; }
+      .formule-card { border-right: none; border-bottom: 1px solid var(--ink); }
+      .formule-card:last-child { border-bottom: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -390,6 +446,100 @@
     </div>
 
   </div>
+
+  <!-- LE DÉROULÉ -->
+  <div class="deroulé" id="deroulé">
+    <div class="deroulé-intro">
+      <div class="deroulé-intro-l">
+        <div class="deroulé-intro-label">— Comment ça se passe</div>
+        <div class="deroulé-intro-title">Le déroulé<em>d'une session.</em></div>
+      </div>
+      <div class="deroulé-intro-r">
+        <p class="deroulé-intro-body">Pas de formulaire, pas de contrat en douze pages. On se parle, on construit quelque chose qui a du sens pour votre groupe — et on passe deux heures à comprendre ce qu'il y a dans le verre.</p>
+      </div>
+    </div>
+    <div class="deroulé-steps">
+      <div class="deroulé-step">
+        <div class="step-num">01</div>
+        <div class="step-title">On échange</div>
+        <p class="step-body">Vous décrivez le groupe, le contexte, les envies. Je pose les bonnes questions. Quinze minutes au téléphone ou par email suffisent.</p>
+      </div>
+      <div class="deroulé-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Je construis</div>
+        <p class="step-body">Sélection des vins, thème adapté au niveau du groupe, logistique gérée en amont. Tout est prêt avant d'arriver.</p>
+      </div>
+      <div class="deroulé-step">
+        <div class="step-num">03</div>
+        <div class="step-title">La session</div>
+        <p class="step-body">2h autour du verre. Méthode rigoureuse, ambiance détendue. On part de ce qu'on ressent — et on remonte jusqu'au sol et au vigneron.</p>
+      </div>
+      <div class="deroulé-step">
+        <div class="step-num">04</div>
+        <div class="step-title">La suite</div>
+        <p class="step-body">Liste des vins dégustés, où les trouver, recommandations selon les préférences exprimées. On repart avec quelque chose de concret.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LES FORMULES -->
+  <div class="formules" id="formules">
+    <div class="formules-head">
+      <span class="formules-label">— Les formules</span>
+    </div>
+    <div class="formules-grid">
+
+      <div class="formule-card">
+        <div class="formule-num">Formule 01</div>
+        <div class="formule-title">Session découverte</div>
+        <div class="formule-target">Particuliers · Grand public</div>
+        <ul class="formule-includes">
+          <li>6 à 14 participants</li>
+          <li>5 à 7 vins par session</li>
+          <li>2h de dégustation guidée</li>
+          <li>Thème du catalogue ou sur demande</li>
+          <li>Dégustation à l'aveugle incluse</li>
+          <li>Fiche récapitulative en fin de session</li>
+        </ul>
+        <div class="formule-price">À partir de 40 €<span> / pers.</span></div>
+        <a href="#avenir" class="formule-cta">Voir les sessions →</a>
+      </div>
+
+      <div class="formule-card formule-card--highlight">
+        <div class="formule-num">Formule 02</div>
+        <div class="formule-title">Atelier entreprise</div>
+        <div class="formule-target">Team building · Séminaire · Événement client</div>
+        <ul class="formule-includes">
+          <li>Groupe privatisé — 6 à 30 personnes</li>
+          <li>Thème sur-mesure ou catalogue</li>
+          <li>Dans vos locaux ou lieu partenaire</li>
+          <li>Durée adaptable — 1h30 à 3h</li>
+          <li>Option dégustation à l'aveugle</li>
+          <li>Support personnalisé si besoin</li>
+        </ul>
+        <div class="formule-price">Sur devis<span> — selon groupe et lieu</span></div>
+        <a href="mailto:paul@pauldefais.fr?subject=Atelier entreprise" class="formule-cta">Demander un devis →</a>
+      </div>
+
+      <div class="formule-card">
+        <div class="formule-num">Formule 03</div>
+        <div class="formule-title">Soirée privée</div>
+        <div class="formule-target">Anniversaire · Lancement · Mariage</div>
+        <ul class="formule-includes">
+          <li>De 6 à 50 personnes</li>
+          <li>Thème et sélection à votre convenance</li>
+          <li>Partout en France</li>
+          <li>Animation + sélection de vins fournis</li>
+          <li>Format cocktail ou assis</li>
+          <li>Organisation complète si besoin</li>
+        </ul>
+        <div class="formule-price">Sur devis<span> — selon format et lieu</span></div>
+        <a href="mailto:paul@pauldefais.fr?subject=Soirée privée dégustation" class="formule-cta">Écrire à Paul →</a>
+      </div>
+
+    </div>
+  </div>
+
 
   <!-- À VENIR -->
   <div class="sbar" id="avenir">
