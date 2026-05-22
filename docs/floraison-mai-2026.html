@@ -206,6 +206,15 @@
     .article-cta-btn:hover { transform: translateY(-2px); }
     .article-cta-ghost { font-size: 11px; color: rgba(255,255,255,.5); text-decoration: underline; text-underline-offset: 3px; }
     .article-cta-ghost:hover { color: #fff; }
+    .lire-aussi { border-bottom: 1px solid var(--ink); }
+    .lire-aussi-head { padding: .75rem 2rem; border-bottom: 1px solid var(--ink); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .lire-aussi-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .lire-aussi-item { padding: 1.8rem 2rem; border-right: 1px solid var(--ink); transition: background .2s; display: block; }
+    .lire-aussi-item:last-child { border-right: none; }
+    .lire-aussi-item:hover { background: var(--warm); }
+    .lire-aussi-cat { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--mid); margin-bottom: .5rem; }
+    .lire-aussi-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 18px; line-height: 1.4; color: var(--ink); }
+    @media (max-width: 768px) { .lire-aussi-grid { grid-template-columns: 1fr; } .lire-aussi-item { border-right: none; border-bottom: 1px solid var(--ink); } .lire-aussi-item:last-child { border-bottom: none; } }
     @media (max-width: 768px) { .article-cta { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; } }
 
 
@@ -339,6 +348,19 @@
     </div>
   </div>
 
+  <div class="lire-aussi">
+    <div class="lire-aussi-head">— Lire aussi</div>
+    <div class="lire-aussi-grid">
+      <a href="epamprage-avril.html" class="lire-aussi-item">
+        <div class="lire-aussi-cat">Terroir &amp; Saisons</div>
+        <div class="lire-aussi-title">L'épamprage. Ce que les mains décident.</div>
+      </a>
+      <a href="blind-tasting.html" class="lire-aussi-item">
+        <div class="lire-aussi-cat">Dégustation</div>
+        <div class="lire-aussi-title">Blind tasting : pourquoi on se trompe toujours.</div>
+      </a>
+    </div>
+  </div>
   <div class="article-cta">
     <div class="article-cta-left">
       <div class="article-cta-label">— Aller plus loin</div>
