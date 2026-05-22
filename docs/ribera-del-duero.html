@@ -121,6 +121,18 @@
     .article-cta-ghost:hover { color: #fff; }
     @media (max-width: 768px) { .article-cta { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; } }
 
+
+    /* Lire aussi */
+    .lire-aussi { border-bottom: 1px solid var(--ink); }
+    .lire-aussi-head { padding: .75rem 2rem; border-bottom: 1px solid var(--ink); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .lire-aussi-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .lire-aussi-item { padding: 1.8rem 2rem; border-right: 1px solid var(--ink); transition: background .2s; display: block; }
+    .lire-aussi-item:last-child { border-right: none; }
+    .lire-aussi-item:hover { background: var(--warm); }
+    .lire-aussi-cat { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--mid); margin-bottom: .5rem; }
+    .lire-aussi-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 18px; line-height: 1.4; color: var(--ink); }
+    @media (max-width: 768px) { .lire-aussi-grid { grid-template-columns: 1fr; } .lire-aussi-item { border-right: none; border-bottom: 1px solid var(--ink); } .lire-aussi-item:last-child { border-bottom: none; } }
+
   </style>
 </head>
 <body>
@@ -203,6 +215,20 @@
     </div>
     <div class="article-nav-links">
       <a href="blog.html">← Tous les articles</a>
+    </div>
+  </div>
+
+  <div class="lire-aussi">
+    <div class="lire-aussi-head">— Lire aussi</div>
+    <div class="lire-aussi-grid">
+      <a href="barolo-piemonte.html" class="lire-aussi-item">
+        <div class="lire-aussi-cat">Voyages &amp; Culture</div>
+        <div class="lire-aussi-title">Barolo, la patience des rois</div>
+      </a>
+      <a href="syrah-du-sud.html" class="lire-aussi-item">
+        <div class="lire-aussi-cat">Terroir</div>
+        <div class="lire-aussi-title">La Syrah du sud</div>
+      </a>
     </div>
   </div>
 

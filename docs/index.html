@@ -266,6 +266,23 @@
       .nl-form { max-width: 100%; width: 100%; }
       .foot { grid-template-columns: 1fr 1fr; }
     }
+
+    /* Encart série saisonnière */
+    .serie-strip { border-bottom: 1px solid var(--ink); }
+    .serie-strip-head { display: flex; align-items: baseline; justify-content: space-between; padding: .85rem 2rem; border-bottom: 1px solid var(--ink); }
+    .serie-strip-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .serie-strip-link { font-size: 11px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .serie-strip-title { font-family: 'Barlow Condensed', sans-serif; font-size: 44px; font-weight: 900; text-transform: uppercase; color: var(--ink); line-height: .92; letter-spacing: -.02em; padding: 1.5rem 2rem 0; }
+    .serie-strip-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 40px; font-weight: 400; text-transform: none; color: var(--rouge); }
+    .serie-strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); margin-top: 1.5rem; }
+    .serie-strip-item { padding: 1.5rem 2rem; border-right: 1px solid var(--ink); transition: background .2s; display: block; color: var(--ink); }
+    .serie-strip-item:last-child { border-right: none; }
+    .serie-strip-item:hover { background: var(--warm); }
+    .serie-ep-num { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--mid); margin-bottom: .4rem; }
+    .serie-ep-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 17px; line-height: 1.4; color: var(--ink); }
+    .serie-ep-date { font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--rule); margin-top: .5rem; }
+    @media (max-width: 768px) { .serie-strip-grid { grid-template-columns: 1fr 1fr; } .serie-strip-item:nth-child(2) { border-right: none; } .serie-strip-item:nth-child(3) { border-right: 1px solid var(--ink); border-top: 1px solid var(--ink); } .serie-strip-item:nth-child(4) { border-right: none; border-top: 1px solid var(--ink); } }
+
   </style>
 </head>
 <body>
@@ -370,7 +387,38 @@
     </div>
   </div>
 
-  
+  <div class="serie-strip">
+    <div class="serie-strip-head">
+      <span class="serie-strip-label">— En cours · Série éditoriale</span>
+      <a href="vieilles-vignes-mars.html" class="serie-strip-link">Commencer la série →</a>
+    </div>
+    <div style="padding: 0 2rem">
+      <div class="serie-strip-title">Le calendrier<em>de la vigne.</em></div>
+    </div>
+    <div class="serie-strip-grid">
+      <a href="vieilles-vignes-mars.html" class="serie-strip-item">
+        <div class="serie-ep-num">Épisode 01</div>
+        <div class="serie-ep-title">Vieilles vignes en mars</div>
+        <div class="serie-ep-date">12 Mars 2026</div>
+      </a>
+      <a href="debourrement-avril.html" class="serie-strip-item">
+        <div class="serie-ep-num">Épisode 02</div>
+        <div class="serie-ep-title">Le débourrement d'avril</div>
+        <div class="serie-ep-date">5 Avr. 2026</div>
+      </a>
+      <a href="epamprage-avril.html" class="serie-strip-item">
+        <div class="serie-ep-num">Épisode 03</div>
+        <div class="serie-ep-title">L'épamprage</div>
+        <div class="serie-ep-date">19 Avr. 2026</div>
+      </a>
+      <a href="floraison-mai-2026.html" class="serie-strip-item">
+        <div class="serie-ep-num">Épisode 04</div>
+        <div class="serie-ep-title">La floraison</div>
+        <div class="serie-ep-date">3 Mai 2026</div>
+      </a>
+    </div>
+  </div>
+
   <!-- B2B — Professionnels -->
   <div class="b2b-strip" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--ink)">
     <div style="padding:3rem 3rem;border-right:1px solid var(--ink);background:var(--warm)">
