@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script defer data-domain="pauldefais.fr" src="https://plausible.io/js/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barolo, la patience des rois — Tastodisso™</title>
   <meta name="description" content="Trois jours dans les Langhe sous la bruine de mars. Ce que le Nebbiolo apprend à un vigneron de Provence. Par Paul Defais." />
@@ -10,11 +12,11 @@
   <meta property="og:url" content="https://www.pauldefais.fr/barolo-piemonte.html" />
   <meta property="og:title" content="Barolo, la patience des rois — Tastodisso™" />
   <meta property="og:description" content="Trois jours dans les Langhe sous la bruine de mars. Ce que le Nebbiolo apprend à un passionné de Provence. Par Paul Defais." />
-  <meta property="og:image" content="https://www.pauldefais.fr/vine5.jpeg" />
+  <meta property="og:image" content="https://www.pauldefais.fr/vine5.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Barolo, la patience des rois — Tastodisso™" />
   <meta name="twitter:description" content="Trois jours dans les Langhe sous la bruine de mars. Ce que le Nebbiolo apprend à un passionné de Provence. Par Paul Defais." />
-  <meta name="twitter:image" content="https://www.pauldefais.fr/vine5.jpeg" />
+  <meta name="twitter:image" content="https://www.pauldefais.fr/vine5.webp" />
   <meta property="article:published_time" content="2026-04-12T00:00:00+02:00" />
   <meta property="article:author" content="Paul Defais" />
   <script type="application/ld+json">
@@ -25,7 +27,7 @@
     "description": "Trois jours dans les Langhe sous la bruine de mars. Ce que le Nebbiolo apprend à un passionné de Provence. Par Paul Defais.",
     "url": "https://www.pauldefais.fr/barolo-piemonte.html",
     "datePublished": "2026-04-12",
-    "image": "https://www.pauldefais.fr/vine5.jpeg",
+    "image": "https://www.pauldefais.fr/vine5.webp",
     "author": {
       "@type": "Person",
       "name": "Paul Defais",
@@ -180,9 +182,18 @@
     .ft-links li:hover { color: var(--rouge); }
     .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
 
+    .nl { background: var(--sun); padding: 2.5rem 3rem; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nl-text { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+    .nl-form { display: flex; flex: 1; max-width: 380px; }
+    .nl-input { flex: 1; padding: 0.75rem 1rem; border: 1.5px solid var(--ink); border-right: none; background: rgba(255,255,255,0.45); font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--ink); outline: none; }
+    .nl-input::placeholder { color: rgba(0,0,0,0.35); }
+    .nl-btn { padding: 0.75rem 1.3rem; border: 1.5px solid var(--ink); background: var(--ink); color: var(--sun); font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+    .nl-btn:hover { background: #fff; color: var(--ink); }
     @media (max-width: 768px) {
       .nav-l { display: none; }
       .nav-r li:first-child { display: none; }
+      .nl { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
+      .nl-form { max-width: 100%; width: 100%; }
       .nav { grid-template-columns: 1fr auto; }
       .article-title { font-size: 48px; }
       .article-title em { font-size: 46px; }
@@ -244,7 +255,7 @@
   </nav>
 
   <header class="article-header">
-    <img src="vine5.jpeg" alt="Vignoble en Piémont, collines des Langhe" />
+    <img src="vine5.webp" alt="Vignoble en Piémont, collines des Langhe" loading="lazy" />
     <div class="article-header-overlay"></div>
     <div class="article-header-content">
       <span class="article-cat">Voyages &amp; Culture</span>
@@ -280,7 +291,7 @@
       <p>On a visité deux propriétés en deux jours. La première — une famille qui travaille depuis cinq générations sur les mêmes neuf hectares — vous reçoit dans une cave qui sent l'humidité et le vieux bois de chêne. Pas de visite guidée. Pas de diaporama avec des cartes de cru et des statistiques de pluviométrie. Une table en bois, des verres à pied pas très propres, et un Barolo 2018 qu'on a attendu une heure avant qu'il consente à s'ouvrir. On a attendu. On a bien fait.</p>
 
       <div class="article-img-block">
-        <img src="vine3.jpeg" alt="Vignes des Langhe en Piémont" />
+        <img src="vine3.webp" alt="Vignes des Langhe en Piémont" loading="lazy" />
         <p class="article-img-caption">Les coteaux des Langhe — mars 2026. Le Nebbiolo sort tard, sort lentement.</p>
       </div>
 
@@ -333,6 +344,13 @@
     </div>
   </div>
 
+  <section class="nl" id="newsletter">
+    <p class="nl-text">Les nouvelles<br>du journal.</p>
+    <form class="nl-form">
+      <input class="nl-input" type="email" name="email" placeholder="Votre adresse e-mail" required />
+      <button class="nl-btn" type="submit">S'inscrire</button>
+    </form>
+  </section>
   <footer>
     <div class="foot">
       <div>

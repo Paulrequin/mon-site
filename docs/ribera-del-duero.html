@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script defer data-domain="pauldefais.fr" src="https://plausible.io/js/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ribera del Duero — Tastodisso™</title>
   <meta name="description" content="Trois jours en Castille pour comprendre ce que le soleil peut faire d'autre. Par Paul Defais." />
@@ -10,11 +12,11 @@
   <meta property="og:url" content="https://www.pauldefais.fr/ribera-del-duero.html" />
   <meta property="og:title" content="Ribera del Duero — Tastodisso™" />
   <meta property="og:description" content="Trois jours en Castille pour comprendre ce que le soleil peut faire d'autre. Par Paul Defais." />
-  <meta property="og:image" content="https://www.pauldefais.fr/vine4.jpeg" />
+  <meta property="og:image" content="https://www.pauldefais.fr/vine4.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ribera del Duero — Tastodisso™" />
   <meta name="twitter:description" content="Trois jours en Castille pour comprendre ce que le soleil peut faire d'autre. Par Paul Defais." />
-  <meta name="twitter:image" content="https://www.pauldefais.fr/vine4.jpeg" />
+  <meta name="twitter:image" content="https://www.pauldefais.fr/vine4.webp" />
   <meta property="article:published_time" content="2026-03-12T00:00:00+02:00" />
   <meta property="article:author" content="Paul Defais" />
   <script type="application/ld+json">
@@ -25,7 +27,7 @@
     "description": "Trois jours en Castille pour comprendre ce que le soleil peut faire d'autre. Par Paul Defais.",
     "url": "https://www.pauldefais.fr/ribera-del-duero.html",
     "datePublished": "2026-03-12",
-    "image": "https://www.pauldefais.fr/vine4.jpeg",
+    "image": "https://www.pauldefais.fr/vine4.webp",
     "author": {
       "@type": "Person",
       "name": "Paul Defais",
@@ -98,9 +100,18 @@
     .ft-links li { font-size: 12px; color: var(--ink); cursor: pointer; transition: color 0.2s; }
     .ft-links li:hover { color: var(--rouge); }
     .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
+    .nl { background: var(--sun); padding: 2.5rem 3rem; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nl-text { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+    .nl-form { display: flex; flex: 1; max-width: 380px; }
+    .nl-input { flex: 1; padding: 0.75rem 1rem; border: 1.5px solid var(--ink); border-right: none; background: rgba(255,255,255,0.45); font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--ink); outline: none; }
+    .nl-input::placeholder { color: rgba(0,0,0,0.35); }
+    .nl-btn { padding: 0.75rem 1.3rem; border: 1.5px solid var(--ink); background: var(--ink); color: var(--sun); font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+    .nl-btn:hover { background: #fff; color: var(--ink); }
     @media (max-width: 768px) {
       .nav-l { display: none; }
-      .nav-r li:first-child { display: none; } .nav { grid-template-columns: 1fr auto; }
+      .nav-r li:first-child { display: none; }
+      .nl { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
+      .nl-form { max-width: 100%; width: 100%; } .nav { grid-template-columns: 1fr auto; }
       .article-title { font-size: 48px; } .article-header-content { padding: 2rem 1.5rem; }
       .article-meta-bar { padding: 0.9rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .article-body { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
@@ -158,7 +169,7 @@
   </nav>
 
   <header class="article-header">
-    <img src="vine4.jpeg" alt="Ribera del Duero" />
+    <img src="vine4.webp" alt="Ribera del Duero" loading="lazy" />
     <div class="article-header-overlay"></div>
     <div class="article-header-content">
       <span class="article-cat">Voyages &amp; Culture</span>
@@ -194,7 +205,7 @@
       <p>Ce que le Tempranillo fait ici que la Rioja ne fait pas : il garde une acidité. Le plateau l'oblige. Les nuits froides du plateau castillan préservent une tension dans le raisin que le Rioja, plus doux, n'a plus vraiment. Résultat : des vins qui vieillissent mieux, qui s'ouvrent plus lentement, qui demandent de la patience.</p>
 
       <div class="article-img-block">
-        <img src="vine2.jpg" alt="Vignoble en plateau" />
+        <img src="vine2.webp" alt="Vignoble en plateau" loading="lazy" />
         <p class="article-img-caption">Le plateau castillan — altitude 900m, Ribera del Duero.</p>
       </div>
 
@@ -244,6 +255,13 @@
     </div>
   </div>
 
+  <section class="nl" id="newsletter">
+    <p class="nl-text">Les nouvelles<br>du journal.</p>
+    <form class="nl-form">
+      <input class="nl-input" type="email" name="email" placeholder="Votre adresse e-mail" required />
+      <button class="nl-btn" type="submit">S'inscrire</button>
+    </form>
+  </section>
   <footer>
     <div class="foot">
       <div>

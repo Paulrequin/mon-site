@@ -1,15 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Newsletter — toutes les pages
+  // Newsletter
+  // ⚠️  Remplacer l'endpoint Formspree : aller sur formspree.io, créer un formulaire,
+  //     et remplacer FORMSPREE_ENDPOINT ci-dessous par l'URL obtenue (ex: https://formspree.io/f/xabc1234)
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/VOTRE_ID_ICI';
+
   document.querySelectorAll('.nl-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var input = form.querySelector('input[type="email"]');
       var btn = form.querySelector('.nl-btn');
       if (!input || !input.value) return;
+
+      // Fallback mailto si endpoint non configuré
+      if (FORMSPREE_ENDPOINT.includes('VOTRE_ID')) {
+        window.location.href = 'mailto:paul@pauldefais.fr?subject=Newsletter%20Tastodisso%E2%84%A2&body=' + encodeURIComponent(input.value);
+        return;
+      }
+
       btn.disabled = true;
       btn.textContent = '…';
-      fetch('https://formspree.io/paul@pauldefais.fr', {
+      fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({ email: input.value, _subject: 'Newsletter Tastodisso™' })

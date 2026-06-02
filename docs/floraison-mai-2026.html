@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script defer data-domain="pauldefais.fr" src="https://plausible.io/js/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mai. Ça fleurit. — Tastodisso™</title>
   <meta name="description" content="La floraison de la vigne dure dix jours. Dix jours pour décider d'une année entière. Par Paul Defais." />
@@ -10,11 +12,11 @@
   <meta property="og:url" content="https://www.pauldefais.fr/floraison-mai-2026.html" />
   <meta property="og:title" content="Mai. Ça fleurit. — Tastodisso™" />
   <meta property="og:description" content="La floraison de la vigne dure dix jours. Dix jours pour décider d'une année entière. Par Paul Defais." />
-  <meta property="og:image" content="https://www.pauldefais.fr/vine4.jpeg" />
+  <meta property="og:image" content="https://www.pauldefais.fr/vine4.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mai. Ça fleurit. — Tastodisso™" />
   <meta name="twitter:description" content="La floraison de la vigne dure dix jours. Dix jours pour décider d'une année entière. Par Paul Defais." />
-  <meta name="twitter:image" content="https://www.pauldefais.fr/vine4.jpeg" />
+  <meta name="twitter:image" content="https://www.pauldefais.fr/vine4.webp" />
   <meta property="article:published_time" content="2026-05-03T00:00:00+02:00" />
   <meta property="article:author" content="Paul Defais" />
   <script type="application/ld+json">
@@ -25,7 +27,7 @@
     "description": "La floraison de la vigne dure dix jours. Dix jours pour décider d'une année entière. Par Paul Defais.",
     "url": "https://www.pauldefais.fr/floraison-mai-2026.html",
     "datePublished": "2026-05-03",
-    "image": "https://www.pauldefais.fr/vine4.jpeg",
+    "image": "https://www.pauldefais.fr/vine4.webp",
     "author": {
       "@type": "Person",
       "name": "Paul Defais",
@@ -180,9 +182,18 @@
     .ft-links li:hover { color: var(--rouge); }
     .ft-bottom { padding: 0.9rem 2rem; display: flex; justify-content: space-between; font-size: 9px; color: var(--mid); background: var(--warm); border-top: 1px solid var(--rule); }
 
+    .nl { background: var(--sun); padding: 2.5rem 3rem; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nl-text { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+    .nl-form { display: flex; flex: 1; max-width: 380px; }
+    .nl-input { flex: 1; padding: 0.75rem 1rem; border: 1.5px solid var(--ink); border-right: none; background: rgba(255,255,255,0.45); font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--ink); outline: none; }
+    .nl-input::placeholder { color: rgba(0,0,0,0.35); }
+    .nl-btn { padding: 0.75rem 1.3rem; border: 1.5px solid var(--ink); background: var(--ink); color: var(--sun); font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+    .nl-btn:hover { background: #fff; color: var(--ink); }
     @media (max-width: 768px) {
       .nav-l { display: none; }
       .nav-r li:first-child { display: none; }
+      .nl { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
+      .nl-form { max-width: 100%; width: 100%; }
       .nav { grid-template-columns: 1fr auto; }
       .article-title { font-size: 48px; }
       .article-title em { font-size: 46px; }
@@ -258,7 +269,7 @@
   </nav>
 
   <header class="article-header">
-    <img src="vine4.jpeg" alt="Vignes de Provence en mai, premières fleurs" />
+    <img src="vine4.webp" alt="Vignes de Provence en mai, premières fleurs" loading="lazy" />
     <div class="article-header-overlay"></div>
     <div class="article-header-content">
       <span class="article-cat">Terroir &amp; Saisons</span>
@@ -297,7 +308,7 @@
       <p>Cette année, la fenêtre météo est correcte. Un anticyclone tient depuis jeudi. Les nuits restent fraîches mais sèches. On regarde les prévisions deux fois par jour. Ce n'est pas de la paranoïa — c'est du métier.</p>
 
       <div class="article-img-block">
-        <img src="vine1.jpg" alt="Vignes de Provence au printemps, floraison mai 2026" />
+        <img src="vine1.webp" alt="Vignes de Provence au printemps, floraison mai 2026" loading="lazy" />
         <p class="article-img-caption">Les parcelles de Grenache à Saint Vincent — début mai 2026.</p>
       </div>
 
@@ -372,6 +383,13 @@
     </div>
   </div>
 
+  <section class="nl" id="newsletter">
+    <p class="nl-text">Les nouvelles<br>du journal.</p>
+    <form class="nl-form">
+      <input class="nl-input" type="email" name="email" placeholder="Votre adresse e-mail" required />
+      <button class="nl-btn" type="submit">S'inscrire</button>
+    </form>
+  </section>
   <footer>
     <div class="foot">
       <div>
