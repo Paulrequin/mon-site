@@ -278,6 +278,80 @@
     .formule-cta { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .75rem 1.6rem; transition: transform .2s var(--ease); align-self: flex-start; background: var(--ink); color: var(--bg); }
     .formule-card--highlight .formule-cta { background: var(--sun); color: var(--ink); }
     .formule-cta:hover { transform: translateY(-2px); }
+    /* ── Formulaire de contact ── */
+    .contact { border-bottom: 1px solid var(--ink); }
+    .contact-head {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .contact-head-l {
+      padding: 3rem; border-right: 1px solid var(--ink);
+      background: var(--ink);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
+    }
+    .contact-head-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+    .contact-head-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900;
+      text-transform: uppercase; line-height: .9; letter-spacing: -.02em; color: #fff;
+    }
+    .contact-head-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 50px; font-weight: 400; text-transform: none; color: var(--sun); display: block;
+    }
+    .contact-head-note { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; color: rgba(255,255,255,.5); line-height: 1.6; }
+    .contact-head-r {
+      padding: 3rem;
+      display: flex; flex-direction: column; gap: 2rem;
+    }
+    .contact-detail { display: flex; flex-direction: column; gap: .3rem; }
+    .contact-detail-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .contact-detail-val { font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic; color: var(--ink); line-height: 1.5; }
+    .contact-form-wrap { padding: 3rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
+    .form-field { display: flex; flex-direction: column; gap: .5rem; }
+    .form-field--full { grid-column: 1 / -1; }
+    .form-label {
+      font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid);
+    }
+    .form-input, .form-select, .form-textarea {
+      font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink);
+      background: transparent; border: none; border-bottom: 1px solid var(--ink);
+      padding: .6rem 0; outline: none; width: 100%;
+      transition: border-color .2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--rouge);
+    }
+    .form-select { cursor: pointer; -webkit-appearance: none; appearance: none; }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-footer {
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap;
+    }
+    .form-note { font-family: 'EB Garamond', serif; font-size: 13px; font-style: italic; color: var(--mid); }
+    .form-submit {
+      background: var(--ink); color: var(--bg);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; padding: .85rem 2.5rem;
+      border: none; cursor: pointer;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+    .form-submit:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .form-success {
+      display: none; padding: 2rem; text-align: center;
+      font-family: 'EB Garamond', serif; font-size: 20px; font-style: italic; color: var(--ink);
+    }
+    .form-success strong { font-style: normal; font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: .5rem; }
+    @media (max-width: 768px) {
+      .contact-head { grid-template-columns: 1fr; }
+      .contact-head-l { border-right: none; border-bottom: 1px solid var(--ink); }
+      .contact-head-title { font-size: 40px; }
+      .contact-head-title em { font-size: 36px; }
+      .contact-form-wrap { padding: 2rem 1.5rem; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 768px) {
 .deroulé-intro { grid-template-columns: 1fr; }
     .deroulé-intro-l { border-right: none; border-bottom: 1px solid var(--ink); }
@@ -464,7 +538,7 @@
           <li>Fiche récapitulative en fin de session</li>
         </ul>
         <div class="formule-price">À partir de 40 €<span> / pers.</span></div>
-        <a href="#avenir" class="formule-cta">Voir les sessions →</a>
+        <a href="#contact" class="formule-cta">Réserver →</a>
       </div>
 
       <div class="formule-card formule-card--highlight">
@@ -480,7 +554,7 @@
           <li>Support personnalisé si besoin</li>
         </ul>
         <div class="formule-price">Sur devis<span> — selon groupe et lieu</span></div>
-        <a href="mailto:paul@pauldefais.fr?subject=Atelier entreprise" class="formule-cta">Demander un devis →</a>
+        <a href="#contact" class="formule-cta">Demander un devis →</a>
       </div>
 
       <div class="formule-card">
@@ -496,7 +570,7 @@
           <li>Organisation complète si besoin</li>
         </ul>
         <div class="formule-price">Sur devis<span> — selon format et lieu</span></div>
-        <a href="mailto:paul@pauldefais.fr?subject=Soirée privée dégustation" class="formule-cta">Écrire à Paul →</a>
+        <a href="#contact" class="formule-cta">Demander un devis →</a>
       </div>
 
     </div>
@@ -513,15 +587,14 @@
     <div class="avenir-coming">
 
       <div class="coming-card">
-        <div class="coming-badge">21 Mai 2026</div>
-        <div class="coming-date">21</div>
-        <div class="coming-month">Mai 2026</div>
-        <div class="coming-title">L'Apéro aux Lumières — Wine Class</div>
-        <p class="coming-body">Les bases de la dégustation sensorielle : arômes, textures, sensations — et les mots pour dire ce qu'on perçoit face à un verre. Avec Guillaume Lefèvre du Domaine de Sulauze. Suivi d'une dégustation libre.</p>
-        <div class="coming-detail">16h30–18h · Wine Class · <span>40 € / pers.</span></div>
-        <div class="coming-detail" style="margin-top:0.4rem">18h–19h30 · Dégustation libre · <span>Gratuite</span></div>
-        <div class="coming-detail" style="margin-top:0.4rem">Lieu : <span>Les Lumières · 34 Grand Rue, Marseille 2e</span></div>
-        <a href="https://www.raisin.digital/fr/decouvrir/salons-vin-naturel-degustation-evenements/degustations/lapero-aux-lumieres-wine-class-4803/" target="_blank" rel="noopener" class="coming-cta">Réserver →</a>
+        <div class="coming-badge">Bientôt</div>
+        <div class="coming-date">Juil.</div>
+        <div class="coming-month">Date à confirmer</div>
+        <div class="coming-title">Prochaine session — Découvrir le vin nature</div>
+        <p class="coming-body">La prochaine session publique est en cours de programmation à Marseille. Inscrivez-vous pour être prévenu en priorité et réserver votre place.</p>
+        <div class="coming-detail">2h · Format Wine Class · <span>40 € / pers.</span></div>
+        <div class="coming-detail" style="margin-top:0.4rem">Lieu : <span>Marseille</span></div>
+        <a href="#contact" class="coming-cta">Être prévenu →</a>
       </div>
 
       <div class="coming-card">
@@ -550,8 +623,127 @@
   <!-- CTA -->
   <div class="bottom-cta">
     <p class="bottom-cta-text">Une question,<br>un projet d'atelier ?</p>
-    <a href="mailto:paul@pauldefais.fr?subject=Atelier dégustation" class="btn-ink">Écrire à Paul →</a>
+    <a href="#contact" class="btn-ink">Envoyer un message →</a>
   </div>
+
+  <!-- ══ FORMULAIRE DE CONTACT ══
+       Pour activer : créer un compte gratuit sur formspree.io,
+       créer un formulaire, et remplacer "VOTRE_ID_FORMSPREE" par votre ID (ex: xpwzyjvp).
+  ══════════════════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+
+    <div class="contact-head">
+      <div class="contact-head-l">
+        <div class="contact-head-label">— Réservation & renseignements</div>
+        <div class="contact-head-title">Une question,<em>un projet ?</em></div>
+        <p class="contact-head-note">Je réponds sous 24h. Décrivez votre groupe, votre contexte, vos envies — on construira quelque chose qui a du sens.</p>
+      </div>
+      <div class="contact-head-r">
+        <div class="contact-detail">
+          <span class="contact-detail-label">— Email</span>
+          <span class="contact-detail-val">paul@pauldefais.fr</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">— Instagram</span>
+          <span class="contact-detail-val">@agencesaintvincent</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">— Zone</span>
+          <span class="contact-detail-val">Marseille et toute la France pour les ateliers entreprise et soirées privées.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+
+      <form id="contact-form"
+            action="https://formspree.io/f/VOTRE_ID_FORMSPREE"
+            method="POST">
+
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label class="form-label" for="nom">— Votre nom</label>
+            <input class="form-input" type="text" id="nom" name="nom" required placeholder="Prénom Nom" />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="email">— Email</label>
+            <input class="form-input" type="email" id="email" name="email" required placeholder="vous@exemple.fr" />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="formule">— Formule souhaitée</label>
+            <select class="form-select" id="formule" name="formule">
+              <option value="">— Choisir</option>
+              <option value="Session découverte (40 €/pers.)">Session découverte — 40 €/pers.</option>
+              <option value="Atelier entreprise">Atelier entreprise</option>
+              <option value="Soirée privée">Soirée privée</option>
+              <option value="Sur-mesure">Sur-mesure / Autre</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="participants">— Nombre de participants</label>
+            <input class="form-input" type="text" id="participants" name="participants" placeholder="Ex : 12 personnes" />
+          </div>
+
+          <div class="form-field form-field--full">
+            <label class="form-label" for="message">— Votre message</label>
+            <textarea class="form-textarea" id="message" name="message" required
+              placeholder="Décrivez votre projet : contexte, date souhaitée, lieu si connu, attentes particulières…"></textarea>
+          </div>
+
+        </div>
+
+        <div class="form-footer">
+          <p class="form-note">Réponse sous 24h · Remboursement intégral si annulation 48h avant</p>
+          <button class="form-submit" type="submit">Envoyer →</button>
+        </div>
+
+      </form>
+
+      <div class="form-success" id="form-success">
+        <strong>Message envoyé.</strong>
+        Je vous réponds dans les 24 heures.
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      var success = document.getElementById('form-success');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.form-submit');
+        btn.disabled = true;
+        btn.textContent = 'Envoi…';
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            btn.disabled = false;
+            btn.textContent = 'Envoyer →';
+            alert('Une erreur est survenue. Écrivez directement à paul@pauldefais.fr');
+          }
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Envoyer →';
+          alert('Une erreur est survenue. Écrivez directement à paul@pauldefais.fr');
+        });
+      });
+    })();
+  </script>
 
   <footer>
     <div class="foot">
