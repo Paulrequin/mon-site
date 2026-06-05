@@ -656,9 +656,7 @@
 
     <div class="contact-form-wrap">
 
-      <form id="contact-form"
-            action="https://formspree.io/f/VOTRE_ID_FORMSPREE"
-            method="POST">
+      <form id="contact-form" action="#" novalidate>
 
         <div class="form-grid">
 
@@ -704,8 +702,8 @@
       </form>
 
       <div class="form-success" id="form-success">
-        <strong>Message envoyé.</strong>
-        Je vous réponds dans les 24 heures.
+        <strong>Votre messagerie s'est ouverte.</strong>
+        Envoyez l'email pré-rempli — je vous réponds sous 24h.
       </div>
 
     </div>
@@ -716,31 +714,41 @@
       var form = document.getElementById('contact-form');
       var success = document.getElementById('form-success');
       if (!form) return;
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var btn = form.querySelector('.form-submit');
-        btn.disabled = true;
-        btn.textContent = 'Envoi…';
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        })
-        .then(function (res) {
-          if (res.ok) {
-            form.style.display = 'none';
-            success.style.display = 'block';
-          } else {
-            btn.disabled = false;
-            btn.textContent = 'Envoyer →';
-            alert('Une erreur est survenue. Écrivez directement à paul@pauldefais.fr');
-          }
-        })
-        .catch(function () {
-          btn.disabled = false;
-          btn.textContent = 'Envoyer →';
-          alert('Une erreur est survenue. Écrivez directement à paul@pauldefais.fr');
-        });
+
+        var nom          = (form.querySelector('#nom').value || '').trim();
+        var email        = (form.querySelector('#email').value || '').trim();
+        var formule      = (form.querySelector('#formule').value || '').trim();
+        var participants = (form.querySelector('#participants').value || '').trim();
+        var message      = (form.querySelector('#message').value || '').trim();
+
+        if (!nom || !email || !message) {
+          form.querySelector('#nom').reportValidity();
+          form.querySelector('#email').reportValidity();
+          form.querySelector('#message').reportValidity();
+          return;
+        }
+
+        var sujet = 'Atelier dégustation' + (formule ? ' — ' + formule : '');
+
+        var corps =
+          'Bonjour Paul,\n\n' +
+          'Nom : ' + nom + '\n' +
+          'Email : ' + email + '\n' +
+          (formule      ? 'Formule : '       + formule      + '\n' : '') +
+          (participants ? 'Participants : '  + participants + '\n' : '') +
+          '\nMessage :\n' + message + '\n\n' +
+          '---\nEnvoyé depuis pauldefais.fr';
+
+        window.location.href =
+          'mailto:tastodisso@gmail.com' +
+          '?subject=' + encodeURIComponent(sujet) +
+          '&body='    + encodeURIComponent(corps);
+
+        form.style.display = 'none';
+        success.style.display = 'block';
       });
     })();
   </script>
