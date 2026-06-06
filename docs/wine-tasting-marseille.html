@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script defer data-domain="pauldefais.fr" src="https://plausible.io/js/script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wine Tasting in Marseille — Mediterranean Experience · Tastodisso™</title>
+  <meta name="description" content="A guided wine tasting in Marseille focused on natural wines from Greece, Provence and Spain. Small groups, English session, 1h30 with a French sommelier. From €50/person." />
+  <link rel="canonical" href="https://www.pauldefais.fr/wine-tasting-marseille.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pauldefais.fr/wine-tasting-marseille.html" />
+  <meta property="og:title" content="Wine Tasting in Marseille — Mediterranean Experience" />
+  <meta property="og:description" content="Discover natural wines from Greece, Provence and Spain. A guided tasting in English, small group, with a French sommelier in Marseille." />
+  <meta property="og:image" content="https://www.pauldefais.fr/vine2.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wine Tasting in Marseille — Mediterranean Experience" />
+  <meta name="twitter:description" content="Natural wines from Greece, Provence and Spain. English session. Small group. Marseille." />
+  <meta name="twitter:image" content="https://www.pauldefais.fr/vine2.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Mediterranean Wine Tasting Experience in Marseille",
+    "description": "A guided wine tasting focused on natural wines from Greece, Provence and Spain. English session, small group (4–8 guests), led by a French sommelier.",
+    "url": "https://www.pauldefais.fr/wine-tasting-marseille.html",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Marseille, France",
+      "address": { "@type": "PostalAddress", "addressLocality": "Marseille", "addressCountry": "FR" }
+    },
+    "organizer": {
+      "@type": "Person",
+      "name": "Paul Defais",
+      "url": "https://www.pauldefais.fr/about.html"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "50",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.pauldefais.fr/wine-tasting-marseille.html"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    .nav-l li:hover, .nav-l li.active { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); min-height: 480px; }
+    .hero-l {
+      background: linear-gradient(150deg, #1A2E1A 0%, #0D1A0D 100%);
+      padding: 4rem 3rem; border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .hero-eyebrow { font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900;
+      text-transform: uppercase; line-height: .86; letter-spacing: -.02em; color: #fff;
+    }
+    .hero-title em {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 72px; font-weight: 400; text-transform: none;
+      color: var(--sun); display: block; margin-top: .08em;
+    }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .hero-chip {
+      font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(255,255,255,.65); border: 1px solid rgba(255,255,255,.2); padding: .3rem .8rem;
+    }
+    .hero-r { padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem; }
+    .hero-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .hero-intro { font-family: 'EB Garamond', serif; font-size: 22px; font-style: italic; line-height: 1.72; color: var(--ink); }
+    .hero-facts { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; }
+    .fact-val { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900; line-height: 1; color: var(--ink); }
+    .fact-key { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-top: .2rem; }
+
+    /* ── SBAR ── */
+    .sbar { display: flex; align-items: baseline; justify-content: space-between; padding: .85rem 2rem; border-bottom: 1px solid var(--ink); }
+    .sbar-l { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .sbar-r { font-size: 11px; color: var(--mid); font-style: italic; font-family: 'EB Garamond', serif; }
+
+    /* ── WHY ── */
+    .why { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .why-col { padding: 2.5rem 2rem; border-right: 1px solid var(--ink); display: flex; flex-direction: column; gap: 1rem; }
+    .why-col:last-child { border-right: none; }
+    .why-icon { font-size: 26px; }
+    .why-title { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 900; text-transform: uppercase; line-height: 1.05; color: var(--ink); }
+    .why-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; line-height: 1.7; color: var(--mid); }
+
+    /* ── WINES ── */
+    .wines-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--ink); }
+    .wine-card { padding: 2.5rem 2rem; border-right: 1px solid var(--ink); display: flex; flex-direction: column; gap: .8rem; }
+    .wine-card:last-child { border-right: none; }
+    .wine-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .16em; color: var(--rule); }
+    .wine-type { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; text-transform: uppercase; line-height: 1.05; color: var(--ink); }
+    .wine-origin { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); }
+    .wine-dot { width: 28px; height: 28px; border-radius: 50%; margin: .2rem 0; }
+    .wine-desc { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.65; color: var(--mid); flex: 1; }
+
+    /* ── PROGRAMME ── */
+    .programme { border-bottom: 1px solid var(--ink); }
+    .prog-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .prog-intro {
+      padding: 3.5rem 3rem; border-right: 1px solid var(--ink);
+      background: #1A2E1A;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .prog-intro-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 1.5rem; }
+    .prog-intro-title { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900; text-transform: uppercase; line-height: .9; letter-spacing: -.02em; color: #fff; }
+    .prog-intro-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 46px; font-weight: 400; text-transform: none; color: var(--sun); display: block; margin-top: .08em; }
+    .prog-intro-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; line-height: 1.7; color: rgba(255,255,255,.6); margin-top: 2rem; }
+    .prog-steps { padding: 3.5rem 3rem; display: flex; flex-direction: column; gap: 0; }
+    .prog-step { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: start; }
+    .prog-step:first-child { padding-top: 0; }
+    .prog-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .prog-num { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--rule); padding-top: .1rem; }
+    .prog-step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: .35rem; }
+    .prog-step-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.65; color: var(--mid); }
+
+    /* ── PULL QUOTE ── */
+    .pullquote {
+      padding: 4rem 3rem; border-bottom: 1px solid var(--ink);
+      display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center;
+    }
+    .pq-marker { font-family: 'Barlow Condensed', sans-serif; font-size: 120px; font-weight: 900; line-height: .8; color: var(--rule); margin-bottom: .5rem; }
+    .pq-credit { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .pq-text { font-family: 'EB Garamond', serif; font-size: 30px; font-style: italic; line-height: 1.5; color: var(--ink); }
+    .pq-text strong { font-style: normal; font-weight: 500; color: var(--vert); }
+
+    /* ── PRACTICAL ── */
+    .practical { border-bottom: 1px solid var(--ink); }
+    .practical-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .practical-col { padding: 3rem 2.5rem; border-right: 1px solid var(--ink); }
+    .practical-col:last-child { border-right: none; }
+    .practical-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 900; text-transform: uppercase; color: var(--ink); margin-bottom: 1.8rem; }
+    .practical-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+    .practical-list li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; font-family: 'EB Garamond', serif; font-size: 16px; line-height: 1.5; border-bottom: 1px solid var(--warm); padding-bottom: 1.1rem; }
+    .practical-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .practical-key { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding-top: .25rem; font-family: 'DM Sans', sans-serif; }
+    .practical-val { color: var(--ink); font-style: italic; }
+
+    /* ── BOOKING CTA ── */
+    .booking-cta {
+      background: linear-gradient(150deg, #1A2E1A 0%, #0D1A0D 100%);
+      padding: 3.5rem 3rem;
+      display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+      border-bottom: 1px solid var(--ink);
+    }
+    .booking-cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900; text-transform: uppercase; line-height: .9; color: #fff; }
+    .booking-cta-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 46px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
+    .booking-cta-right { display: flex; flex-direction: column; gap: 1rem; align-items: flex-end; }
+    .booking-cta-price { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900; color: #fff; line-height: 1; }
+    .booking-cta-price span { font-size: 13px; font-weight: 400; font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,.45); }
+    .btn-book {
+      display: inline-block; background: var(--sun); color: var(--ink);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; padding: 1rem 2.5rem; white-space: nowrap;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .btn-book:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+
+    /* ── CONTACT FORM ── */
+    .contact { border-bottom: 1px solid var(--ink); }
+    .contact-head { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .contact-head-l { padding: 3rem; border-right: 1px solid var(--ink); background: var(--ink); display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
+    .contact-head-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+    .contact-head-title { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900; text-transform: uppercase; line-height: .9; letter-spacing: -.02em; color: #fff; }
+    .contact-head-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 46px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
+    .contact-head-note { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; color: rgba(255,255,255,.5); line-height: 1.6; }
+    .contact-head-r { padding: 3rem; display: flex; flex-direction: column; gap: 2rem; }
+    .contact-detail-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .contact-detail-val { font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic; color: var(--ink); line-height: 1.5; margin-top: .3rem; }
+    .contact-form-wrap { padding: 3rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
+    .form-field { display: flex; flex-direction: column; gap: .5rem; }
+    .form-field--full { grid-column: 1 / -1; }
+    .form-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .form-input, .form-select, .form-textarea { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); background: transparent; border: none; border-bottom: 1px solid var(--ink); padding: .6rem 0; outline: none; width: 100%; transition: border-color .2s; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--rouge); }
+    .form-select { cursor: pointer; -webkit-appearance: none; appearance: none; }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-footer { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; }
+    .form-note { font-family: 'EB Garamond', serif; font-size: 13px; font-style: italic; color: var(--mid); }
+    .form-submit { background: var(--ink); color: var(--bg); font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .85rem 2.5rem; border: none; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+    .form-success { display: none; padding: 2rem; text-align: center; font-family: 'EB Garamond', serif; font-size: 20px; font-style: italic; color: var(--ink); }
+    .form-success strong { font-style: normal; font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: .5rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-r li:first-child { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-l { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--ink); }
+      .hero-title { font-size: 56px; }
+      .hero-title em { font-size: 50px; }
+      .hero-r { padding: 2.5rem 1.5rem; }
+      .hero-intro { font-size: 18px; }
+      .why { grid-template-columns: 1fr; }
+      .why-col { border-right: none; border-bottom: 1px solid var(--ink); }
+      .why-col:last-child { border-bottom: none; }
+      .wines-grid { grid-template-columns: 1fr 1fr; }
+      .wine-card:nth-child(2n) { border-right: none; }
+      .wine-card { border-bottom: 1px solid var(--ink); }
+      .wine-card:last-child { border-bottom: none; }
+      .prog-grid { grid-template-columns: 1fr; }
+      .prog-intro { border-right: none; border-bottom: 1px solid var(--ink); }
+      .pullquote { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 1.5rem; }
+      .pq-marker { font-size: 80px; }
+      .pq-text { font-size: 22px; }
+      .practical-grid { grid-template-columns: 1fr; }
+      .practical-col { border-right: none; border-bottom: 1px solid var(--ink); }
+      .practical-col:last-child { border-bottom: none; }
+      .booking-cta { grid-template-columns: 1fr; }
+      .booking-cta-right { align-items: flex-start; }
+      .contact-head { grid-template-columns: 1fr; }
+      .contact-head-l { border-right: none; border-bottom: 1px solid var(--ink); }
+      .contact-head-title { font-size: 40px; }
+      .contact-head-title em { font-size: 36px; }
+      .contact-form-wrap { padding: 2rem 1.5rem; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="nav-l">
+      <li class="active"><a href="atelier-degustation.html">Atelier</a></li>
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="domaines.html">Domaines</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Tastodisso<span class="logo-tm">™</span></span>
+        <span class="logo-sub">par Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="travailler-avec-moi.html">Agence Saint Vincent</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="mailto:tastodisso@gmail.com" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-l">
+      <div class="hero-eyebrow">— Wine Tasting · Marseille</div>
+      <div>
+        <h1 class="hero-title">Mediterranean<em>Wine Experience.</em></h1>
+      </div>
+      <div class="hero-chips">
+        <span class="hero-chip">Guided in English</span>
+        <span class="hero-chip">4–8 guests</span>
+        <span class="hero-chip">1h30</span>
+        <span class="hero-chip">€50 / person</span>
+        <span class="hero-chip">Marseille</span>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="hero-label">— The experience</div>
+      <p class="hero-intro">Most wine tours in France stick to Bordeaux and Burgundy. This one goes further — and deeper. Discover natural wines from Greece, Provence and Spain, guided by a French sommelier who sources directly from the growers. No lecture. Just good bottles and honest conversation.</p>
+      <div class="hero-facts">
+        <div class="fact">
+          <div class="fact-val">4</div>
+          <div class="fact-key">Wines opened</div>
+        </div>
+        <div class="fact">
+          <div class="fact-val">1h30</div>
+          <div class="fact-key">Duration</div>
+        </div>
+        <div class="fact">
+          <div class="fact-val">€50</div>
+          <div class="fact-key">Per person</div>
+        </div>
+        <div class="fact">
+          <div class="fact-val">8 max</div>
+          <div class="fact-key">Guests</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHY ── -->
+  <div class="sbar">
+    <span class="sbar-l">— Why this experience</span>
+    <span class="sbar-r">What makes it different</span>
+  </div>
+
+  <div class="why">
+    <div class="why-col">
+      <div class="why-icon">🍇</div>
+      <div class="why-title">Wines you won't find at home</div>
+      <p class="why-body">We skip the famous appellations and go straight to the producers nobody talks about — natural winemakers from Naoussa, Samos, Céphalonie. The wines on this table don't sit on supermarket shelves.</p>
+    </div>
+    <div class="why-col">
+      <div class="why-icon">🧭</div>
+      <div class="why-title">A guide who knows the growers</div>
+      <p class="why-body">Paul Defais sources these wines directly from the domains. He knows who made them, in which vineyard, with what intention. That story is part of what you're tasting.</p>
+    </div>
+    <div class="why-col">
+      <div class="why-icon">🪑</div>
+      <div class="why-title">Small group. Real conversation.</div>
+      <p class="why-body">Maximum 8 guests. No microphone, no slideshow. A table, four wines, and enough time to ask the questions that actually matter to you — even the ones that feel basic.</p>
+    </div>
+  </div>
+
+  <!-- ── WINES ── -->
+  <div class="sbar">
+    <span class="sbar-l">— The wines</span>
+    <span class="sbar-r">4 wines · selection varies by session</span>
+  </div>
+
+  <div class="wines-grid">
+    <div class="wine-card">
+      <div class="wine-num">01</div>
+      <div class="wine-type">Provence Rosé</div>
+      <div class="wine-origin">South of France</div>
+      <div class="wine-dot" style="background: #f0b8a0;"></div>
+      <p class="wine-desc">Not the pale rosé you've seen everywhere. A natural, unfiltered version — more texture, more character. The reference point to understand what "natural" changes in the glass.</p>
+    </div>
+    <div class="wine-card">
+      <div class="wine-num">02</div>
+      <div class="wine-type">Greek White</div>
+      <div class="wine-origin">Peloponnese or Aegean</div>
+      <div class="wine-dot" style="background: #e8dbb0;"></div>
+      <p class="wine-desc">Roditis, Malagousia or Assyrtiko from one of our Greek domains — grown on volcanic soils at altitude, biodynamic, with a minerality that has nothing to do with what France produces.</p>
+    </div>
+    <div class="wine-card">
+      <div class="wine-num">03</div>
+      <div class="wine-type">Orange Wine</div>
+      <div class="wine-origin">Mediterranean</div>
+      <div class="wine-dot" style="background: #c89060;"></div>
+      <p class="wine-desc">White grapes macerated on their skins — amber colour, grip, tannins you don't expect in a white. The wine that surprises everyone and explains the most about natural winemaking.</p>
+    </div>
+    <div class="wine-card">
+      <div class="wine-num">04</div>
+      <div class="wine-type">Greek Red</div>
+      <div class="wine-origin">Macedonia or Naoussa</div>
+      <div class="wine-dot" style="background: #6b1f1f;"></div>
+      <p class="wine-desc">Xinomavro — Greece's most serious red grape. High acidity, firm tannins, a structure closer to Barolo than to anything you'd expect from the Balkans. The wine that changes the conversation.</p>
+    </div>
+  </div>
+
+  <!-- ── PROGRAMME ── -->
+  <div class="sbar">
+    <span class="sbar-l">— The session</span>
+    <span class="sbar-r">What happens in 1h30</span>
+  </div>
+
+  <div class="programme">
+    <div class="prog-grid">
+      <div class="prog-intro">
+        <div class="prog-intro-label">— The approach</div>
+        <div class="prog-intro-title">No lecture.<em>Just tasting.</em></div>
+        <p class="prog-intro-body">We don't start with a map on a screen. We start with a glass. Theory follows sensation — always. You'll understand the wines better because you've already tasted them.</p>
+      </div>
+      <div class="prog-steps">
+        <div class="prog-step">
+          <div class="prog-num">01</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Welcome & context</div>
+            <p class="prog-step-body">A brief intro to what "natural wine" actually means — and doesn't mean. Why these producers, why the Mediterranean, why now. Five minutes, no slides.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">02</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Four wines, four conversations</div>
+            <p class="prog-step-body">Each wine opens a different chapter: a terroir, a grape variety, a production choice. We taste slowly, compare, disagree. There's no right answer — just more precise observations.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">03</div>
+          <div class="prog-content">
+            <div class="prog-step-title">The story behind the bottle</div>
+            <p class="prog-step-body">For each wine: who made it, where the vines are, what the season was like. Context that changes how you taste — and gives you something to say when you serve it at home.</p>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">04</div>
+          <div class="prog-content">
+            <div class="prog-step-title">Where to find these wines</div>
+            <p class="prog-step-body">A list of every wine tasted — with producers, importers, and a few addresses in Marseille and online. You leave with something concrete.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PULL QUOTE ── -->
+  <div class="pullquote">
+    <div>
+      <div class="pq-marker">"</div>
+      <div class="pq-credit">— Paul Defais</div>
+    </div>
+    <p class="pq-text">The most interesting wines in the Mediterranean aren't in Bordeaux. They're on a volcanic island in the Aegean, grown by a sommelier who quit Paris to make <strong>something honest.</strong></p>
+  </div>
+
+  <!-- ── PRACTICAL ── -->
+  <div class="sbar">
+    <span class="sbar-l">— Practical info</span>
+    <span class="sbar-r">Everything you need to know</span>
+  </div>
+
+  <div class="practical">
+    <div class="practical-grid">
+      <div class="practical-col">
+        <div class="practical-title">The format</div>
+        <ul class="practical-list">
+          <li>
+            <span class="practical-key">Duration</span>
+            <span class="practical-val">1h30 guided tasting</span>
+          </li>
+          <li>
+            <span class="practical-key">Group size</span>
+            <span class="practical-val">4 to 8 guests — intimate format, no crowd</span>
+          </li>
+          <li>
+            <span class="practical-key">Wines</span>
+            <span class="practical-val">4 wines opened — selection varies by session and season</span>
+          </li>
+          <li>
+            <span class="practical-key">Language</span>
+            <span class="practical-val">English · French available on request</span>
+          </li>
+          <li>
+            <span class="practical-key">Location</span>
+            <span class="practical-val">Marseille — address confirmed on booking</span>
+          </li>
+          <li>
+            <span class="practical-key">Included</span>
+            <span class="practical-val">Glasses, water, wine list sent after the session</span>
+          </li>
+        </ul>
+      </div>
+      <div class="practical-col">
+        <div class="practical-title">Booking</div>
+        <ul class="practical-list">
+          <li>
+            <span class="practical-key">Price</span>
+            <span class="practical-val">€50 per person · paid on site (cash or bank transfer)</span>
+          </li>
+          <li>
+            <span class="practical-key">Private group</span>
+            <span class="practical-val">Available from 4 guests · date and location flexible</span>
+          </li>
+          <li>
+            <span class="practical-key">Cancellation</span>
+            <span class="practical-val">Full refund if cancelled 48h before the session</span>
+          </li>
+          <li>
+            <span class="practical-key">Response time</span>
+            <span class="practical-val">Within 24 hours</span>
+          </li>
+          <li>
+            <span class="practical-key">Contact</span>
+            <span class="practical-val">Use the form below or write to tastodisso@gmail.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BOOKING CTA ── -->
+  <div class="booking-cta">
+    <div>
+      <div class="booking-cta-title">Book your<em>experience.</em></div>
+    </div>
+    <div class="booking-cta-right">
+      <div class="booking-cta-price">€50<span> / person</span></div>
+      <a href="#book" class="btn-book">Send a request →</a>
+    </div>
+  </div>
+
+  <!-- ── CONTACT FORM ── -->
+  <section class="contact" id="book">
+    <div class="contact-head">
+      <div class="contact-head-l">
+        <div class="contact-head-label">— Booking request</div>
+        <div class="contact-head-title">Let's plan<em>your session.</em></div>
+        <p class="contact-head-note">Tell me your dates, your group size, and any questions you have. I'll get back to you within 24 hours with availability.</p>
+      </div>
+      <div class="contact-head-r">
+        <div>
+          <div class="contact-detail-label">— Email</div>
+          <div class="contact-detail-val">tastodisso@gmail.com</div>
+        </div>
+        <div>
+          <div class="contact-detail-label">— Instagram</div>
+          <div class="contact-detail-val">@agencesaintvincent</div>
+        </div>
+        <div>
+          <div class="contact-detail-label">— Location</div>
+          <div class="contact-detail-val">Marseille, France — private sessions available across France</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <form id="booking-form" action="#" novalidate>
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label class="form-label" for="name">— Your name</label>
+            <input class="form-input" type="text" id="name" name="name" required placeholder="First Last" />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="email">— Email</label>
+            <input class="form-input" type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="date">— Preferred date(s)</label>
+            <input class="form-input" type="text" id="date" name="date" placeholder="e.g. July 10–15, flexible" />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="guests">— Number of guests</label>
+            <input class="form-input" type="text" id="guests" name="guests" placeholder="e.g. 4 people" />
+          </div>
+
+          <div class="form-field form-field--full">
+            <label class="form-label" for="message">— Anything else</label>
+            <textarea class="form-textarea" id="message" name="message"
+              placeholder="Private group, dietary restrictions, questions about the wines — anything useful."></textarea>
+          </div>
+
+        </div>
+
+        <div class="form-footer">
+          <p class="form-note">Your email client will open with a pre-filled message · Reply within 24h</p>
+          <button class="form-submit" type="submit">Send request →</button>
+        </div>
+      </form>
+
+      <div class="form-success" id="booking-success">
+        <strong>Your email client has opened.</strong>
+        Send the pre-filled message — I'll get back to you within 24 hours.
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var form = document.getElementById('booking-form');
+      var success = document.getElementById('booking-success');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = (form.querySelector('#name').value    || '').trim();
+        var email   = (form.querySelector('#email').value   || '').trim();
+        var date    = (form.querySelector('#date').value    || '').trim();
+        var guests  = (form.querySelector('#guests').value  || '').trim();
+        var message = (form.querySelector('#message').value || '').trim();
+        if (!name || !email) {
+          form.querySelector('#name').reportValidity();
+          form.querySelector('#email').reportValidity();
+          return;
+        }
+        var subject = 'Wine Tasting Marseille — Booking Request';
+        var body =
+          'Hi Paul,\n\n' +
+          'I\'d like to book a Mediterranean Wine Experience in Marseille.\n\n' +
+          'Name: '   + name   + '\n' +
+          'Email: '  + email  + '\n' +
+          (date   ? 'Preferred date(s): ' + date   + '\n' : '') +
+          (guests ? 'Number of guests: ' + guests  + '\n' : '') +
+          (message ? '\nAdditional info:\n' + message + '\n' : '') +
+          '\nLooking forward to hearing from you!\n\n' +
+          '---\nSent from pauldefais.fr';
+        window.location.href =
+          'mailto:tastodisso@gmail.com' +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body='    + encodeURIComponent(body);
+        form.style.display = 'none';
+        success.style.display = 'block';
+      });
+    })();
+  </script>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Tastodisso™</div>
+        <div class="ft-sub">par Paul Defais</div>
+        <p class="ft-body">Wine tasting workshops in Marseille. Natural wines from the Mediterranean — Greece, Provence, Spain. Agence Saint Vincent.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="atelier-degustation.html">Ateliers (FR)</a></li>
+          <li><a href="wine-tasting-marseille.html">Wine Tasting (EN)</a></li>
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="domaines.html">Domaines</a></li>
+          <li><a href="about.html">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Follow</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com/agencesaintvincent" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          <li><a href="mailto:tastodisso@gmail.com">Write →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Tastodisso™ 2026</span>
+      <span>Marseille, France</span>
+    </div>
+  </footer>
+
+</body>
+</html>
