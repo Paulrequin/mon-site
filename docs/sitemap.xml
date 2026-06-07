@@ -2,76 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.pauldefais.fr/</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.pauldefais.fr/travailler-avec-moi.html</loc>
+    <loc>https://www.pauldefais.fr/wine-tasting-marseille.html</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.pauldefais.fr/about.html</loc>
+    <loc>https://www.pauldefais.fr/degustation-vin-marseille.html</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/blog.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.pauldefais.fr/atelier-degustation.html</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.pauldefais.fr/blog.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.pauldefais.fr/atelier-debutant-vin-nature.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pauldefais.fr/about.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pauldefais.fr/travailler-avec-moi.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.pauldefais.fr/domaines.html</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.pauldefais.fr/rose-de-provence-2025.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/epamprage-avril.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/barolo-piemonte.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/debourrement-avril.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.pauldefais.fr/floraison-mai-2026.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/grenache-2023.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/ribera-del-duero.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/syrah-du-sud.html</loc>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pauldefais.fr/vieilles-vignes-mars.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
@@ -94,30 +79,63 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.pauldefais.fr/epamprage-avril.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pauldefais.fr/debourrement-avril.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pauldefais.fr/vieilles-vignes-mars.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.pauldefais.fr/blind-tasting.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pauldefais.fr/syrah-du-sud.html</loc>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.pauldefais.fr/temperature-du-vin.html</loc>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.pauldefais.fr/atelier-debutant-vin-nature.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.pauldefais.fr/grenache-2023.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.pauldefais.fr/wine-tasting-marseille.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.pauldefais.fr/ribera-del-duero.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.pauldefais.fr/degustation-vin-marseille.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.pauldefais.fr/barolo-piemonte.html</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pauldefais.fr/rose-de-provence-2025.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
