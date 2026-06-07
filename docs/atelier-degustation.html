@@ -355,6 +355,42 @@
       .form-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── BANNIÈRE TOURISTES ── */
+    .tourist-block {
+      background: var(--ink); padding: 2.5rem 3rem; border-bottom: 1px solid var(--ink);
+      display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+    }
+    .tourist-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .8rem; }
+    .tourist-title { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 900; text-transform: uppercase; color: #fff; line-height: .92; }
+    .tourist-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 36px; font-weight: 400; text-transform: none; color: var(--sun); display: block; margin-top: .06em; }
+    .tourist-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; color: rgba(255,255,255,.55); margin-top: 1rem; line-height: 1.6; }
+    .tourist-link { display: inline-block; background: var(--sun); color: var(--ink); font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .85rem 2rem; white-space: nowrap; flex-shrink: 0; transition: transform .2s var(--ease); }
+    .tourist-link:hover { transform: translateY(-2px); }
+
+    /* ── BIO PAUL ── */
+    .bio-grid { display: grid; grid-template-columns: 1fr 2fr; border-bottom: 1px solid var(--ink); }
+    .bio-l { padding: 3rem; border-right: 1px solid var(--ink); background: var(--warm); display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+    .bio-l-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
+    .bio-l-title { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 900; text-transform: uppercase; line-height: .9; color: var(--ink); }
+    .bio-l-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 38px; font-weight: 400; text-transform: none; color: var(--rouge); display: block; margin-top: .06em; }
+    .bio-r { padding: 3rem; display: flex; flex-direction: column; gap: 2rem; }
+    .bio-body { font-family: 'EB Garamond', serif; font-size: 17px; font-style: italic; line-height: 1.8; color: var(--mid); }
+    .bio-body strong { font-style: normal; font-weight: 500; color: var(--ink); }
+    .bio-creds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--rule); padding-top: 1.5rem; }
+    .bio-cred { padding-right: 1.5rem; border-right: 1px solid var(--rule); margin-right: 1.5rem; }
+    .bio-cred:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .bio-cred-val { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 900; text-transform: uppercase; color: var(--ink); line-height: 1.1; }
+    .bio-cred-src { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: .3rem; }
+
+    @media (max-width: 768px) {
+      .tourist-block { grid-template-columns: 1fr; }
+      .bio-grid { grid-template-columns: 1fr; }
+      .bio-l { border-right: none; border-bottom: 1px solid var(--ink); }
+      .bio-creds { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .bio-cred { border-right: none; margin-right: 0; padding-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
+      .bio-cred:nth-child(3), .bio-cred:last-child { border-bottom: none; padding-bottom: 0; }
+    }
+
     @media (max-width: 768px) {
 .deroulé-intro { grid-template-columns: 1fr; }
     .deroulé-intro-l { border-right: none; border-bottom: 1px solid var(--ink); }
@@ -385,7 +421,7 @@
     <ul class="nav-r">
       <li><a href="travailler-avec-moi.html">Agence Saint Vincent</a></li>
       <li><a href="about.html">À propos</a></li>
-      <li><a href="mailto:paul@pauldefais.fr" class="nav-cta">Contact</a></li>
+      <li><a href="mailto:tastodisso@gmail.com" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 
@@ -567,7 +603,7 @@
         <ul class="formule-includes">
           <li>De 6 à 50 personnes</li>
           <li>Thème et sélection à votre convenance</li>
-          <li>Partout en France</li>
+          <li>Partout en France — à domicile à Marseille</li>
           <li>Animation + sélection de vins fournis</li>
           <li>Format cocktail ou assis</li>
           <li>Organisation complète si besoin</li>
@@ -579,6 +615,16 @@
     </div>
   </div>
 
+
+  <!-- BANNIÈRE TOURISTES -->
+  <div class="tourist-block">
+    <div>
+      <div class="tourist-label">— En vacances à Marseille ?</div>
+      <div class="tourist-title">On vient chez vous.<em>We come to you.</em></div>
+      <p class="tourist-body">Session privée à domicile — votre Airbnb, villa ou terrasse à Marseille. 1h30, 3 vins naturels, bouchées provençales. Disponible en anglais ou français.</p>
+    </div>
+    <a href="wine-tasting-marseille.html" class="tourist-link">Voir l'expérience →</a>
+  </div>
 
   <!-- À VENIR -->
   <div class="sbar" id="avenir">
@@ -607,7 +653,7 @@
         <div class="coming-title">Session à annoncer</div>
         <p class="coming-body">Thème et date en cours de définition. Écrivez pour exprimer un intérêt ou proposer un sujet.</p>
         <div class="coming-detail">Lieu : <span>Marseille</span></div>
-        <a href="mailto:paul@pauldefais.fr?subject=Intérêt atelier dégustation" class="coming-cta">Me prévenir →</a>
+        <a href="mailto:tastodisso@gmail.com?subject=Intérêt atelier dégustation" class="coming-cta">Me prévenir →</a>
       </div>
 
       <div class="coming-card">
@@ -617,7 +663,7 @@
         <div class="coming-title">Atelier sur-mesure</div>
         <p class="coming-body">Un thème en particulier ? Un groupe constitué ? On construit l'atelier autour de votre curiosité — soirée privée, entreprise ou événement.</p>
         <div class="coming-detail">Lieu : <span>Partout en France</span></div>
-        <a href="mailto:paul@pauldefais.fr?subject=Atelier sur-mesure" class="coming-cta">Écrire à Paul →</a>
+        <a href="mailto:tastodisso@gmail.com?subject=Atelier sur-mesure" class="coming-cta">Écrire à Paul →</a>
       </div>
 
     </div>
@@ -627,6 +673,39 @@
   <div class="bottom-cta">
     <p class="bottom-cta-text">Une question,<br>un projet d'atelier ?</p>
     <a href="#contact" class="btn-ink">Envoyer un message →</a>
+  </div>
+
+  <!-- BIO PAUL -->
+  <div class="sbar">
+    <span class="sbar-l">— Votre intervenant</span>
+    <span class="sbar-r">Paul Defais · Tastodisso™</span>
+  </div>
+  <div class="bio-grid">
+    <div class="bio-l">
+      <div class="bio-l-label">— Parcours</div>
+      <div class="bio-l-title">Ex-vigneron.<em>Agent & formateur.</em></div>
+    </div>
+    <div class="bio-r">
+      <p class="bio-body">Ancien vigneron avec plus de 10 ans d'expérience en France et en Angleterre. Ses vins ont été notés <strong>90/100 par La Revue du Vin de France</strong>. Invité sur <strong>BBC Radio Kent</strong> pour ses pratiques biodynamiques, couvert par la <strong>SRF</strong> (radio-télévision publique suisse) pour son travail en viticulture organique. Aujourd'hui installé à Marseille, il représente des domaines indépendants du Sud en tant qu'agent commercial, et anime Tastodisso — un projet de formation autour du vin naturel, sans jargon imposé.</p>
+      <div class="bio-creds">
+        <div class="bio-cred">
+          <div class="bio-cred-val">90/100</div>
+          <div class="bio-cred-src">La Revue du Vin de France</div>
+        </div>
+        <div class="bio-cred">
+          <div class="bio-cred-val">BBC Radio Kent</div>
+          <div class="bio-cred-src">Biodynamie & viticulture</div>
+        </div>
+        <div class="bio-cred">
+          <div class="bio-cred-val">SRF Suisse</div>
+          <div class="bio-cred-src">Viticulture organique</div>
+        </div>
+        <div class="bio-cred">
+          <div class="bio-cred-val">10+ ans</div>
+          <div class="bio-cred-src">Vigneron France & Angleterre</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ══ FORMULAIRE DE CONTACT ══
@@ -644,7 +723,7 @@
       <div class="contact-head-r">
         <div class="contact-detail">
           <span class="contact-detail-label">— Email</span>
-          <span class="contact-detail-val">paul@pauldefais.fr</span>
+          <span class="contact-detail-val">tastodisso@gmail.com</span>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">— Instagram</span>
@@ -766,11 +845,13 @@
       <div>
         <div class="ft-head">Navigation</div>
         <ul class="ft-links">
-          <li><a href="atelier-degustation.html">Atelier</a></li>
+          <li><a href="atelier-degustation.html">Ateliers (FR)</a></li>
+          <li><a href="degustation-vin-marseille.html">Dégustation Marseille (FR)</a></li>
+          <li><a href="wine-tasting-marseille.html">Wine Tasting (EN)</a></li>
           <li><a href="blog.html">Articles</a></li>
           <li><a href="domaines.html">Domaines</a></li>
           <li><a href="travailler-avec-moi.html">Agence Saint Vincent</a></li>
-      <li><a href="about.html">À propos</a></li>
+          <li><a href="about.html">À propos</a></li>
         </ul>
       </div>
       <div>
@@ -783,13 +864,13 @@
         <div class="ft-head">Contact</div>
         <ul class="ft-links">
           <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
-          <li><a href="mailto:paul@pauldefais.fr">Écrire →</a></li>
+          <li><a href="mailto:tastodisso@gmail.com">Écrire →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-bottom">
       <span>© Tastodisso™ 2026</span>
-      <span>Provence, France</span>
+      <span>Marseille, France</span>
     </div>
   </footer>
 
