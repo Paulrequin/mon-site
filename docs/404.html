@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page introuvable — Paul Defais</title>
+  <meta name="description" content="Cette page n'existe pas ou a été déplacée. Retrouvez les ateliers de dégustation de vin à Marseille." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    .error-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--ink);
+      min-height: 70vh;
+    }
+    .error-l {
+      background: linear-gradient(150deg, #1A0E00 0%, #0D0700 100%);
+      padding: 5rem 3rem;
+      border-right: 1px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .error-code {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 160px;
+      font-weight: 900;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.08);
+    }
+    .error-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 72px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .error-title em {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 64px;
+      font-weight: 400;
+      text-transform: none;
+      color: var(--sun);
+      display: block;
+      margin-top: 0.08em;
+    }
+    .error-r {
+      padding: 5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3rem;
+    }
+    .error-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .error-body {
+      font-family: 'EB Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--mid);
+    }
+    .error-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .error-link {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .error-link:first-child {
+      border-top: 1px solid var(--rule);
+    }
+    .error-link:hover {
+      color: var(--rouge);
+    }
+    .error-link-label {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .error-link-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+    .error-link:hover .error-link-name {
+      color: var(--rouge);
+    }
+    .error-link-arrow {
+      font-size: 13px;
+      color: var(--rule);
+    }
+    @media (max-width: 768px) {
+      .error-grid { grid-template-columns: 1fr; min-height: auto; }
+      .error-l { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--ink); }
+      .error-code { font-size: 100px; }
+      .error-title { font-size: 52px; }
+      .error-title em { font-size: 46px; }
+      .error-r { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="nav-l">
+      <li><a href="atelier-degustation.html">Atelier</a></li>
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="domaines.html">Domaines</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-main">Paul Defais</span>
+      </a>
+    </div>
+    <ul class="nav-r">
+      <li><a href="travailler-avec-moi.html">Travailler avec moi</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="mailto:tastodisso@gmail.com" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="error-grid">
+    <div class="error-l">
+      <div class="error-code">404</div>
+      <div>
+        <div class="error-title">Page<em>introuvable.</em></div>
+      </div>
+    </div>
+    <div class="error-r">
+      <div>
+        <div class="error-label">— Erreur 404</div>
+      </div>
+      <p class="error-body">Cette page n'existe pas ou a été déplacée. Revenez à l'accueil ou choisissez une destination ci-dessous.</p>
+      <div class="error-links">
+        <a href="index.html" class="error-link">
+          <div>
+            <div class="error-link-label">— Accueil</div>
+            <div class="error-link-name">Paul Defais</div>
+          </div>
+          <span class="error-link-arrow">→</span>
+        </a>
+        <a href="atelier-degustation.html" class="error-link">
+          <div>
+            <div class="error-link-label">— Ateliers</div>
+            <div class="error-link-name">Dégustation de vin</div>
+          </div>
+          <span class="error-link-arrow">→</span>
+        </a>
+        <a href="wine-tasting-marseille.html" class="error-link">
+          <div>
+            <div class="error-link-label">— Touristes / Tourists</div>
+            <div class="error-link-name">Wine Tasting Marseille</div>
+          </div>
+          <span class="error-link-arrow">→</span>
+        </a>
+        <a href="blog.html" class="error-link">
+          <div>
+            <div class="error-link-label">— Articles</div>
+            <div class="error-link-name">Le blog</div>
+          </div>
+          <span class="error-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <div class="ft-logo">Paul Defais</div>
+        <p class="ft-body">Ateliers de dégustation de vin à Marseille. Vins naturels de Méditerranée.</p>
+      </div>
+      <div>
+        <div class="ft-head">Navigation</div>
+        <ul class="ft-links">
+          <li><a href="atelier-degustation.html">Ateliers (FR)</a></li>
+          <li><a href="wine-tasting-marseille.html">Wine Tasting (EN)</a></li>
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="about.html">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Contact</div>
+        <ul class="ft-links">
+          <li><a href="mailto:tastodisso@gmail.com">Écrire →</a></li>
+          <li><a href="https://instagram.com/pauldefais" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© Paul Defais 2026</span>
+      <span>Marseille, France</span>
+    </div>
+  </footer>
+
+</body>
+</html>
