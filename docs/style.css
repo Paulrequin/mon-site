@@ -50,6 +50,9 @@ a { color: inherit; text-decoration: none; }
 .article-pull em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 34px; font-weight: 400; text-transform: none; color: var(--mid); display: block; margin-top: 0.3em; }
 .article-img-block { margin: 2.5rem 0; }
 .article-img-block img { width: 100%; display: block; border: 1px solid var(--rule); }
+.article-figure { margin: 2.5rem 0; }
+.article-figure img { width: 100%; display: block; border: 1px solid var(--rule); }
+.article-figure figcaption { font-family: 'DM Sans', Arial, sans-serif; font-size: 13px; color: var(--mid); margin-top: 0.6rem; font-style: italic; }
 .article-img-caption { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-top: 0.6rem; }
 .article-footer-bar { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 1px solid var(--ink); background: var(--warm); }
 .article-tags { display: flex; gap: 0.6rem; }
