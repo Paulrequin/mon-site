@@ -1,483 +1,216 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <script defer data-domain="pauldefais.fr" src="https://plausible.io/js/script.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paul Defais, Vigneron · Marseille</title>
-  <meta name="description" content="Vigneron à Marseille. Ateliers de dégustation de vin naturel, représentation de domaines méditerranéens. Journal autour du vin, de la Provence et du terroir." />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paul Defais — Le journal du vin vivant · Marseille</title>
   <link rel="canonical" href="https://pauldefais.fr/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pauldefais.fr/" />
-  <meta property="og:title" content="Paul Defais, Vigneron · Marseille" />
-  <meta property="og:description" content="Journal autour du vin, de la culture et des récits de Provence. Vigneron à Marseille. Ateliers de dégustation, représentation de domaines, récits autour du vin nature." />
-  <meta property="og:image" content="https://pauldefais.fr/grappes-noires-automne.webp" />
+  <meta property="og:title" content="Paul Defais — Le journal du vin vivant · Marseille" />
+  <meta property="og:description" content="Dégustations, terroirs et saisons par Paul Defais, vigneron à Marseille. Ateliers de dégustation et représentation de domaines indépendants." />
+  <meta property="og:image" content="https://pauldefais.fr/collines-toscanes.webp" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Paul Defais, Vigneron · Marseille" />
-  <meta name="twitter:description" content="Journal autour du vin, de la culture et des récits de Provence." />
-  <meta name="twitter:image" content="https://pauldefais.fr/grappes-noires-automne.webp" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Paul Defais",
-    "url": "https://pauldefais.fr/",
-    "description": "Journal autour du vin, de la culture et des récits de Provence.",
-    "author": {
-      "@type": "Person",
-      "name": "Paul Defais",
-      "email": "contact@pauldefais.fr",
-      "url": "https://pauldefais.fr/about.html"
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Paul Defais",
-      "url": "https://pauldefais.fr/"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Paul Defais, Ateliers Dégustation de Vin Marseille",
-    "description": "Ateliers de dégustation de vin naturel à Marseille. Je viens chez vous, votre Airbnb, villa ou terrasse. Vins méditerranéens de Grèce, Provence et Espagne. Sessions en français et anglais.",
-    "url": "https://pauldefais.fr/",
-    "email": "contact@pauldefais.fr",
-    "image": "https://pauldefais.fr/grappes-noires-automne.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Marseille",
-      "addressRegion": "Bouches-du-Rhône",
-      "postalCode": "13000",
-      "addressCountry": "FR"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Marseille"
-    },
-    "priceRange": "€40–€70",
-    "currenciesAccepted": "EUR",
-    "sameAs": [
-      "https://www.instagram.com/paulxdefais"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Ateliers et dégustations de vin",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Dégustation à domicile, Je viens chez vous",
-            "url": "https://pauldefais.fr/degustation-vin-marseille.html"
-          },
-          "price": "70",
-          "priceCurrency": "EUR"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Atelier dégustation de vin",
-            "url": "https://pauldefais.fr/atelier-degustation.html"
-          },
-          "price": "40",
-          "priceCurrency": "EUR"
-        }
-      ]
-    }
-  }
-  </script>
-  <link rel="preload" as="image" href="collines-toscanes.webp" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
-  <style>
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero {
-      position: relative; min-height: 92vh;
-      border-bottom: 1px solid var(--ink);
-      display: flex; align-items: flex-end;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center 35%;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(26,14,0,0.90) 0%,
-        rgba(26,14,0,0.48) 45%,
-        rgba(26,14,0,0.10) 100%
-      );
-    }
-    .hero-img-tag {
-      position: absolute; top: 2rem; right: 2rem; z-index: 3;
-      background: var(--sun); color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.8rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      padding: 3.5rem 3rem;
-      width: 100%; max-width: 720px;
-    }
-    .hero-big-type {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 120px; font-weight: 900;
-      line-height: 0.88; text-transform: uppercase; color: #fff; letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-      animation: fadeUp 0.6s var(--ease) both;
-    }
-    .hero-big-type .hl { color: var(--sun); display: block; }
-    .hero-big-type .hr { font-family: 'EB Garamond', serif; font-style: italic; font-size: 105px; font-weight: 400; text-transform: none; color: #fff; display: block; opacity: 0.9; }
-    .hero-desc-wrap { animation: fadeUp 0.6s 0.15s var(--ease) both; }
-    .hero-desc { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.82); margin-bottom: 1.8rem; max-width: 460px; }
-    .hero-ctas { display: flex; gap: 1rem; align-items: center; }
-    .btn-sun {
-      background: var(--sun); color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.8rem;
-      cursor: pointer; display: inline-block;
-      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
-    }
-    .btn-sun:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
-    .btn-ghost { font-size: 12px; color: rgba(255,255,255,0.65); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; transition: color 0.2s; letter-spacing: 0.03em; }
-    .btn-ghost:hover { color: #fff; }
-    .sbar { display: flex; align-items: baseline; justify-content: space-between; padding: 0.85rem 2rem; border-bottom: 1px solid var(--ink); }
-    .sbar-l { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
-    .sbar-r { font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: var(--ink); transition: opacity 0.2s; letter-spacing: 0.03em; }
-    .sbar-r:hover { opacity: 0.45; }
-    .feat { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); cursor: pointer; transition: background 0.25s var(--ease); }
-    .feat:hover { background: var(--warm); }
-    .feat-img { aspect-ratio: 4/3; background: var(--warm); border-right: 1px solid var(--ink); overflow: hidden; position: relative; }
-    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
-    .feat:hover .feat-img img { transform: scale(1.03); }
-    .feat-img-fill {
-      width: 100%; height: 100%; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 40%, rgba(212,160,96,0.35) 0%, transparent 55%),
-        radial-gradient(ellipse at 75% 70%, rgba(160,112,48,0.25) 0%, transparent 50%);
-      mix-blend-mode: multiply;
-      transition: transform 0.5s var(--ease);
-    }
-    .feat:hover .feat-img-fill { transform: scale(1.03); }
-    .feat-text { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: space-between; }
-    .feat-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.8rem; }
-    .feat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 46px; font-weight: 700; line-height: 1.0; text-transform: uppercase; color: var(--ink); margin-bottom: 1.2rem; letter-spacing: -0.01em; }
-    .feat-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 50px; font-weight: 400; text-transform: none; color: var(--rouge); }
-    .feat-body { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.75; color: var(--mid); flex: 1; margin-bottom: 2rem; }
-    .feat-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
-    .feat-meta { font-size: 9px; color: var(--rule); letter-spacing: 0.08em; text-transform: uppercase; }
-    .feat-read { font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: var(--ink); letter-spacing: 0.03em; transition: opacity 0.2s; }
-    .feat-read:hover { opacity: 0.5; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--ink); }
-    .art { padding: 2rem; border-right: 1px solid var(--ink); cursor: pointer; transition: background 0.25s var(--ease); }
-    .art:last-child { border-right: none; }
-    .art:hover { background: var(--warm); }
-    .art-img { width: 100%; aspect-ratio: 3/2; margin-bottom: 1.2rem; overflow: hidden; position: relative; }
-    .art-img-fill { width: 100%; height: 100%; position: absolute; inset: 0; transition: transform 0.5s var(--ease); }
-    .art:hover .art-img-fill { transform: scale(1.04); }
-    .art-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
-    .art:hover .art-img img { transform: scale(1.04); }
-    .art-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; }
-    .art-title { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.1; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; }
-    .art-body { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; line-height: 1.7; color: var(--mid); margin-bottom: 1rem; }
-    .art-rule { width: 24px; height: 1px; background: var(--rule); margin-bottom: 0.8rem; }
-    .art-meta { font-size: 9px; color: var(--rule); letter-spacing: 0.06em; }
-    .quote {
-      background: linear-gradient(125deg, #2D6A3F 0%, #1E4D2C 100%);
-      padding: 4.5rem 2rem; border-bottom: 1px solid var(--ink);
-      display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: center;
-    }
-    .q-text { font-family: 'Barlow Condensed', sans-serif; font-size: 62px; font-weight: 900; line-height: 0.95; text-transform: uppercase; color: #fff; letter-spacing: -0.02em; }
-    .q-text em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 58px; font-weight: 400; text-transform: none; color: var(--sun); display: block; margin-top: 0.1em; }
-    .q-side { border-left: 1px solid rgba(255,255,255,0.18); padding-left: 2rem; }
-    .q-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.8rem; }
-    .q-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,0.7); line-height: 1.7; }
-    .sv { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
-    .sv-l {
-      background: linear-gradient(150deg, #2A1800 0%, #1A0E00 100%);
-      padding: 3.5rem 2.5rem; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--ink);
-    }
-    .sv-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; }
-    .sv-title { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900; line-height: 0.92; text-transform: uppercase; color: #fff; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
-    .sv-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 52px; font-weight: 400; text-transform: none; color: var(--sun); display: block; }
-    .sv-body { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 2rem; }
-    .sv-btn {
-      display: inline-block; background: var(--sun); color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.8rem;
-      cursor: pointer; width: fit-content;
-      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
-    }
-    .sv-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(245,166,35,0.4); }
-    .sv-r { padding: 3.5rem 2.5rem; background: var(--bg); display: flex; flex-direction: column; justify-content: space-between; }
-    .sv-r-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem; }
-    .sv-spec { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule); transition: background 0.15s; }
-    .sv-spec:last-child { border-bottom: none; }
-    .sv-spec-k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
-    .sv-spec-v { font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic; color: var(--ink); }
-    @media (max-width: 768px) {
-.nav-r li:first-child { display: none; }
-    .hero { min-height: 85vh; }
-    .hero-big-type { font-size: 76px; }
-    .hero-big-type .hr { font-size: 68px; }
-    .hero-content { padding: 2rem; }
-    .feat { grid-template-columns: 1fr; }
-    .feat-img { border-right: none; border-bottom: 1px solid var(--ink); }
-    .grid { grid-template-columns: 1fr; }
-    .art { border-right: none; border-bottom: 1px solid var(--ink); }
-    .art:last-child { border-bottom: none; }
-    .quote { grid-template-columns: 1fr; }
-    .q-text { font-size: 42px; }
-    .q-text em { font-size: 40px; }
-    .q-side { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; }
-    .sv { grid-template-columns: 1fr; }
-    .sv-l { border-right: none; border-bottom: 1px solid var(--ink); }
-}
-    .serie-strip { border-bottom: 1px solid var(--ink); }
-    .serie-strip-head { display: flex; align-items: baseline; justify-content: space-between; padding: .85rem 2rem; border-bottom: 1px solid var(--ink); }
-    .serie-strip-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); }
-    .serie-strip-link { font-size: 11px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-    .serie-strip-title { font-family: 'Barlow Condensed', sans-serif; font-size: 44px; font-weight: 900; text-transform: uppercase; color: var(--ink); line-height: .92; letter-spacing: -.02em; padding: 1.5rem 2rem 0; }
-    .serie-strip-title em { font-family: 'EB Garamond', serif; font-style: italic; font-size: 40px; font-weight: 400; text-transform: none; color: var(--rouge); }
-    .serie-strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); margin-top: 1.5rem; }
-    .serie-strip-item { padding: 1.5rem 2rem; border-right: 1px solid var(--ink); transition: background .2s; display: block; color: var(--ink); }
-    .serie-strip-item:last-child { border-right: none; }
-    .serie-strip-item:hover { background: var(--warm); }
-    .serie-ep-num { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--mid); margin-bottom: .4rem; }
-    .serie-ep-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 17px; line-height: 1.4; color: var(--ink); }
-    .serie-ep-date { font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--rule); margin-top: .5rem; }
-    @media (max-width: 768px) {
-.serie-strip-grid { grid-template-columns: 1fr 1fr; }
-    .serie-strip-item:nth-child(2) { border-right: none; }
-    .serie-strip-item:nth-child(3) { border-right: 1px solid var(--ink); border-top: 1px solid var(--ink); }
-    .serie-strip-item:nth-child(4) { border-right: none; border-top: 1px solid var(--ink); }
-    /* ── B2B strip ── */
-    .b2b-strip { grid-template-columns: 1fr !important; }
-    .b2b-strip > div:first-child { border-right: none !important; border-bottom: 1px solid var(--ink); }
-    /* ── Hero CTAs wrap ── */
-    .hero-ctas { flex-wrap: wrap; }
-}
-  </style>
+  <meta name="twitter:title" content="Paul Defais — Le journal du vin vivant · Marseille" />
+  <meta name="twitter:description" content="Dégustations, terroirs et saisons par Paul Defais, vigneron à Marseille. Ateliers de dégustation et représentation de domaines indépendants." />
+  <meta name="twitter:image" content="https://pauldefais.fr/collines-toscanes.webp" />
+<meta name="description" content="Dégustations, terroirs et saisons par Paul Defais, vigneron à Marseille. Ateliers de dégustation et représentation de domaines indépendants." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script defer data-domain="pauldefais.fr" src="https://plausible.io/js/script.js"></script>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+<header>
+  <div class="dateline">
+    <span>Marseille · Provence</span>
+    <span class="dateline-c">Édition № 04 — Été 2026 — Le journal du vin vivant</span>
+    <span class="dateline-soc"><a href="#">FR / EN</a><a href="https://instagram.com/paulxdefais" target="_blank" rel="noopener">Instagram ↗</a></span>
+  </div>
   <nav class="nav">
     <ul class="nav-l">
-      <li><a href="atelier-degustation.html">Atelier</a></li>
-      <li><a href="blog.html">Articles</a></li>
-      <li><a href="domaines.html">Domaines</a></li>
+      <li><a class="nav-link" href="atelier-degustation.html">Atelier</a></li>
+      <li><a class="nav-link active" href="index.html">Journal</a></li>
+      <li><a class="nav-link" href="domaines.html">Domaines</a></li>
     </ul>
-    <div class="nav-logo">
-      <span class="logo-main">Paul Defais</span>
-    </div>
+    <a class="nav-logo" href="index.html">
+      <span class="lm">Paul Defais</span>
+      <span class="ls">Vigneron · Marseille</span>
+    </a>
     <ul class="nav-r">
-      <li><a href="travailler-avec-moi.html">Travailler avec moi</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="mailto:contact@pauldefais.fr" class="nav-cta">Contact</a></li>
+      <li><a class="nav-link" href="about.html">À propos</a></li>
+      <li><a class="btn btn--rouge" style="padding:0.6rem 1.3rem;font-size:12px" href="atelier-degustation.html">Réserver</a></li>
     </ul>
   </nav>
+</header>
 
-  <section id="journal" class="hero">
-    <img class="hero-bg" src="collines-toscanes.webp" alt="Vignoble de Provence" fetchpriority="high" />
-    <div class="hero-overlay"></div>
-    <div class="hero-img-tag">Provence 2026</div>
-    <div class="hero-content">
-      <h1 class="hero-big-type">
-        <span>Vin</span>
-        <span class="hl">Culture</span>
-        <span class="hr">Récits.</span>
-      </h1>
-      <div class="hero-desc-wrap">
-        <p class="hero-desc">Notes d'un passionné entre Marseille et le monde du vin. Un journal au rythme des saisons.</p>
-        <div class="hero-ctas">
-          <a href="blog.html" class="btn-sun">Lire le journal</a>
-          <a href="travailler-avec-moi.html" class="btn-ghost">Mes services →</a>
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-bg" src="collines-toscanes.webp" alt="Vignoble de Provence au soleil couchant" />
+    <div class="hero-grad"></div>
+    <div class="hero-edition"><span>Édition № 04 — Été 2026</span><span>Provence</span></div>
+    <div class="hero-inner">
+      <div class="hero-kicker"><span class="dot"></span><span>Le journal d'un vigneron à Marseille</span></div>
+      <h1 class="hero-title"><span>Le vin,</span><span class="hl">de la vigne</span><span class="hr">au récit.</span></h1>
+      <p class="hero-desc">Dégustations, terroirs et saisons — écrits comme on boit : sans chichi, sans hiérarchie, mais jamais sans curiosité.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--sun btn--lg" href="article.html">Lire le journal</a>
+        <a class="btn btn--ghost btn--ghost-light" href="atelier-degustation.html">Réserver une dégustation →</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Défiler</span><span class="line"></span></div>
+  </section>
+
+  <!-- I — À LA UNE -->
+  <div class="rubric"><div class="rubric-l"><span class="rubric-num">I</span><span class="rubric-label">À la une</span></div><a class="rubric-r" href="blog.html">Tous les articles →</a></div>
+  <a class="feat reveal" href="article.html">
+    <div class="feat-media">
+      <img src="vignes-plateau-soleil.webp" alt="La minéralité dans le vin" />
+      <span class="badge-sun feat-flag">Le dossier</span>
+    </div>
+    <div class="feat-body">
+      <div class="card-cat">Dégustation</div>
+      <h2 class="feat-title">La minéralité.<em>Ce mot qui ne veut rien dire.</em></h2>
+      <p class="feat-excerpt">Tout le monde l'emploie, personne ne s'entend dessus. Enquête sur le terme le plus commode — et le plus vague — du vocabulaire œnologique.</p>
+      <div class="feat-foot">
+        <div class="byline">
+          <span class="byline-dot">PD</span>
+          <span class="byline-meta"><strong>Paul Defais</strong><br />28 Mai 2026 · 5 min</span>
         </div>
+        <span class="read-link">Lire l'article →</span>
       </div>
     </div>
-  </section>
+  </a>
 
-  <div class="sbar">
-    <span class="sbar-l">À la une</span>
-    <a class="sbar-r" href="blog.html">Tous les articles</a>
-  </div>
-
-  <article class="feat" onclick="window.location='domaine-la-chance.html'">
-    <div class="feat-img">
-      <img src="vignoble-plaine-ete.webp" alt="Vignes sur les tuffeaux de la Loire" loading="lazy" />
-      <div class="feat-img-fill"></div>
-    </div>
-    <div class="feat-text">
-      <div>
-        <div class="feat-cat">Domaines · Nouveau</div>
-        <h2 class="feat-title">Domaine La Chance.<br><em>La Loire entre dans le catalogue.</em></h2>
-        <p class="feat-body">Jérôme Becuwe et Christine Kieu, cinq hectares sur les tuffeaux de Turquant et Montsoreau. Chenin Blanc, Cabernet Franc, bio. Premier domaine français du catalogue.</p>
-      </div>
-      <div class="feat-footer">
-        <span class="feat-meta">13 Juin 2026 · 4 min</span>
-        <a class="feat-read" href="domaine-la-chance.html">Lire l'article →</a>
-      </div>
-    </div>
-  </article>
-
-  <div id="articles" class="sbar">
-    <span class="sbar-l">Derniers articles</span>
-    <a class="sbar-r" href="blog.html">Voir tout</a>
-  </div>
-
-  <div class="grid">
-    <a class="art" href="saumur.html">
-      <div class="art-img"><img src="grappes-cabernet-panorama.webp" alt="Grappes de Cabernet Franc, coteaux de Saumur" loading="lazy" /></div>
-      <div class="art-cat">Dégustation</div>
-      <h3 class="art-title">Saumur. La roche a tout décidé.</h3>
-      <p class="art-body">On arrive à Saumur et on voit les falaises avant les vignes. Le tuffeau, ses caves à douze degrés, et deux cépages qui n'auraient pas pu être ailleurs.</p>
-      <div class="art-rule"></div>
-      <span class="art-meta">7 Juin 2026 · 5 min</span>
+  <!-- II — LE JOURNAL -->
+  <div class="rubric"><div class="rubric-l"><span class="rubric-num">II</span><span class="rubric-label">Le journal</span></div><a class="rubric-r" href="blog.html">Voir tout →</a></div>
+  <div class="cards reveal">
+    <a class="card" href="article.html">
+      <div class="card-media"><img src="collines-brume-doree.webp" alt="L'orange" /></div>
+      <div class="card-cat">Dégustation</div>
+      <h3 class="card-title">L'orange</h3>
+      <p class="card-excerpt">Un blanc vinifié comme un rouge. Trois semaines de macération, et les catégories qu'on croyait fixes se brouillent.</p>
+      <div class="card-foot"><span class="card-meta">22 Mai · 5 min</span><span class="card-arrow">→</span></div>
     </a>
-    <a class="art" href="xinomavro.html">
-      <div class="art-img"><img src="collines-brume-doree.webp" alt="Xinomavro, vignoble de Naoussa" loading="lazy" /></div>
-      <div class="art-cat">Dégustation</div>
-      <h3 class="art-title">Xinomavro. L'acide, le noir, et ce qu'on oublie toujours.</h3>
-      <p class="art-body">Le cépage grec qu'on confond avec le Pinot Noir, qu'on compare au Nebbiolo, et dont le nom signifie acide noir. Notes sur un vin qui ne ressemble à rien d'autre.</p>
-      <div class="art-rule"></div>
-      <span class="art-meta">5 Juin 2026 · 5 min</span>
+    <a class="card" href="article.html">
+      <div class="card-media"><img src="vignoble-plaine-ete.webp" alt="Blind tasting" /></div>
+      <div class="card-cat">À l'aveugle</div>
+      <h3 class="card-title">Blind tasting</h3>
+      <p class="card-excerpt">Dix vins, aucune étiquette. Personne n'a trouvé le Barolo, personne n'a pensé à la Grèce. Leçon d'humilité.</p>
+      <div class="card-foot"><span class="card-meta">8 Mai · 5 min</span><span class="card-arrow">→</span></div>
     </a>
-    <a class="art" href="mineralite.html">
-      <div class="art-img"><img src="vignes-plateau-soleil.webp" alt="La minéralité dans le vin" loading="lazy" /></div>
-      <div class="art-cat">Dégustation</div>
-      <h3 class="art-title">La minéralité. Ce mot qui ne veut rien dire.</h3>
-      <p class="art-body">Tout le monde l'utilise. Personne ne s'entend sur ce qu'il désigne. Enquête sur le terme le plus commode, et le plus vague, du vocabulaire oenologique.</p>
-      <div class="art-rule"></div>
-      <span class="art-meta">28 Mai 2026 · 5 min</span>
+    <a class="card" href="article.html">
+      <div class="card-media"><img src="collines-brume-doree.webp" alt="La floraison" /></div>
+      <div class="card-cat">Terroir &amp; saisons</div>
+      <h3 class="card-title">La floraison</h3>
+      <p class="card-excerpt">Dix jours où tout se joue — le vent, la pluie, un orage hors saison. Le vigneron regarde le ciel et se tait.</p>
+      <div class="card-foot"><span class="card-meta">3 Mai · 4 min</span><span class="card-arrow">→</span></div>
     </a>
   </div>
 
-  <div class="quote">
-    <p class="q-text">La vigne<br>ne ment pas.<em>Le sol non plus.</em></p>
-    <div class="q-side">
-      <div class="q-label">Printemps 2026</div>
-      <p class="q-body">Épamprage terminé sur toutes les parcelles. Les premières feuilles sont là. La saison est lancée.</p>
+  <!-- CITATION -->
+  <div class="quote reveal">
+    <p class="quote-text">La vigne ne ment pas.<em>Le sol non plus.</em></p>
+    <div class="quote-side">
+      <div class="l">— Carnet · Printemps 2026</div>
+      <div class="b">Épamprage terminé sur toutes les parcelles. Les premières feuilles sont là. La saison est lancée.</div>
     </div>
   </div>
 
-  <div class="serie-strip">
-    <div class="serie-strip-head">
-      <span class="serie-strip-label">En cours · Série éditoriale</span>
-      <a href="vieilles-vignes-mars.html" class="serie-strip-link">Commencer la série →</a>
-    </div>
-    <div style="padding: 0 2rem">
-      <div class="serie-strip-title">Le calendrier<em>de la vigne.</em></div>
-    </div>
-    <div class="serie-strip-grid">
-      <a href="vieilles-vignes-mars.html" class="serie-strip-item">
-        <div class="serie-ep-num">Épisode 01</div>
-        <div class="serie-ep-title">Vieilles vignes en mars</div>
-        <div class="serie-ep-date">12 Mars 2026</div>
-      </a>
-      <a href="debourrement-avril.html" class="serie-strip-item">
-        <div class="serie-ep-num">Épisode 02</div>
-        <div class="serie-ep-title">Le débourrement d'avril</div>
-        <div class="serie-ep-date">5 Avr. 2026</div>
-      </a>
-      <a href="epamprage-avril.html" class="serie-strip-item">
-        <div class="serie-ep-num">Épisode 03</div>
-        <div class="serie-ep-title">L'épamprage</div>
-        <div class="serie-ep-date">19 Avr. 2026</div>
-      </a>
-      <a href="floraison-mai-2026.html" class="serie-strip-item">
-        <div class="serie-ep-num">Épisode 04</div>
-        <div class="serie-ep-title">La floraison</div>
-        <div class="serie-ep-date">3 Mai 2026</div>
-      </a>
+  <!-- III — L'ATELIER -->
+  <div class="rubric"><div class="rubric-l"><span class="rubric-num">III</span><span class="rubric-label">L'atelier</span></div><a class="rubric-r" href="atelier-degustation.html">Découvrir →</a></div>
+  <div class="split reveal">
+    <div class="panel panel--media"><img src="grappes-noires-automne.webp" alt="Dégustation à Marseille" /></div>
+    <div class="panel panel--ink">
+      <div class="eyebrow eyebrow--dark">— Dégustation à domicile</div>
+      <h2 class="panel-title">Comprendre le vin<em>sans le subir.</em></h2>
+      <p class="panel-body">Des ateliers pour les curieux, pas pour les connaisseurs. On part du verre, on remonte au geste du vigneron. À partir de 40 € — chez vous, à Marseille.</p>
+      <div style="display:flex;gap:1.2rem;align-items:center;margin-top:0.5rem">
+        <a class="btn btn--sun" href="atelier-degustation.html">Voir les ateliers →</a>
+        <a class="btn btn--ghost btn--ghost-light" href="atelier-degustation.html">Les formules</a>
+      </div>
     </div>
   </div>
 
-  <!-- B2B, Professionnels -->
-  <div class="b2b-strip" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--ink)">
-    <div style="padding:3rem 3rem;border-right:1px solid var(--ink);background:var(--warm)">
-      <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem">Pour les professionnels</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;margin-bottom:1.2rem">Restaurateur,<br><em style="font-family:'EB Garamond',serif;font-style:italic;font-size:40px;font-weight:400;text-transform:none;color:var(--rouge)">caviste, importateur ?</em></div>
-      <p style="font-family:'EB Garamond',serif;font-size:17px;font-style:italic;line-height:1.7;color:var(--mid);margin-bottom:2rem">Paul Defais représente 13 domaines en Grèce, Italie et Espagne. Des vins solides, traçables, défendables, tarifs et dégustations sur demande.</p>
-      <a href="domaines.html" style="display:inline-block;background:var(--ink);color:var(--bg);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem">Voir les domaines →</a>
+  <!-- IV — LES DOMAINES -->
+  <div class="rubric"><div class="rubric-l"><span class="rubric-num">IV</span><span class="rubric-label">Pour les professionnels</span></div><a class="rubric-r" href="domaines.html">Voir les domaines →</a></div>
+  <div class="split reveal">
+    <div class="panel panel--warm">
+      <div class="eyebrow" style="margin-bottom:0.4rem">— Agent commercial</div>
+      <h2 class="panel-title">Restaurateur,<em>caviste, importateur ?</em></h2>
+      <p class="panel-body">12 domaines indépendants en Grèce, Italie et Espagne. Des vins traçables, défendables, choisis pour la table — tarifs et dégustations pro sur demande.</p>
+      <a class="btn btn--ink" style="align-self:flex-start" href="domaines.html">Voir la sélection →</a>
     </div>
-    <div style="padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:0">
-      <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem">La sélection</div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--rule)"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Domaines</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)">13 producteurs</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--rule)"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Origines</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)">France · Grèce · Italie · Espagne</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--rule)"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Ateliers</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)">Dégustation sur demande</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0"><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)">Contact</span><span style="font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink)"><a href="mailto:contact@pauldefais.fr">contact@pauldefais.fr</a></span></div>
+    <div class="panel" style="background:var(--bg)">
+      <div class="eyebrow" style="margin-bottom:0.4rem">— La sélection en bref</div>
+      <div>
+        <div class="spec"><span class="spec-k">Domaines</span><span class="spec-v">12 producteurs</span></div>
+        <div class="spec"><span class="spec-k">Origines</span><span class="spec-v">Grèce · Italie · Espagne</span></div>
+        <div class="spec"><span class="spec-k">Profil</span><span class="spec-v">Nature, bio, traçable</span></div>
+        <div class="spec"><span class="spec-k">Contact</span><span class="spec-v">contact@pauldefais.fr</span></div>
+      </div>
     </div>
   </div>
 
-  <section id="paul-defais" class="sv">
-    <div class="sv-l">
-      <div>
-        <div class="sv-tag">Paul Defais · Vigneron</div>
-        <h2 class="sv-title">Vigneron<em>à Marseille.</em></h2>
-        <a href="travailler-avec-moi.html" class="sv-btn">Travailler ensemble →</a>
-        <a href="about.html" style="display:inline-block;margin-left:1.5rem;font-size:11px;color:var(--mid);text-decoration:underline;text-underline-offset:3px;">À propos →</a>
+  <!-- PROFIL -->
+  <div class="split reveal">
+    <div class="panel panel--ink">
+      <div class="eyebrow eyebrow--dark">— Paul Defais · Vigneron</div>
+      <h2 class="panel-title">Dix ans dans les rangs.<em>Aujourd'hui, à votre table.</em></h2>
+      <div style="display:flex;gap:1.5rem;align-items:center;margin-top:0.5rem">
+        <a class="btn btn--sun" href="about.html">Mon parcours →</a>
+        <a class="btn btn--ghost btn--ghost-light" href="about.html">À propos</a>
       </div>
     </div>
-    <div class="sv-r">
-      <div class="sv-r-label">En quelques mots</div>
+    <div class="panel" style="background:var(--bg)">
+      <div class="eyebrow" style="margin-bottom:0.4rem">— En quelques mots</div>
       <div>
-        <div class="sv-spec"><span class="sv-spec-k">Activité</span><span class="sv-spec-v">Dégustation · Représentation</span></div>
-        <div class="sv-spec"><span class="sv-spec-k">Expérience</span><span class="sv-spec-v">10+ ans de viticulture</span></div>
-        <div class="sv-spec"><span class="sv-spec-k">Domaines</span><span class="sv-spec-v">France · Grèce · Italie · Espagne</span></div>
-        <div class="sv-spec"><span class="sv-spec-k">Lieu</span><span class="sv-spec-v">Marseille, France</span></div>
+        <div class="spec"><span class="spec-k">Activité</span><span class="spec-v">Dégustation · Représentation</span></div>
+        <div class="spec"><span class="spec-k">Expérience</span><span class="spec-v">10+ ans · France &amp; Angleterre</span></div>
+        <div class="spec"><span class="spec-k">Presse</span><span class="spec-v">RVF 90/100 · BBC · SRF</span></div>
+        <div class="spec"><span class="spec-k">Lieu</span><span class="spec-v">Marseille, France</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</main>
 
-  <footer>
-    <div class="foot">
-      <div>
-        <div class="ft-logo">Paul Defais</div>
-        <p class="ft-body">Vigneron à Marseille. Agent de domaines, ateliers de dégustation, récits autour du vin.</p>
-      </div>
-      <div>
-        <div class="ft-head">Navigation</div>
-        <ul class="ft-links">
-          <li><a href="atelier-degustation.html">Atelier</a></li>
-          <li><a href="atelier-debutant-vin-nature.html">Atelier débutant</a></li>
-          <li><a href="blog.html">Articles</a></li>
-          <li><a href="domaines.html">Domaines</a></li>
-          <li><a href="travailler-avec-moi.html">Travailler avec moi</a></li>
-          <li><a href="about.html">À propos</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="ft-head">Suivre</div>
-        <ul class="ft-links">
-          <li><a href="https://instagram.com/paulxdefais" target="_blank">Instagram</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="ft-head">Contact</div>
-        <ul class="ft-links">
-          <li><a href="mailto:contact@pauldefais.fr">Écrire →</a></li>
-          <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
-        </ul>
-      </div>
+<footer>
+  <div class="news reveal">
+    <div class="news-l">
+      <div class="eyebrow" style="margin-bottom:1.2rem">— La lettre des saisons</div>
+      <div class="news-title">Une fois par saison.<em> Rien de plus.</em></div>
+      <p class="lede" style="font-size:16px;margin-top:1rem;max-width:420px">Les notes du moment, les vins qui valent le détour, les prochaines dégustations à Marseille. Pas de spam, pas de jargon.</p>
     </div>
-    <div class="ft-bottom">
-      <span>© Paul Defais 2026</span>
-      <span>Marseille, France</span>
+    <div class="news-r">
+      <div class="eyebrow">— S'inscrire</div>
+      <form class="news-form">
+        <input type="email" placeholder="vous@exemple.fr" required />
+        <button type="submit">S'inscrire →</button>
+      </form>
     </div>
-  </footer>
+  </div>
+  <div class="foot">
+    <div>
+      <div class="foot-logo">Paul Defais</div>
+      <p class="foot-sub">Vigneron, agent de domaines indépendants et guide de dégustation. Un journal au rythme des saisons, entre Marseille et la Méditerranée.</p>
+    </div>
+    <div>
+      <div class="foot-head">Le site</div>
+      <ul class="foot-links"><li><a href="index.html">Journal</a></li><li><a href="atelier-degustation.html">Atelier</a></li><li><a href="domaines.html">Domaines</a></li><li><a href="about.html">À propos</a></li></ul>
+    </div>
+    <div>
+      <div class="foot-head">Suivre</div>
+      <ul class="foot-links"><li><a href="https://instagram.com/paulxdefais" target="_blank" rel="noopener">Instagram ↗</a></li><li><a href="#">La lettre des saisons</a></li></ul>
+    </div>
+    <div>
+      <div class="foot-head">Contact</div>
+      <ul class="foot-links"><li><a href="mailto:contact@pauldefais.fr">contact@pauldefais.fr</a></li><li><a href="https://pauldefais.fr">pauldefais.fr</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bottom"><span>© Paul Defais 2026 — Tastodisso™</span><span>Marseille, France · Agence Saint Vincent</span></div>
+</footer>
 
-
+<script src="site.js"></script>
 </body>
 </html>
