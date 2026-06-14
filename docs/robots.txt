@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pauldefais.fr/sitemap.xml
+Sitemap: https://pauldefais.fr/sitemap.xml
