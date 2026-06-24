@@ -237,7 +237,10 @@
       font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(255,255,255,0.38); margin-top: 0.5rem;
     }
-    .ft-modal-body { padding: 2rem 2.5rem; display: grid; gap: 1.4rem; }
+    .ft-modal-body { padding: 2rem 2.5rem; display: flex; gap: 2rem; align-items: flex-start; }
+    .ft-bottle { flex: 0 0 110px; }
+    .ft-bottle img { width: 100%; height: auto; display: block; }
+    .ft-info { flex: 1; display: grid; gap: 1.4rem; }
     .ft-section { display: grid; gap: 0.3rem; }
     .ft-section-label {
       font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid);
@@ -691,26 +694,29 @@
         <div class="ft-modal-meta" id="ft-meta"></div>
       </div>
       <div class="ft-modal-body">
-        <div class="ft-section">
-          <div class="ft-section-label">Cépage</div>
-          <div class="ft-section-text" id="ft-cepage"></div>
-        </div>
-        <div class="ft-section">
-          <div class="ft-section-label">Terroir</div>
-          <div class="ft-section-text" id="ft-terroir"></div>
-        </div>
-        <div class="ft-section">
-          <div class="ft-section-label">Vinification</div>
-          <div class="ft-section-text" id="ft-vini"></div>
-        </div>
-        <div class="ft-section">
-          <div class="ft-section-label">Dégustation</div>
-          <div class="ft-section-text" id="ft-degu"></div>
-        </div>
-        <div class="ft-specs">
-          <div class="ft-spec"><span class="ft-spec-k">Alcool</span><span class="ft-spec-v" id="ft-alcool"></span></div>
-          <div class="ft-spec"><span class="ft-spec-k">SO2 total</span><span class="ft-spec-v" id="ft-so2"></span></div>
-          <div class="ft-spec"><span class="ft-spec-k">Service</span><span class="ft-spec-v" id="ft-service"></span></div>
+        <div class="ft-bottle"><img id="ft-photo" src="" alt="" /></div>
+        <div class="ft-info">
+          <div class="ft-section">
+            <div class="ft-section-label">Cépage</div>
+            <div class="ft-section-text" id="ft-cepage"></div>
+          </div>
+          <div class="ft-section">
+            <div class="ft-section-label">Terroir</div>
+            <div class="ft-section-text" id="ft-terroir"></div>
+          </div>
+          <div class="ft-section">
+            <div class="ft-section-label">Vinification</div>
+            <div class="ft-section-text" id="ft-vini"></div>
+          </div>
+          <div class="ft-section">
+            <div class="ft-section-label">Dégustation</div>
+            <div class="ft-section-text" id="ft-degu"></div>
+          </div>
+          <div class="ft-specs">
+            <div class="ft-spec"><span class="ft-spec-k">Alcool</span><span class="ft-spec-v" id="ft-alcool"></span></div>
+            <div class="ft-spec"><span class="ft-spec-k">SO2 total</span><span class="ft-spec-v" id="ft-so2"></span></div>
+            <div class="ft-spec"><span class="ft-spec-k">Service</span><span class="ft-spec-v" id="ft-service"></span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -724,6 +730,7 @@
       'heures-heureuses': {
         nom: 'Les Heures Heureuses',
         meta: 'Vin de France · Blanc · 2025 · 75 cl',
+        photo: 'lc-heures-heureuses.webp',
         cepage: 'Chenin blanc',
         terroir: 'Parcelle des Haut Bournais, Montsoreau. Sol argilo-calcaire légèrement limoneux.',
         vini: 'Pressurage direct. Élevage sur lies totales en cuve inox, 7 mois.',
@@ -735,6 +742,7 @@
       'volte-face': {
         nom: 'Volte-Face',
         meta: 'Vin de France · Blanc · 2024 · 75 cl',
+        photo: 'lc-volte-face.webp',
         cepage: 'Chenin blanc — sélection massale, vignes de 35 ans',
         terroir: 'Parcelle des Vigneaux, Turquant. Sol argilo-calcaire légèrement limoneux.',
         vini: 'Pressurage lent. Fermentation et élevage 18 mois en fûts de 400 l (3/4 vins).',
@@ -746,6 +754,7 @@
       'rouge-des-bois': {
         nom: 'Rouge des Bois',
         meta: 'AOC Saumur-Champigny · Rouge · 2024 · 75 cl & 150 cl',
+        photo: 'lc-rouge-des-bois.webp',
         cepage: 'Cabernet franc — 100 % égrappé',
         terroir: 'Parcelles des Bournais (Montsoreau) et des Vigneaux (Turquant). Vignes entre 25 et 45 ans, plateau argilo-calcaire.',
         vini: 'Macération de 6 jours. Assemblage : 30 % fûts de 228 l (5-6 vins), 30 % cuve béton, 40 % cuve inox.',
@@ -757,6 +766,7 @@
       'monde-nouveau': {
         nom: 'Un Monde Nouveau',
         meta: 'AOC Saumur-Champigny · Rouge · 2022 · 75 cl & 150 cl',
+        photo: 'lc-monde-nouveau.webp',
         cepage: 'Cabernet franc — 100 % égrappé',
         terroir: 'Parcelles des Bournais (Montsoreau) et des Vigneaux (Turquant). Plateau argilo-calcaire au-dessus de la Loire. Vignes entre 25 et 45 ans.',
         vini: 'Macération 3 semaines en cuve béton. Élevage 8 mois en cuve béton, puis 1 an en bouteille.',
@@ -768,6 +778,7 @@
       'saisons': {
         nom: 'Saisons — Épisode II',
         meta: 'Vin de France · Rosé · 2023 · 75 cl',
+        photo: 'lc-saisons.webp',
         cepage: 'Cabernet franc (macération 24h) + Cabernet sauvignon (rosé, très mûrs)',
         terroir: 'Parcelles des Bournais (Montsoreau) et des Vigneaux (Turquant).',
         vini: 'Assemblage d\'une macération de cabernet franc 24h et d\'un rosé de cabernet sauvignon très mûrs. Élevage en cuve inox.',
@@ -779,6 +790,7 @@
       'midi-minuit': {
         nom: 'Midi Minuit',
         meta: 'Vin de France · Effervescent · 2023 · 75 cl',
+        photo: 'lc-midi-minuit.webp',
         cepage: 'Cabernet franc — pressurage direct',
         terroir: 'Parcelles de Montsoreau et des Vigneaux, Turquant. Sol argilo-calcaire avec argiles profondes.',
         vini: 'Élevage minimum 18 mois sur lattes dans les caves de tuffeau à 12 °C. Dégorgement à la commande. Aucun sucre résiduel.',
@@ -791,6 +803,8 @@
 
     function ftOpen(id) {
       const c = CUVEES[id]; if (!c) return;
+      const photo = document.getElementById('ft-photo');
+      photo.src = c.photo; photo.alt = c.nom;
       document.getElementById('ft-nom').textContent = c.nom;
       document.getElementById('ft-meta').textContent = c.meta;
       document.getElementById('ft-cepage').textContent = c.cepage;
