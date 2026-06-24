@@ -213,6 +213,57 @@
     }
     .transport-cta:hover { opacity: 0.85; }
 
+    /* ===== MODAL FICHE TECHNIQUE ===== */
+    .ft-overlay {
+      position: fixed; inset: 0; z-index: 9000;
+      background: rgba(16,20,12,0.82);
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 2rem; overflow-y: auto;
+      opacity: 0; pointer-events: none; transition: opacity 0.22s;
+    }
+    .ft-overlay.open { opacity: 1; pointer-events: all; }
+    .ft-modal {
+      background: var(--bg); width: 100%; max-width: 620px;
+      position: relative; margin: auto;
+      transform: translateY(20px); transition: transform 0.22s;
+    }
+    .ft-overlay.open .ft-modal { transform: translateY(0); }
+    .ft-modal-head { background: var(--ink); padding: 2rem 2.5rem 1.5rem; }
+    .ft-modal-name {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 38px; font-weight: 900;
+      text-transform: uppercase; color: var(--bg); line-height: 1; letter-spacing: -0.01em;
+    }
+    .ft-modal-meta {
+      font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.38); margin-top: 0.5rem;
+    }
+    .ft-modal-body { padding: 2rem 2.5rem; display: grid; gap: 1.4rem; }
+    .ft-section { display: grid; gap: 0.3rem; }
+    .ft-section-label {
+      font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid);
+    }
+    .ft-section-text {
+      font-family: 'EB Garamond', serif; font-size: 16px; line-height: 1.55; color: var(--ink);
+    }
+    .ft-specs {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
+      border-top: 1px solid var(--warm); padding-top: 1.25rem; margin-top: 0.25rem;
+    }
+    .ft-spec { display: flex; flex-direction: column; gap: 0.2rem; }
+    .ft-spec-k { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); }
+    .ft-spec-v { font-size: 14px; color: var(--ink); }
+    .ft-close {
+      position: absolute; top: 1rem; right: 1rem; background: none; border: none;
+      cursor: pointer; color: rgba(255,255,255,0.35); font-size: 22px; line-height: 1;
+      transition: color 0.2s; padding: 0.25rem 0.5rem;
+    }
+    .ft-close:hover { color: #fff; }
+    .cuvee-link {
+      cursor: pointer; text-decoration: underline; text-underline-offset: 3px;
+      text-decoration-color: rgba(0,0,0,0.18); transition: text-decoration-color 0.2s;
+    }
+    .cuvee-link:hover { text-decoration-color: var(--rouge); color: var(--rouge); }
+
     /* ===== PRINT ===== */
     @media print {
       .gate { display: none !important; }
@@ -342,7 +393,7 @@
           <tbody>
             <tr class="tr-cat"><td colspan="7">Blancs</td></tr>
             <tr>
-              <td>Les Heures Heureuses</td>
+              <td><span class="cuvee-link" data-id="heures-heureuses">Les Heures Heureuses</span></td>
               <td>Vin de France</td>
               <td class="col-couleur">Blanc</td>
               <td class="col-mill">2025</td>
@@ -351,7 +402,7 @@
               <td class="col-prix-resto">9,30 €</td>
             </tr>
             <tr>
-              <td>Volte Face</td>
+              <td><span class="cuvee-link" data-id="volte-face">Volte Face</span></td>
               <td>Vin de France</td>
               <td class="col-couleur">Blanc</td>
               <td class="col-mill">2024</td>
@@ -361,7 +412,7 @@
             </tr>
             <tr class="tr-cat"><td colspan="7">Rouges</td></tr>
             <tr>
-              <td>Rouge des Bois</td>
+              <td><span class="cuvee-link" data-id="rouge-des-bois">Rouge des Bois</span></td>
               <td>Saumur-Champigny</td>
               <td class="col-couleur">Rouge</td>
               <td class="col-mill">2024</td>
@@ -370,7 +421,7 @@
               <td class="col-prix-resto">9,30 €</td>
             </tr>
             <tr>
-              <td>Rouge des Bois</td>
+              <td><span class="cuvee-link" data-id="rouge-des-bois">Rouge des Bois</span></td>
               <td>Saumur-Champigny</td>
               <td class="col-couleur">Rouge</td>
               <td class="col-mill">2024</td>
@@ -379,7 +430,7 @@
               <td class="col-prix-resto">19,60 €</td>
             </tr>
             <tr>
-              <td>Un Monde Nouveau</td>
+              <td><span class="cuvee-link" data-id="monde-nouveau">Un Monde Nouveau</span></td>
               <td>Saumur-Champigny</td>
               <td class="col-couleur">Rouge</td>
               <td class="col-mill">2023</td>
@@ -388,7 +439,7 @@
               <td class="col-prix-resto">11,60 €</td>
             </tr>
             <tr>
-              <td>Un Monde Nouveau</td>
+              <td><span class="cuvee-link" data-id="monde-nouveau">Un Monde Nouveau</span></td>
               <td>Saumur-Champigny</td>
               <td class="col-couleur">Rouge</td>
               <td class="col-mill">2023</td>
@@ -398,7 +449,7 @@
             </tr>
             <tr class="tr-cat"><td colspan="7">Rosé</td></tr>
             <tr>
-              <td>Saisons, épisode II</td>
+              <td><span class="cuvee-link" data-id="saisons">Saisons, épisode II</span></td>
               <td>Vin de France</td>
               <td class="col-couleur">Rosé</td>
               <td class="col-mill">2023</td>
@@ -408,7 +459,7 @@
             </tr>
             <tr class="tr-cat"><td colspan="7">Effervescent</td></tr>
             <tr>
-              <td>Midi Minuit</td>
+              <td><span class="cuvee-link" data-id="midi-minuit">Midi Minuit</span></td>
               <td>Vin de France</td>
               <td class="col-couleur">Effervescent</td>
               <td class="col-mill">2023</td>
@@ -631,7 +682,139 @@
 
   </div><!-- /content -->
 
+  <!-- ===== MODAL FICHE TECHNIQUE ===== -->
+  <div class="ft-overlay" id="ft-overlay" onclick="ftClose(event)">
+    <div class="ft-modal" id="ft-modal">
+      <button class="ft-close" onclick="ftCloseBtn()">✕</button>
+      <div class="ft-modal-head">
+        <div class="ft-modal-name" id="ft-nom"></div>
+        <div class="ft-modal-meta" id="ft-meta"></div>
+      </div>
+      <div class="ft-modal-body">
+        <div class="ft-section">
+          <div class="ft-section-label">Cépage</div>
+          <div class="ft-section-text" id="ft-cepage"></div>
+        </div>
+        <div class="ft-section">
+          <div class="ft-section-label">Terroir</div>
+          <div class="ft-section-text" id="ft-terroir"></div>
+        </div>
+        <div class="ft-section">
+          <div class="ft-section-label">Vinification</div>
+          <div class="ft-section-text" id="ft-vini"></div>
+        </div>
+        <div class="ft-section">
+          <div class="ft-section-label">Dégustation</div>
+          <div class="ft-section-text" id="ft-degu"></div>
+        </div>
+        <div class="ft-specs">
+          <div class="ft-spec"><span class="ft-spec-k">Alcool</span><span class="ft-spec-v" id="ft-alcool"></span></div>
+          <div class="ft-spec"><span class="ft-spec-k">SO2 total</span><span class="ft-spec-v" id="ft-so2"></span></div>
+          <div class="ft-spec"><span class="ft-spec-k">Service</span><span class="ft-spec-v" id="ft-service"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // ============================================================
+    // FICHES TECHNIQUES
+    // ============================================================
+    const CUVEES = {
+      'heures-heureuses': {
+        nom: 'Les Heures Heureuses',
+        meta: 'Vin de France · Blanc · 2025 · 75 cl',
+        cepage: 'Chenin blanc',
+        terroir: 'Parcelle des Haut Bournais, Montsoreau. Sol argilo-calcaire légèrement limoneux.',
+        vini: 'Pressurage direct. Élevage sur lies totales en cuve inox, 7 mois.',
+        degu: 'Nez frais et citrus, gourmandise et fraîcheur, belle salinité en finale. Sapide.',
+        alcool: '12,5 % vol.',
+        so2: '10 mg/hl',
+        service: '10 – 12 °C'
+      },
+      'volte-face': {
+        nom: 'Volte-Face',
+        meta: 'Vin de France · Blanc · 2024 · 75 cl',
+        cepage: 'Chenin blanc — sélection massale, vignes de 35 ans',
+        terroir: 'Parcelle des Vigneaux, Turquant. Sol argilo-calcaire légèrement limoneux.',
+        vini: 'Pressurage lent. Fermentation et élevage 18 mois en fûts de 400 l (3/4 vins).',
+        degu: 'Bel équilibre acidité-minéralité. L\'élevage en fût apporte un toucher de bouche et une tension pour un vin très digeste.',
+        alcool: '12 % vol.',
+        so2: '11 mg/hl',
+        service: '11 – 13 °C'
+      },
+      'rouge-des-bois': {
+        nom: 'Rouge des Bois',
+        meta: 'AOC Saumur-Champigny · Rouge · 2024 · 75 cl & 150 cl',
+        cepage: 'Cabernet franc — 100 % égrappé',
+        terroir: 'Parcelles des Bournais (Montsoreau) et des Vigneaux (Turquant). Vignes entre 25 et 45 ans, plateau argilo-calcaire.',
+        vini: 'Macération de 6 jours. Assemblage : 30 % fûts de 228 l (5-6 vins), 30 % cuve béton, 40 % cuve inox.',
+        degu: 'Nez sur la fraise des bois. Bouche acidulée et fraîche, aucun tanin.',
+        alcool: '12 % vol.',
+        so2: '21 mg/hl',
+        service: '13 – 15 °C'
+      },
+      'monde-nouveau': {
+        nom: 'Un Monde Nouveau',
+        meta: 'AOC Saumur-Champigny · Rouge · 2022 · 75 cl & 150 cl',
+        cepage: 'Cabernet franc — 100 % égrappé',
+        terroir: 'Parcelles des Bournais (Montsoreau) et des Vigneaux (Turquant). Plateau argilo-calcaire au-dessus de la Loire. Vignes entre 25 et 45 ans.',
+        vini: 'Macération 3 semaines en cuve béton. Élevage 8 mois en cuve béton, puis 1 an en bouteille.',
+        degu: 'Nez floral et frais, arômes de fruits rouges. Finale crayeuse — expression du terroir.',
+        alcool: '13 % vol.',
+        so2: '17 mg/hl',
+        service: '14 – 16 °C'
+      },
+      'saisons': {
+        nom: 'Saisons — Épisode II',
+        meta: 'Vin de France · Rosé · 2023 · 75 cl',
+        cepage: 'Cabernet franc (macération 24h) + Cabernet sauvignon (rosé, très mûrs)',
+        terroir: 'Parcelles des Bournais (Montsoreau) et des Vigneaux (Turquant).',
+        vini: 'Assemblage d\'une macération de cabernet franc 24h et d\'un rosé de cabernet sauvignon très mûrs. Élevage en cuve inox.',
+        degu: 'Nez floral et fruité. Belle matière puissante, sans tanin.',
+        alcool: '13 % vol.',
+        so2: '19 mg/hl',
+        service: '14 °C'
+      },
+      'midi-minuit': {
+        nom: 'Midi Minuit',
+        meta: 'Vin de France · Effervescent · 2023 · 75 cl',
+        cepage: 'Cabernet franc — pressurage direct',
+        terroir: 'Parcelles de Montsoreau et des Vigneaux, Turquant. Sol argilo-calcaire avec argiles profondes.',
+        vini: 'Élevage minimum 18 mois sur lattes dans les caves de tuffeau à 12 °C. Dégorgement à la commande. Aucun sucre résiduel.',
+        degu: 'Sensation désaltérante, soutenue par de légers amers.',
+        alcool: '11,5 % vol.',
+        so2: '10 mg/hl',
+        service: '8 – 10 °C'
+      }
+    };
+
+    function ftOpen(id) {
+      const c = CUVEES[id]; if (!c) return;
+      document.getElementById('ft-nom').textContent = c.nom;
+      document.getElementById('ft-meta').textContent = c.meta;
+      document.getElementById('ft-cepage').textContent = c.cepage;
+      document.getElementById('ft-terroir').textContent = c.terroir;
+      document.getElementById('ft-vini').textContent = c.vini;
+      document.getElementById('ft-degu').textContent = c.degu;
+      document.getElementById('ft-alcool').textContent = c.alcool;
+      document.getElementById('ft-so2').textContent = c.so2;
+      document.getElementById('ft-service').textContent = c.service;
+      document.getElementById('ft-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function ftClose(e) {
+      if (e.target === document.getElementById('ft-overlay')) ftCloseBtn();
+    }
+    function ftCloseBtn() {
+      document.getElementById('ft-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') ftCloseBtn(); });
+    document.querySelectorAll('.cuvee-link').forEach(el => {
+      el.addEventListener('click', () => ftOpen(el.dataset.id));
+    });
+
     // ============================================================
     // CODE D'ACCES - changer la valeur ci-dessous
     // ============================================================
