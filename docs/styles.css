@@ -265,7 +265,7 @@ img { display: block; }
 .about-hero { display: grid; grid-template-columns: 1fr 1fr; border-bottom: var(--r-line); min-height: 56vh; }
 .about-hero-l { background: var(--ink); padding: var(--r-cell); display: flex; flex-direction: column; justify-content: space-between; border-right: var(--r-line); }
 .about-hero-r { position: relative; overflow: hidden; background: var(--warm); }
-.about-hero-r img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.about-hero-r img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 /* ── Newsletter + footer ──────────────────────────────────────────────────── */
 .news { display: grid; grid-template-columns: 1fr 1fr; border-bottom: var(--r-line); }
@@ -294,6 +294,7 @@ img { display: block; }
   .hero-title { font-size: calc(64px * var(--r-scale)); }
   .hero-title .hr { font-size: calc(52px * var(--r-scale)); }
   .feat, .cards, .quote, .split, .formules, .steps, .phead, .about-hero, .news, .foot { grid-template-columns: 1fr; }
+  .about-hero-r { min-height: 55vw; }
   .feat-media, .panel--ink, .panel--warm, .panel--media, .phead-l, .about-hero-l, .news-l { border-right: none; border-bottom: var(--r-line); }
   .card, .formule, .step { border-right: none; border-bottom: var(--r-line); }
   .card:last-child, .formule:last-child, .step:last-child { border-bottom: none; }
