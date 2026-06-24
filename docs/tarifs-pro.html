@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifs Professionnels 2026 | Paul Defais</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ===== GATE ===== */
+    .gate {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem;
+    }
+    .gate-box {
+      width: 100%; max-width: 380px;
+      display: flex; flex-direction: column; gap: 2.5rem;
+    }
+    .gate-logo {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900;
+      text-transform: uppercase; color: var(--bg); letter-spacing: -0.01em;
+    }
+    .gate-intro { display: flex; flex-direction: column; gap: 0.4rem; }
+    .gate-label {
+      font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .gate-title {
+      font-family: 'EB Garamond', serif; font-size: 24px; font-style: italic;
+      color: rgba(255,255,255,0.75);
+    }
+    .gate-form { display: flex; flex-direction: column; gap: 0.75rem; }
+    .gate-input {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300;
+      padding: 0.9rem 1rem; outline: none; letter-spacing: 0.08em;
+      width: 100%; box-sizing: border-box; transition: border-color 0.2s;
+    }
+    .gate-input:focus { border-color: rgba(255,255,255,0.45); }
+    .gate-input::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+    .gate-btn {
+      background: var(--sun); color: var(--ink);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.95rem 2rem;
+      border: none; cursor: pointer; transition: opacity 0.2s; width: 100%;
+    }
+    .gate-btn:hover { opacity: 0.85; }
+    .gate-error {
+      font-size: 11px; color: #f87171; display: none;
+      letter-spacing: 0.04em; padding-top: 0.2rem;
+    }
+    .gate-foot {
+      font-size: 11px; color: rgba(255,255,255,0.18); letter-spacing: 0.03em;
+    }
+    .gate.hidden { display: none; }
+
+    /* ===== PAGE HEADER ===== */
+    .tarifs-header {
+      border-bottom: 1px solid var(--ink);
+      padding: 4.5rem 2rem 3.5rem;
+      background: var(--warm);
+    }
+    .tarifs-header-label {
+      font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 1.5rem;
+    }
+    .tarifs-header-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 84px; font-weight: 900;
+      line-height: 0.88; text-transform: uppercase; color: var(--ink);
+      letter-spacing: -0.02em; margin-bottom: 0;
+    }
+    .tarifs-header-title em {
+      font-family: 'EB Garamond', serif; font-style: italic; font-size: 76px;
+      font-weight: 400; text-transform: none; color: var(--rouge); display: block;
+      margin-top: 0.05em;
+    }
+
+    /* ===== INFO STRIP ===== */
+    .info-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--ink);
+    }
+    .info-strip-item {
+      padding: 1.2rem 2rem; border-right: 1px solid var(--ink);
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .info-strip-item:last-child { border-right: none; }
+    .info-strip-k {
+      font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid);
+    }
+    .info-strip-v {
+      font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--ink);
+      line-height: 1.5;
+    }
+    .info-strip-v a { color: var(--ink); }
+
+    /* ===== DOMAIN SECTION ===== */
+    .domaine-section { border-bottom: 2px solid var(--ink); }
+
+    .domaine-section-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 2rem; border-bottom: 1px solid var(--ink);
+      background: var(--ink);
+    }
+    .domaine-section-name {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 900;
+      text-transform: uppercase; color: var(--bg); letter-spacing: 0.01em;
+    }
+    .domaine-section-region {
+      font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+
+    .domaine-catalogue {
+      display: grid; grid-template-columns: 300px 1fr;
+      border-bottom: 1px solid var(--ink);
+    }
+    .domaine-cat-photo {
+      border-right: 1px solid var(--ink); overflow: hidden;
+      position: relative; min-height: 280px;
+    }
+    .domaine-cat-photo img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .domaine-cat-info {
+      padding: 2rem 2.5rem; display: flex; flex-direction: column; gap: 1rem;
+    }
+    .domaine-cat-appellation {
+      font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic;
+      color: var(--rouge);
+    }
+    .domaine-cat-cepages {
+      font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid);
+    }
+    .domaine-cat-desc {
+      font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic;
+      line-height: 1.8; color: var(--ink); flex: 1;
+    }
+    .domaine-cat-contact {
+      font-size: 11px; color: var(--mid); letter-spacing: 0.02em; margin-top: 0.5rem;
+    }
+    .domaine-cat-contact a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ===== PRICE TABLE ===== */
+    .prix-section { padding: 1.8rem 2rem 2.2rem; }
+    .prix-label {
+      font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 1.2rem; display: block;
+    }
+    .prix-table { width: 100%; border-collapse: collapse; }
+    .prix-table thead tr { background: var(--warm); }
+    .prix-table th {
+      font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--mid); font-weight: 400; text-align: left;
+      padding: 0.55rem 1rem; border: 1px solid var(--rule);
+    }
+    .prix-table th.th-r { text-align: right; }
+    .prix-table td {
+      font-size: 12px; color: var(--ink);
+      padding: 0.65rem 1rem; border: 1px solid var(--rule);
+      vertical-align: middle; line-height: 1.3;
+    }
+    .prix-table tbody tr:hover { background: var(--warm); }
+    .prix-table .col-couleur {
+      font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--mid); white-space: nowrap;
+    }
+    .prix-table .col-mill { color: var(--mid); font-size: 11px; white-space: nowrap; }
+    .prix-table .col-format { color: var(--mid); font-size: 11px; white-space: nowrap; text-align: center; }
+    .prix-table .col-prix {
+      text-align: right; font-family: 'EB Garamond', serif;
+      font-size: 15px; font-weight: 500; white-space: nowrap; color: var(--ink);
+    }
+    .prix-table .col-prix-resto {
+      text-align: right; font-family: 'EB Garamond', serif;
+      font-size: 15px; white-space: nowrap; color: var(--mid);
+    }
+    .tr-cat td {
+      font-size: 8px !important; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mid) !important; background: var(--warm);
+      padding: 0.6rem 1rem !important; border-left: none !important; border-right: none !important;
+      border-top: 2px solid var(--rule) !important;
+    }
+
+    /* ===== TRANSPORT ===== */
+    .transport-strip {
+      background: #162416; padding: 2.5rem 2rem;
+      display: flex; gap: 4rem; align-items: center;
+      border-bottom: 1px solid var(--ink);
+    }
+    .transport-body { flex: 1; }
+    .transport-label {
+      font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,.28); margin-bottom: 0.6rem;
+    }
+    .transport-text {
+      font-family: 'EB Garamond', serif; font-size: 16px; font-style: italic;
+      color: rgba(255,255,255,.72); line-height: 1.7;
+    }
+    .transport-cta {
+      display: inline-block; background: var(--sun); color: var(--ink);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.85rem 2rem;
+      white-space: nowrap; transition: opacity 0.2s;
+    }
+    .transport-cta:hover { opacity: 0.85; }
+
+    /* ===== PRINT ===== */
+    @media print {
+      .gate { display: none !important; }
+      nav, .transport-cta { display: none; }
+      .tarifs-header { padding: 2rem; }
+      .tarifs-header-title { font-size: 52px; }
+      .tarifs-header-title em { font-size: 46px; }
+      .prix-table th, .prix-table td { border: 1px solid #bbb; }
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .nav-r li:first-child { display: none; }
+      .tarifs-header-title { font-size: 54px; }
+      .tarifs-header-title em { font-size: 48px; }
+      .info-strip { grid-template-columns: 1fr 1fr; }
+      .info-strip-item:nth-child(2) { border-right: none; }
+      .info-strip-item:nth-child(3),
+      .info-strip-item:nth-child(4) { border-top: 1px solid var(--ink); }
+      .info-strip-item:nth-child(4) { border-right: none; }
+      .domaine-catalogue { grid-template-columns: 1fr; }
+      .domaine-cat-photo { min-height: 220px; border-right: none; border-bottom: 1px solid var(--ink); }
+      .domaine-section-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+      .transport-strip { flex-direction: column; gap: 1.5rem; }
+      .prix-table { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== GATE ===== -->
+  <div class="gate" id="gate">
+    <div class="gate-box">
+      <div class="gate-logo">Paul Defais</div>
+      <div class="gate-intro">
+        <div class="gate-label">Espace réservé aux professionnels</div>
+        <div class="gate-title">Tarifs 2026.</div>
+      </div>
+      <div class="gate-form">
+        <input type="password" class="gate-input" id="gate-input" placeholder="Code d'accès" autocomplete="off" />
+        <div class="gate-error" id="gate-error">Code incorrect — contactez Paul Defais.</div>
+        <button class="gate-btn" id="gate-btn">Accéder →</button>
+      </div>
+      <div class="gate-foot">contact@pauldefais.fr · Marseille</div>
+    </div>
+  </div>
+
+  <!-- ===== CONTENU ===== -->
+  <div id="content" style="display:none;">
+
+    <nav class="nav">
+      <ul class="nav-l">
+        <li><a href="atelier-degustation.html">Atelier</a></li>
+        <li><a href="blog.html">Articles</a></li>
+        <li><a href="domaines.html">Domaines</a></li>
+      </ul>
+      <div class="nav-logo">
+        <a href="index.html"><span class="logo-main">Paul Defais</span></a>
+      </div>
+      <ul class="nav-r">
+        <li><a href="travailler-avec-moi.html">Travailler avec moi</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="mailto:contact@pauldefais.fr" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="tarifs-header">
+      <div class="tarifs-header-label">Paul Defais · Agent de domaines · Marseille</div>
+      <h1 class="tarifs-header-title">Tarifs<br>professionnels.<em>2026.</em></h1>
+    </div>
+
+    <div class="info-strip">
+      <div class="info-strip-item">
+        <span class="info-strip-k">Conditions</span>
+        <span class="info-strip-v">Prix HT départ cave · par carton de 6 bouteilles</span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-k">Validité</span>
+        <span class="info-strip-v">Tarifs valables jusqu'au 31 décembre 2026</span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-k">Transport</span>
+        <span class="info-strip-v">Frais en sus selon volume et destination</span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-k">Commandes</span>
+        <span class="info-strip-v"><a href="mailto:contact@pauldefais.fr">contact@pauldefais.fr</a></span>
+      </div>
+    </div>
+
+
+    <!-- ============================================================
+         DOMAINE LA CHANCE
+    ============================================================ -->
+    <div class="domaine-section">
+      <div class="domaine-section-head">
+        <span class="domaine-section-name">Domaine La Chance</span>
+        <span class="domaine-section-region">Turquant · Saumur · Loire · France</span>
+      </div>
+      <div class="domaine-catalogue">
+        <div class="domaine-cat-photo">
+          <img src="la-chance-portrait.webp" alt="Jérôme Becuwe et Christine Kieu — Domaine La Chance, Saumur" />
+        </div>
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">Saumur-Champigny · Vin de France</div>
+          <div class="domaine-cat-cepages">Chenin Blanc · Cabernet Franc · Cabernet Sauvignon</div>
+          <p class="domaine-cat-desc">Jérôme Becuwe et Christine Kieu ont quitté la gestion et la communication à Paris pour devenir vignerons sur les tuffeaux de Turquant. Cinq hectares en agriculture biologique sur le plateau argilo-calcaire de Montsoreau et Turquant, au-dessus de la Loire. Vendanges manuelles en petite caisse, tri sévère à la vigne et au chai, levures indigènes. Leurs blancs de Chenin fermentent lentement et longuement. Leurs Saumur-Champigny ignorent les tanins. Midi Minuit, l'effervescent, vieillit 18 mois sur lattes dans les caves à 12°.</p>
+          <div class="domaine-cat-contact">Pour toute commande : <a href="mailto:contact@pauldefais.fr?subject=Commande%20Domaine%20La%20Chance">contact@pauldefais.fr</a></div>
+        </div>
+      </div>
+      <div class="prix-section">
+        <span class="prix-label">Tarifs HT départ cave · carton de 6 · millésime 2026</span>
+        <table class="prix-table">
+          <thead>
+            <tr>
+              <th style="width:28%">Cuvée</th>
+              <th>Appellation</th>
+              <th>Couleur</th>
+              <th>Mill.</th>
+              <th style="text-align:center">Format</th>
+              <th class="th-r">Caviste HT</th>
+              <th class="th-r">Restaurant HT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tr-cat"><td colspan="7">Blancs</td></tr>
+            <tr>
+              <td>Les Heures Heureuses</td>
+              <td>Vin de France</td>
+              <td class="col-couleur">Blanc</td>
+              <td class="col-mill">2025</td>
+              <td class="col-format">75 cl</td>
+              <td class="col-prix">8,45 €</td>
+              <td class="col-prix-resto">9,30 €</td>
+            </tr>
+            <tr>
+              <td>Volte Face</td>
+              <td>Vin de France</td>
+              <td class="col-couleur">Blanc</td>
+              <td class="col-mill">2024</td>
+              <td class="col-format">75 cl</td>
+              <td class="col-prix">10,55 €</td>
+              <td class="col-prix-resto">11,60 €</td>
+            </tr>
+            <tr class="tr-cat"><td colspan="7">Rouges</td></tr>
+            <tr>
+              <td>Rouge des Bois</td>
+              <td>Saumur-Champigny</td>
+              <td class="col-couleur">Rouge</td>
+              <td class="col-mill">2024</td>
+              <td class="col-format">75 cl</td>
+              <td class="col-prix">8,45 €</td>
+              <td class="col-prix-resto">9,30 €</td>
+            </tr>
+            <tr>
+              <td>Rouge des Bois</td>
+              <td>Saumur-Champigny</td>
+              <td class="col-couleur">Rouge</td>
+              <td class="col-mill">2024</td>
+              <td class="col-format">150 cl</td>
+              <td class="col-prix">18,20 €</td>
+              <td class="col-prix-resto">19,60 €</td>
+            </tr>
+            <tr>
+              <td>Un Monde Nouveau</td>
+              <td>Saumur-Champigny</td>
+              <td class="col-couleur">Rouge</td>
+              <td class="col-mill">2023</td>
+              <td class="col-format">75 cl</td>
+              <td class="col-prix">10,55 €</td>
+              <td class="col-prix-resto">11,60 €</td>
+            </tr>
+            <tr>
+              <td>Un Monde Nouveau</td>
+              <td>Saumur-Champigny</td>
+              <td class="col-couleur">Rouge</td>
+              <td class="col-mill">2023</td>
+              <td class="col-format">150 cl</td>
+              <td class="col-prix">23,30 €</td>
+              <td class="col-prix-resto">25,10 €</td>
+            </tr>
+            <tr class="tr-cat"><td colspan="7">Rosé</td></tr>
+            <tr>
+              <td>Saisons, épisode II</td>
+              <td>Vin de France</td>
+              <td class="col-couleur">Rosé</td>
+              <td class="col-mill">2023</td>
+              <td class="col-format">75 cl</td>
+              <td class="col-prix">8,45 €</td>
+              <td class="col-prix-resto">9,30 €</td>
+            </tr>
+            <tr class="tr-cat"><td colspan="7">Effervescent</td></tr>
+            <tr>
+              <td>Midi Minuit</td>
+              <td>Vin de France</td>
+              <td class="col-couleur">Effervescent</td>
+              <td class="col-mill">2023</td>
+              <td class="col-format">75 cl</td>
+              <td class="col-prix">10,65 €</td>
+              <td class="col-prix-resto">11,70 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- ===== TRANSPORT ===== -->
+    <div class="transport-strip">
+      <div class="transport-body">
+        <div class="transport-label">Transport &amp; livraison</div>
+        <p class="transport-text">Tous les tarifs s'entendent hors taxes, départ cave. Les frais de transport sont facturés en sus selon le volume de commande et la destination. Livraison en France metropolitaine, export sur devis. Pour toute commande ou demande de tarif transport, contactez Paul directement.</p>
+      </div>
+      <a href="mailto:contact@pauldefais.fr?subject=Commande%20pro" class="transport-cta">Passer commande →</a>
+    </div>
+
+    <footer>
+      <div class="foot">
+        <div>
+          <div class="ft-logo">Paul Defais</div>
+          <p class="ft-body">Agent de domaines à Marseille. Document confidentiel réservé aux professionnels.</p>
+        </div>
+        <div>
+          <div class="ft-head">Navigation</div>
+          <ul class="ft-links">
+            <li><a href="domaines.html">Domaines</a></li>
+            <li><a href="atelier-degustation.html">Atelier</a></li>
+            <li><a href="blog.html">Articles</a></li>
+            <li><a href="about.html">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="ft-head">Contact</div>
+          <ul class="ft-links">
+            <li><a href="mailto:contact@pauldefais.fr">contact@pauldefais.fr</a></li>
+            <li><a href="https://pauldefais.fr">pauldefais.fr</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="ft-head">Document</div>
+          <ul class="ft-links">
+            <li><a href="#" onclick="window.print();return false;">Imprimer / PDF ↓</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ft-bottom">
+        <span>© Paul Defais 2026 · Confidentiel</span>
+        <span>Marseille, France</span>
+      </div>
+    </footer>
+
+  </div><!-- /content -->
+
+  <script>
+    // ============================================================
+    // CODE D'ACCES - changer la valeur ci-dessous
+    // ============================================================
+    const CODE = 'tarifs2026';
+
+    function unlock() {
+      const val = document.getElementById('gate-input').value;
+      const err = document.getElementById('gate-error');
+      if (val === CODE) {
+        document.getElementById('gate').classList.add('hidden');
+        document.getElementById('content').style.display = 'block';
+        sessionStorage.setItem('pro-auth', '1');
+      } else {
+        err.style.display = 'block';
+        document.getElementById('gate-input').value = '';
+        document.getElementById('gate-input').focus();
+      }
+    }
+
+    document.getElementById('gate-btn').addEventListener('click', unlock);
+    document.getElementById('gate-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') unlock();
+    });
+
+    // Rester connecté dans la même session navigateur
+    if (sessionStorage.getItem('pro-auth') === '1') {
+      document.getElementById('gate').classList.add('hidden');
+      document.getElementById('content').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
