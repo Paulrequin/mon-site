@@ -96,9 +96,9 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Mobile ──────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .nav-l { display: none; }
+  /* visibility:hidden garde la colonne grid → logo reste centré */
+  .nav-l { visibility: hidden; pointer-events: none; }
   .nav-r li:first-child { display: none; }
-  .nav { grid-template-columns: 1fr auto; }
   .article-title { font-size: 48px; }
   .article-title em { font-size: 46px; }
   .article-header-content { padding: 2rem 1.5rem; }

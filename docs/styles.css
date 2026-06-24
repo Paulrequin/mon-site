@@ -288,8 +288,8 @@ img { display: block; }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 860px) {
-  .nav-l { display: none; }
-  .nav { grid-template-columns: 1fr auto; }
+  /* visibility:hidden garde la colonne grid → logo reste centré */
+  .nav-l { visibility: hidden; pointer-events: none; }
   .nav-r { gap: 1.1rem; }
   .hero-title { font-size: calc(64px * var(--r-scale)); }
   .hero-title .hr { font-size: calc(52px * var(--r-scale)); }
@@ -304,4 +304,15 @@ img { display: block; }
   .art-col { grid-column: 1; }
   .art-hero-title { font-size: calc(46px * var(--r-scale)); }
   .foot { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Mobile petit écran ────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .dateline { padding: 0.5rem 1rem; }
+  .nav { padding: 0 1.25rem; }
+  .hero-inner { padding: 2rem 1.25rem; }
+  .hero-title { font-size: calc(48px * var(--r-scale)); }
+  .hero-title .hr { font-size: calc(40px * var(--r-scale)); }
+  .hero-desc { font-size: 16px; }
+  .rubric { padding: 0.75rem 1.25rem; }
 }
