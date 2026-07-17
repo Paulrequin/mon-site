@@ -122,6 +122,8 @@
       display: grid; grid-template-columns: 300px 1fr;
       border-bottom: 1px solid var(--ink);
     }
+    .domaine-catalogue.solo { grid-template-columns: 1fr; }
+
     .domaine-cat-photo {
       border-right: 1px solid var(--ink); overflow: hidden;
       position: relative; min-height: 280px;
@@ -350,7 +352,11 @@
       </div>
       <div class="info-strip-item">
         <span class="info-strip-k">Transport</span>
-        <span class="info-strip-v">0,78 € / bouteille</span>
+        <span class="info-strip-v">
+          <span style="display:block">Moins de 30 btes &nbsp;&nbsp;· <strong>1 € / bte</strong></span>
+          <span style="display:block">30 btes et plus &nbsp;&nbsp;&nbsp;&nbsp;· <strong>0,78 € / bte</strong></span>
+          <span style="display:block;font-size:11px;color:var(--mid);margin-top:0.25rem">OENOS : +0,30 € / bte · cdes &lt; 30 btes</span>
+        </span>
       </div>
       <div class="info-strip-item">
         <span class="info-strip-k">Commandes</span>
@@ -644,7 +650,17 @@
         <span class="domaine-section-name">Panos Sarris</span>
         <span class="domaine-section-region">Céphalonie · Îles Ioniennes · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue">
+        <div class="domaine-cat-photo">
+          <img src="panos-sarris.jpg" alt="Panos Sarris, vigneron à Céphalonie, présente ses vins de l'île ionienne" />
+        </div>
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Robola de Céphalonie · IGP Coteaux Ainos</div>
+          <div class="domaine-cat-cepages">Robola · Vostilidi · Tsaoussi</div>
+          <p class="domaine-cat-desc">Fondée en 2017 à Svoronata, sur la côte ionienne de Céphalonie, la winery de Panos Sarris a pour seule boussole le terroir de l'île. Le Robola pousse ici sur les pentes calcaires du mont Ainos à 700 mètres - une roche pauvre et drainante qui lui donne une minéralité tranchante et une fraîcheur que l'altitude seule peut offrir sous ce soleil. Vostilidi et Tsaoussi, cépages endémiques presque disparus, sont vinifiés avec la même rigueur : levures indigènes, biologique, petites séries. La mer, la pierre et le ciel - la philosophie du domaine résume le terroir mieux que n'importe quel cahier des charges.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · carton de 6 · Culture biologique</span>
         <table class="prix-table">
           <thead>
@@ -738,7 +754,14 @@
         <span class="domaine-section-name">Sclavos-Zisimatos</span>
         <span class="domaine-section-region">Céphalonie · Biodynamie · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Robola de Céphalonie · IGP Coteaux Ainos</div>
+          <div class="domaine-cat-cepages">Robola · Mavrodaphne · Tsaoussi · Vostylidi · Zakynthino · Moscatela</div>
+          <p class="domaine-cat-desc">Depuis 2015, Évriviadis Sclavos et Spiros Zisimatos travaillent en biodynamie sur la péninsule de Paliki, à l'ouest de Céphalonie. Vieilles vignes de 70 ans en moyenne, enracinées dans des calcaires, marnes et argiles blanches qui confèrent aux vins une acidité naturelle saisissante. Sclavos est le seul vigneron de l'île à vinifier les cépages autochtones en variétaux purs - Tsaoussi, Vostylidi, Zakynthino, des noms que la viticulture conventionnelle a longtemps ignorés. En 2021, Wine & Spirits Magazine a classé le domaine parmi les 100 meilleurs du monde.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · carton de 6 · Biodynamie</span>
         <table class="prix-table">
           <thead>
@@ -776,7 +799,14 @@
         <span class="domaine-section-name">Apostolos Thymiopoulos</span>
         <span class="domaine-section-region">Naoussa · Rapsani · Macédoine · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Naoussa · AOP Rapsani · IGP Macédoine</div>
+          <div class="domaine-cat-cepages">Xinomavro</div>
+          <p class="domaine-cat-desc">A Trilofos, en Macédoine du Nord, Apostolos Thymiopoulos consacre ses 34 hectares à un seul cépage : le Xinomavro. Xino, l'acide. Mavro, le noir. Une variété à la structure tannique serrée, aux arômes d'épices et de fruits rouges secs, dont le potentiel de vieillissement rivalise avec les grands Nebbiolo du Piémont. En biodynamie depuis 2003, le domaine vinifie entre 100 et 400 mètres d'altitude au pied du mont Vermio. Terre et Ciel, la cuvée phare, tient facilement dix à vingt ans de garde.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · carton de 6 · Culture biologique</span>
         <table class="prix-table">
           <thead>
@@ -953,7 +983,14 @@
         <span class="domaine-section-name">Glinavos-Thymiopoulos</span>
         <span class="domaine-section-region">Zitsa · Épire · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Zitsa · Épire</div>
+          <div class="domaine-cat-cepages">Debina · Vlachiko · Bekari</div>
+          <p class="domaine-cat-desc">A Zitsa, à l'est de Ioannina en Épire, le cépage Debina donne un vin légèrement pétillant d'une vivacité et d'une fraîcheur que l'altitude et le calcaire seuls expliquent. Le domaine est aujourd'hui la référence de l'appellation, fondé en 1978 par Lefteris Glinavos de retour de formation à Bordeaux - l'un des premiers œnologues actifs de Grèce. Cave à 400 fûts de chêne français, unité de production de vins pétillants et semi-pétillants depuis 2009. Fine Debina et Poème de Nature sont des classiques du vignoble grec contemporain.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · carton de 6</span>
         <table class="prix-table">
           <thead>
@@ -1009,7 +1046,14 @@
         <span class="domaine-section-name">Nikos Zoumberakis</span>
         <span class="domaine-section-region">Crète · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">IGP Crète</div>
+          <div class="domaine-cat-cepages">Vidiano · Liatiko · Kotsifali · Thrapsathiri · Assyrtiko</div>
+          <p class="domaine-cat-desc">Troisième génération à Kali Sikia, dans l'arrière-pays de Rethymno, au sud-ouest de la Crète. Les vignes de Zoumberakis poussent entre 600 et 800 mètres sur les pentes du Krioneritis, dans un sol de schiste et d'argile rouge qui ralentit la maturité et préserve la fraîcheur naturelle. Vidiano, Liatiko, Kotsifali, Thrapsathiri : des cépages crétois ancestraux que l'agriculture biologique a ici sauvés de l'oubli. Leur Vidiano, blanc floral et tendu, est l'une des révélations du vignoble grec de ces dernières années.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · carton de 6 · Culture biologique</span>
         <table class="prix-table">
           <thead>
@@ -1085,7 +1129,14 @@
         <span class="domaine-section-name">Oenosnature &amp; Domaine Nopera</span>
         <span class="domaine-section-region">Samos · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">IGP Mer Égée · Île de Samos</div>
+          <div class="domaine-cat-cepages">Muscat Blanc à Petits Grains</div>
+          <p class="domaine-cat-desc">L'île de Samos, dans la mer Égée face aux côtes turques, est entièrement vouée au Muscat Blanc à Petits Grains depuis l'Antiquité. Sur les pentes escarpées du mont Ampelos, jusqu'à 900 mètres d'altitude, des vignerons cultivent un terroir rocailleux et pauvre balayé par les vents marins. Domaine Nopera, distribué par OENOS, vinifie le Muscat en sec ou en passerillage avec une approche radicalement artisanale : fermentation naturelle sur levures indigènes, interventions minimales, longue maturation.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Culture biologique</span>
         <table class="prix-table">
           <thead>
@@ -1132,7 +1183,14 @@
         <span class="domaine-section-name">Savogloy-Tsivolas</span>
         <span class="domaine-section-region">Limnos · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Limnos · Mer Égée du Nord</div>
+          <div class="domaine-cat-cepages">Muscat d'Alexandrie · Limnio</div>
+          <p class="domaine-cat-desc">Île volcanique du nord de la mer Égée, Limnos est l'une des origines viticoles les plus anciennes de Grèce - Aristote lui-même mentionnait le Lemnia dans ses écrits. Sur un sol volcanique façonné par des millénaires de feux internes, deux cépages coexistent : le Muscat d'Alexandrie, blanc sec ou doux d'une grande richesse aromatique, et le Limnio, cépage rouge ancestral presque introuvable ailleurs. Savoglou et Tsivolas ont fondé leur domaine en 2002 pour redonner à l'île son identité viticole, en agriculture biologique.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Culture biologique</span>
         <table class="prix-table">
           <thead>
@@ -1170,7 +1228,14 @@
         <span class="domaine-section-name">Domaine Kefalinos</span>
         <span class="domaine-section-region">Zante · Îles Ioniennes · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Verdea · IGP Zakynthos · Îles Ioniennes</div>
+          <div class="domaine-cat-cepages">Macripodia · Goustolidi · Robola · Pavlos · Koutsoubeli · Lagorthi</div>
+          <p class="domaine-cat-desc">Sur l'île de Zakynthos, la Verdea est une appellation d'origine vénitienne - le nom désigne la teinte vert pâle du jus et la tradition de vendanges précoces. Dimitris Kefallinos vinifie depuis 2018 une mosaïque de six cépages indigènes de l'île, presque tous introuvables ailleurs, en fermentation spontanée sur levures indigènes et vieillissement en vieux fûts. Pas de filtration, soufre homéopathique. Séries limitées : entre 1 000 et 3 000 bouteilles par cuvée.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Vignes pré-phylloxériques</span>
         <table class="prix-table">
           <thead>
@@ -1227,7 +1292,14 @@
         <span class="domaine-section-name">Vassilis Vaïmakis — Mater Natura</span>
         <span class="domaine-section-region">Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Naoussa · Macédoine du Nord</div>
+          <div class="domaine-cat-cepages">Xinomavro · Roditis · Malagouzia</div>
+          <p class="domaine-cat-desc">Le Dr Vasilis Vaimakis est l'un des œnologues les plus reconnus de Macédoine du Nord. Après des décennies de conseil aux meilleurs domaines grecs, il a fondé sa propre micro-exploitation à Naoussa pour pousser une conviction jusqu'au bout : le Xinomavro peut être vinifié sans soufre ajouté sans rien sacrifier de la précision ni de la capacité de vieillissement. Mater Natura est le nom de cette série de vins zéro soufre - nets, équilibrés, rendements bas de 30 à 40 hl/ha.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Vins naturels</span>
         <table class="prix-table">
           <thead>
@@ -1285,7 +1357,17 @@
         <span class="domaine-section-name">Famille Georgas</span>
         <span class="domaine-section-region">Attique · Biodynamie · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue">
+        <div class="domaine-cat-photo">
+          <img src="georgas-vignoble.webp" alt="Vigneron de la famille Georgas dans ses vignes de la Mesogia, Attique" />
+        </div>
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Retsina · IGP Attique</div>
+          <div class="domaine-cat-cepages">Savatiano</div>
+          <p class="domaine-cat-desc">La famille Georgas cultive en agriculture biologique le Savatiano dans la plaine de la Mesogia, en Attique, à quelques kilomètres d'Athènes. C'est ici, sur ce plateau argilo-calcaire, que la Retsina est née - une pratique vinaire de trois millénaires, longtemps décriée par l'Occident, aujourd'hui réhabilitée par une nouvelle génération de vignerons exigeants. Une touche légère de résine de pin d'Alep, introduite pendant la fermentation, donne aux vins leur signature unique : une fraîcheur résineuse qui n'écrase jamais le fruit.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Biodynamie</span>
         <table class="prix-table">
           <thead>
@@ -1323,7 +1405,14 @@
         <span class="domaine-section-name">Ilias Perimenis</span>
         <span class="domaine-section-region">Kranidi · Péloponnèse · Grèce</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">AOP Kranidi · Argolide · Péloponnèse</div>
+          <div class="domaine-cat-cepages">Huile d'olive extra vierge · Variété Manaki</div>
+          <p class="domaine-cat-desc">Kranidi est un port de l'Argolide, sur la côte nord-est du Péloponnèse, baigné par les vents de la mer Égée. Son appellation AOP pour l'huile d'olive extra vierge est l'une des plus reconnues de Grèce. La variété Manaki, à petits fruits et à faible teneur en acide oléique, donne une huile d'une finesse et d'une douceur caractéristiques. Récolte manuelle, première pression à froid, acidité inférieure à 0,5%.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT</span>
         <table class="prix-table">
           <thead>
@@ -1360,7 +1449,14 @@
         <span class="domaine-section-name">Viñedos Verticales</span>
         <span class="domaine-section-region">Sierras de Málaga · Andalousie · Espagne</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">DO Sierras de Málaga · Axarquía · Andalousie</div>
+          <div class="domaine-cat-cepages">Moscatel de Alejandría · Pedro Ximénez · Doradilla · Garnacha · Romé</div>
+          <p class="domaine-cat-desc">Juan Muñoz et Vicente Inat ont fondé en 2015 leur domaine à Moclinejo, dans l'Axarquía de Málaga, pour défendre un terroir spectaculaire : des vignes centenaires accrochées à des pentes de 40 à 60 %, entre 400 et 900 mètres d'altitude, sur un sol de schiste sombre. Le Moscatel de Alejandría y pousse depuis l'époque phénicienne - l'une des lignées génétiques de vigne les plus anciennes qui soient. Viticulture régénérative, vinification ancestrale sans intrants modernes.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Agriculture biologique</span>
         <table class="prix-table">
           <thead>
@@ -1435,7 +1531,14 @@
         <span class="domaine-section-name">Mario Rovira</span>
         <span class="domaine-section-region">Catalogne · Andalousie · Bierzo · Espagne</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">DO Bierzo · DO Alella · Espagne</div>
+          <div class="domaine-cat-cepages">Mencía · Pansa Blanca · Palomino Fino</div>
+          <p class="domaine-cat-desc">Mario Rovira est l'une des figures montantes de la viticulture espagnole naturelle. Formé à l'œnologie à Tarragone, il affine sa pratique à Sancerre, en Nouvelle-Zélande, puis chez Jean-Claude Berrouet à Château La Fleur-Petrus à Pomerol. En revenant en Espagne, il choisit le Bierzo pour ses vieilles vignes de Mencía sur des sols d'ardoise noire, et achète 3 hectares face à la mer en Alella, en Catalogne, en 2017. Fermentations spontanées lentes et fraîches, soufre minimal.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave</span>
         <table class="prix-table">
           <thead>
@@ -1483,7 +1586,14 @@
         <span class="domaine-section-name">Bodega Herrera-Alvarado</span>
         <span class="domaine-section-region">Valle Marga-Marga · Chili</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">Valle Marga Marga · Chili</div>
+          <div class="domaine-cat-cepages">País · Muscat Rosada · Cristal · Pinot Noir · Chardonnay · Sauvignon Blanc</div>
+          <p class="domaine-cat-desc">Fondée en 2003 dans la vallée de Marga Marga, Carolina Alvarado et Arturo Herrera ont posé les bases du vin naturel chilien. Sur 1,5 hectare de vignes en culture sèche, sans irrigation, sur des sols de quartz et d'argile proches du Pacifique, ils produisent des vins sans aucun intrant : zéro soufre, zéro additif. Leur cave a été construite de leurs mains en adobe, à partir de l'argile de leurs propres parcelles. Les cépages ancestraux País et Muscat Rosada y côtoient le Pinot Noir et le Chardonnay.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Vignes pré-phylloxériques · Biologiques</span>
         <table class="prix-table">
           <thead>
@@ -1539,7 +1649,17 @@
         <span class="domaine-section-name">Davide Carlone</span>
         <span class="domaine-section-region">Boca · Haut-Piémont · Italie</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue">
+        <div class="domaine-cat-photo">
+          <img src="alto-piemonte.webp" alt="Vignobles de l'Alto Piemonte avec les Alpes en arrière-plan - Davide Carlone, Boca DOC" />
+        </div>
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">DOC Boca · Colline Novaresi · Alto Piemonte</div>
+          <div class="domaine-cat-cepages">Nebbiolo · Vespolina · Croatina · Erbaluce</div>
+          <p class="domaine-cat-desc">A Boca, dans le nord du Piémont, les vignes de Davide Carlone poussent sur les vestiges d'un supervolcan - la Valsesia - à 380-450 mètres d'altitude, que les Alpes surplombent à l'horizon. 11 hectares en biologique consacrés pour l'essentiel au Nebbiolo (85 %) et à la Vespolina (15 %), assemblés selon la tradition du Boca DOC et vieillis 24 mois en grandes barriques de Slavonie. L'Alto Piemonte, longtemps dans l'ombre de Barolo et Barbaresco, connaît aujourd'hui une renaissance portée par des vignerons comme Carlone.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Vins naturels</span>
         <table class="prix-table">
           <thead>
@@ -1614,7 +1734,14 @@
         <span class="domaine-section-name">Mas del Prat</span>
         <span class="domaine-section-region">Aveyron · France</span>
       </div>
-      <div class="prix-section">
+            <div class="domaine-catalogue solo">
+        <div class="domaine-cat-info">
+          <div class="domaine-cat-appellation">IGP Comté Tolosan · Aveyron</div>
+          <div class="domaine-cat-cepages">Fer Servadou · Prunelard · Mauzac</div>
+          <p class="domaine-cat-desc">3 hectares plantés en 2015 dans le sud de l'Aveyron sur des schistes d'altitude entre 300 et 450 mètres. Un terroir frais et minéral où le Fer Servadou - appelé Mansois ici - retrouve son expression la plus directe : acidité vive, fruits rouges sauvages, poivre. Le Prunelard, ancien cépage gascon presque disparu, y est vinifié en rouge tendu. Le Mauzac, natif du Massif Central, en blanc aromatique. Agriculture biologique, vinification naturelle.</p>
+        </div>
+      </div>
+<div class="prix-section">
         <span class="prix-label">Tarifs HT départ cave · Culture biologique</span>
         <table class="prix-table">
           <thead>
